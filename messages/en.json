@@ -1,0 +1,25 @@
+{
+    "navigation": {
+      "home": "Home",
+      "story": "Our Story",
+      "schedule": "Schedule",
+      "gallery": "Photos",
+      "location": "Location",
+      "faq": "FAQ",
+      "rsvp": "RSVP",
+      "openMenu": "Open menu",
+      "closeMenu": "Close menu",
+      "homeLabel": "Go to homepage"
+    },
+    "hero": {
+      "nameOne": "Merle",
+      "nameTwo": "Lasse",
+      "eyebrow": "We are getting married",
+      "date": "May 15, 2027",
+      "location": "Heimathaus Tornesch · Schleswig-Holstein",
+      "days": "Days",
+      "hours": "Hours",
+      "minutes": "Minutes",
+      "cta": "RSVP now"
+    }
+  }

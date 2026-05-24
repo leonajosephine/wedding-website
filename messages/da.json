@@ -1,0 +1,25 @@
+{
+  "navigation": {
+    "home": "Hjem",
+    "story": "Vores historie",
+    "schedule": "Program",
+    "gallery": "Billeder",
+    "location": "Lokation",
+    "faq": "FAQ",
+    "rsvp": "RSVP",
+    "openMenu": "Åbn menu",
+    "closeMenu": "Luk menu",
+    "homeLabel": "Gå til forsiden"
+  },
+    "hero": {
+      "nameOne": "Merle",
+      "nameTwo": "Lasse",
+      "eyebrow": "Vi skal giftes",
+      "date": "15. maj 2027",
+      "location": "Heimathaus Tornesch · Schleswig-Holstein",
+      "days": "Dage",
+      "hours": "Timer",
+      "minutes": "Minutter",
+      "cta": "Svar nu"
+    }
+  }

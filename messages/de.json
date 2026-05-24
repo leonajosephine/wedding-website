@@ -1,0 +1,25 @@
+{
+    "navigation": {
+      "home": "Home",
+      "story": "Unsere Geschichte",
+      "schedule": "Ablauf",
+      "gallery": "Fotos",
+      "location": "Location",
+      "faq": "FAQ",
+      "rsvp": "RSVP",
+      "openMenu": "Menü öffnen",
+      "closeMenu": "Menü schließen",
+      "homeLabel": "Zur Startseite"
+    },
+    "hero": {
+      "nameOne": "Merle",
+      "nameTwo": "Lasse",
+      "eyebrow": "Wir heiraten",
+      "date": "15. Mai 2027",
+      "location": "Heimathaus Tornesch · Schleswig-Holstein",
+      "days": "Tage",
+      "hours": "Stunden",
+      "minutes": "Minuten",
+      "cta": "Jetzt zusagen"
+    }
+  }
