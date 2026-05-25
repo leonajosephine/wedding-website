@@ -71,7 +71,16 @@ export function RSVP() {
   return (
     <section id="rsvp" className="section bg-gradient-to-br from-[#d8e4d9] via-[#f5efe3] to-[#d7d0b5]">
       <div className="container max-w-2xl">
-        <SectionHeader eyebrow={t('eyebrow')} title={t('title')} />
+
+        <div className="mx-auto mb-14 max-w-2xl text-center">
+            <p className="eyebrow mb-3">{t('eyebrow')}</p>
+            
+            <h2 className="serif text-6xl leading-[0.95] text-[var(--text)] md:text-7xl lg:text-8xl">
+          {t('title')}
+          </h2> 
+          
+          <div className="mx-auto mt-6 h-px w-14 bg-[var(--olive-light)]" />
+        </div>
 
         <div className="mb-8">
           <div className="mb-2 flex justify-between text-xs text-[var(--text-soft)]">

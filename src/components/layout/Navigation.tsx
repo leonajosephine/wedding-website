@@ -6,7 +6,6 @@ import {useLocale, useTranslations} from 'next-intl';
 import {usePathname, useRouter} from 'next/navigation';
 
 const navItems = [
-  {key: 'home', href: '#home'},
   {key: 'story', href: '#story'},
   {key: 'schedule', href: '#schedule'},
   {key: 'gallery', href: '#gallery'},
