@@ -2,10 +2,12 @@ import './globals.css';
 
 import {
   Pinyon_Script,
+  Meie_Script ,
   Parisienne,
   Cedarville_Cursive,
   Abhaya_Libre,
-  Manrope
+  Manrope,
+  //Dawning_of_a_New_Day ersatz für Cedarville_Cursive
 } from 'next/font/google';
 
 const pinyon = Pinyon_Script({
