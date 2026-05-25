@@ -21,5 +21,55 @@
       "hours": "Hours",
       "minutes": "Minutes",
       "cta": "RSVP now"
+    },
+    "story": {
+      "eyebrow": "Our Story",
+      "title": "How it all began",
+      "paragraphOne": "What started as a chance encounter became the most beautiful story of our lives. Merle and Lasse met when life had other plans – and yet everything felt exactly as it was meant to be.",
+      "paragraphTwo": "Together we have laughed, argued, travelled and dreamed. Every moment together is a gift. And now we cannot wait to celebrate the most beautiful day with the people who mean the most to us.",
+      "quote": "I choose you – today, tomorrow and all the days after.",
+      "imageAlt": "Merle and Lasse"
+    },
+    "schedule": {
+      "eyebrow": "The Big Day",
+      "title": "Schedule · May 15, 2027",
+      "events": [
+        {
+          "time": "2:00 PM",
+          "title": "Civil Ceremony",
+          "description": "The official beginning of our shared journey – Heimathaus Tornesch",
+          "tag": "Dresscode: Elegant & Colorful"
+        },
+        {
+          "time": "3:30 PM",
+          "title": "Reception & Photos",
+          "description": "Celebrate, take photos and enjoy the moment – please no photos during the ceremony",
+          "tag": ""
+        },
+        {
+          "time": "6:00 PM",
+          "title": "Dinner & Program",
+          "description": "Dinner, speeches, surprises and moments we will never forget",
+          "tag": ""
+        },
+        {
+          "time": "9:00 PM",
+          "title": "First Dance & Party",
+          "description": "Dance until your shoes wear out – and then keep going a little longer",
+          "tag": ""
+        }
+      ]
+    },
+    "gallery": {
+      "eyebrow": "Moments",
+      "title": "Our Photos",
+      "items": [
+        {"date": "July 2023", "caption": "Engagement"},
+        {"date": "August 2023", "caption": "Our summer"},
+        {"date": "September 2023", "caption": "Together"},
+        {"date": "November 2023", "caption": "Adventure"},
+        {"date": "January 2024", "caption": "Winter moments"},
+        {"date": "May 2024", "caption": "Forever"}
+      ]
     }
   }

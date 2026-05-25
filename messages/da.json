@@ -21,5 +21,55 @@
       "hours": "Timer",
       "minutes": "Minutter",
       "cta": "Svar nu"
+    },
+    "story": {
+      "eyebrow": "Vores historie",
+      "title": "Hvordan det hele begyndte",
+      "paragraphOne": "Det, der begyndte som et tilfældigt møde, blev til den smukkeste historie i vores liv. Merle og Lasse mødte hinanden, da livet havde andre planer – og alligevel føltes alt præcis, som det skulle.",
+      "paragraphTwo": "Sammen har vi grinet, diskuteret, rejst og drømt. Hvert øjeblik sammen er en gave. Og nu glæder vi os til at fejre den smukkeste dag med de mennesker, der betyder allermest for os.",
+      "quote": "Jeg vælger dig – i dag, i morgen og alle dage derefter.",
+      "imageAlt": "Merle og Lasse"
+    },
+    "schedule": {
+      "eyebrow": "Den store dag",
+      "title": "Program · 15. maj 2027",
+      "events": [
+        {
+          "time": "14:00",
+          "title": "Borgerlig vielse",
+          "description": "Den officielle begyndelse på vores fælles rejse – Heimathaus Tornesch",
+          "tag": "Dresscode: Elegant & Farverigt"
+        },
+        {
+          "time": "15:30",
+          "title": "Reception & billeder",
+          "description": "Skål, tag billeder og nyd øjeblikket – ingen billeder under ceremonien",
+          "tag": ""
+        },
+        {
+          "time": "18:00",
+          "title": "Middag & program",
+          "description": "Festmiddag, taler, overraskelser og øjeblikke vi aldrig vil glemme",
+          "tag": ""
+        },
+        {
+          "time": "21:00",
+          "title": "Første dans & fest",
+          "description": "Dans til skoene ryger af – og lidt længere endnu",
+          "tag": ""
+        }
+      ]
+    },
+    "gallery": {
+      "eyebrow": "Øjeblikke",
+      "title": "Vores billeder",
+      "items": [
+        {"date": "Juli 2023", "caption": "Forlovelse"},
+        {"date": "August 2023", "caption": "Vores sommer"},
+        {"date": "September 2023", "caption": "Sammen"},
+        {"date": "November 2023", "caption": "Eventyr"},
+        {"date": "Januar 2024", "caption": "Vinterøjeblikke"},
+        {"date": "Maj 2024", "caption": "For altid"}
+      ]
     }
   }

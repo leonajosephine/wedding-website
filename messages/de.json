@@ -21,5 +21,263 @@
       "hours": "Stunden",
       "minutes": "Minuten",
       "cta": "Jetzt zusagen"
+    },
+    "story": {
+      "eyebrow": "Unsere Geschichte",
+      "title": "Wie alles begann",
+      "paragraphOne": "Was als zufällige Begegnung begann, wurde zur schönsten Geschichte unseres Lebens. Merle und Lasse lernten sich kennen, als das Leben andere Pläne hatte – und doch schien alles genau so zu sein, wie es sein sollte.",
+      "paragraphTwo": "Gemeinsam haben wir gelacht, gestritten, gereist und geträumt. Jeder Moment miteinander ist ein Geschenk. Und jetzt freuen wir uns darauf, den schönsten Tag mit all den Menschen zu feiern, die uns am meisten bedeuten.",
+      "quote": "Ich wähle dich – heute, morgen und all die Tage danach.",
+      "imageAlt": "Merle und Lasse"
+    },
+    "schedule": {
+      "eyebrow": "Programm",
+      "title": "Unser Wochenende",
+      "days": [
+        {
+          "label": "Freitag · 14. Mai 2027",
+          "title": "Polterabend 🎉",
+          "events": [
+            {
+              "time": "18:00 Uhr",
+              "title": "Ankommen",
+              "description": "Wir starten entspannt mit Drinks, Musik und den ersten gemeinsamen Momenten.",
+              "tag": "Casual"
+            },
+            {
+              "time": "20:00 Uhr",
+              "title": "Poltern & Buffet",
+              "description": "Gemeinsam feiern, anstoßen und den Abend genießen.",
+              "tag": ""
+            }
+          ]
+        },
+        {
+          "label": "Samstag · 15. Mai 2027",
+          "title": "Hochzeitstag 💒",
+          "events": [
+            {
+              "time": "14:00 Uhr",
+              "title": "Standesamtliche Trauung",
+              "description": "Der offizielle Beginn unseres gemeinsamen Weges – Heimathaus Tornesch.",
+              "tag": "Elegant & Bunt"
+            },
+            {
+              "time": "15:30 Uhr",
+              "title": "Sektempfang & Fotos",
+              "description": "Anstoßen, Fotos machen und den Moment genießen.",
+              "tag": ""
+            },
+            {
+              "time": "18:00 Uhr",
+              "title": "Abendessen & Programm",
+              "description": "Festtafel, Reden, Überraschungen und unvergessliche Momente.",
+              "tag": ""
+            },
+            {
+              "time": "21:00 Uhr",
+              "title": "Erster Tanz & Party",
+              "description": "Tanzen bis die Schuhe qualmen.",
+              "tag": ""
+            }
+          ]
+        }
+      ]
+    },
+    "gallery": {
+      "eyebrow": "Momente",
+      "title": "Unsere Bilder",
+      "items": [
+        {"date": "Juli 2023", "caption": "Verlobung"},
+        {"date": "August 2023", "caption": "Unser Sommer"},
+        {"date": "September 2023", "caption": "Zusammen"},
+        {"date": "November 2023", "caption": "Abenteuer"},
+        {"date": "Januar 2024", "caption": "Wintermomente"},
+        {"date": "Mai 2024", "caption": "Für immer"}
+      ]
+    },
+    "location": {
+      "eyebrow": "Wo es passiert",
+      "title": "Location & Anreise",
+      "venue": {
+        "name": "Heimathaus Tornesch",
+        "address": "Riedweg 3\n25436 Tornesch\nSchleswig-Holstein",
+        "description": "Die Zeremonie findet im Freien statt, die Feier unter einem Zelt. Bitte plant eure Anreise rechtzeitig.",
+        "mapCta": "In Google Maps öffnen",
+        "mapLink": "https://maps.google.com/?q=Riedweg+3,+25436+Tornesch"
+      },
+      "stay": {
+        "title": "Unterkunft in der Nähe",
+        "description": "Wir haben einige Unterkünfte in der Nähe gesammelt. Bitte bucht frühzeitig, da die Verfügbarkeit begrenzt sein kann."
+      },
+      "accommodations": [
+        {
+          "name": "Hotel Esinger Hof",
+          "distance": "ca. 10 Minuten entfernt",
+          "description": "Gemütliche Unterkunft in der Umgebung von Tornesch.",
+          "link": "https://www.google.com/search?q=Hotel+Esinger+Hof+Tornesch"
+        },
+        {
+          "name": "Hotel Dias",
+          "distance": "ca. 15 Minuten entfernt",
+          "description": "Zentrale Option in Pinneberg mit guter Anbindung.",
+          "link": "https://www.google.com/search?q=Hotel+Dias+Pinneberg"
+        },
+        {
+          "name": "Booking.com",
+          "distance": "weitere Unterkünfte",
+          "description": "Weitere Hotels und Ferienwohnungen in Tornesch, Pinneberg und Umgebung.",
+          "link": "https://www.booking.com/searchresults.html?ss=Tornesch"
+        }
+      ],
+      "info": {
+        "parking": "Kostenlose Parkplätze befinden sich direkt an oder in der Nähe der Location.",
+        "accessibility": "Die Location ist grundsätzlich gut zugänglich. Bei besonderen Bedürfnissen meldet euch gerne vorher."
+      }
+    },
+    "dressCode": {
+      "eyebrow": "Was anziehen?",
+      "title": "Dresscode",
+      "intro": "Wir freuen uns über festliche, elegante Kleidung. Hier ist unsere Farbpalette zur Inspiration.",
+      "colors": [
+        {"name": "Mint", "hex": "#b8d4c6"},
+        {"name": "Light Sage", "hex": "#a8c4b5"},
+        {"name": "Sage Green", "hex": "#7a9e8a"},
+        {"name": "Moss Green", "hex": "#5f7a6b"},
+        {"name": "Forest", "hex": "#4a6b58"}
+      ],
+      "imageAlt": "Dresscode Inspiration",
+      "noteLabel": "Wichtig:",
+      "note": "Das Ganze dient natürlich nur zur Orientierung und wir haben vollstes Verständnis, wenn ihr diese Farben nicht zu Hause habt. Bitte vermeidet reines Weiß, Schwarz oder Rot – alle anderen Farben sind herzlich willkommen."
+    },
+    "rsvp": {
+      "eyebrow": "Bitte bis 15. April zusagen",
+      "title": "RSVP",
+
+      "step": "Schritt",
+
+      "contactTitle": "Deine Kontaktdaten 💌",
+      "contactText": "Damit wir wissen, wer kommt und wie wir dich erreichen können.",
+
+      "firstName": "Vorname",
+      "lastName": "Nachname",
+      "email": "E-Mail Adresse",
+
+      "attendanceTitle": "Wirst du dabei sein?",
+      "attendanceText": "Wir würden uns freuen, dich bei unserer Hochzeit begrüßen zu dürfen.",
+
+      "yesTitle": "Ja, ich komme! 🍾",
+      "yesText": "Ich freue mich darauf, mit euch zu feiern.",
+
+      "noTitle": "Leider nicht 😢",
+      "noText": "Ich kann leider nicht teilnehmen.",
+
+      "detailsTitle": "Noch ein paar Details",
+      "detailsText": "Damit wir alles perfekt vorbereiten können.",
+
+      "polterabend": "Ich komme auch zum Polterabend am Freitag. 🎉",
+
+      "menu": "Menü-Wunsch 🌱",
+      "allergies": "Allergien / Unverträglichkeiten",
+      "songWish": "Song-Wunsch für die Party",
+
+      "back": "Zurück",
+      "next": "Weiter",
+      "submit": "Absenden",
+
+      "successTitle": "Vielen Dank!",
+      "successText": "Wir haben deine Antwort erhalten und freuen uns riesig auf euch."
+    },
+    "message": {
+      "imageAlt": "Merle und Lasse",
+      "paragraphOne": "Jede Beziehung ist eine Reise, und wir sind unglaublich dankbar, dass ihr Teil unserer Geschichte seid.",
+      "paragraphTwo": "Von den ersten gemeinsamen Momenten bis zu diesem besonderen Tag – ihr habt uns begleitet, unterstützt und mit uns gelacht.",
+      "highlight": "Danke, dass ihr mit uns feiert. Wir freuen uns auf unvergessliche Momente mit euch allen.",
+      "signature": "Merle & Lasse"
+    },
+    "faq": {
+      "eyebrow": "Fragen & Antworten",
+      "title": "FAQ",
+      "items": [
+        {
+          "question": "Was soll ich anziehen?",
+          "answer": "Wir wünschen uns elegante Garderobe in bunten Farben. Wichtig ist vor allem, dass ihr euch wohlfühlt."
+        },
+        {
+          "question": "Darf ich Fotos machen?",
+          "answer": "Während der Zeremonie bitten wir euch, keine Fotos zu machen. Danach freuen wir uns sehr über eure Schnappschüsse."
+        },
+        {
+          "question": "Kann ich Kinder mitbringen?",
+          "answer": "Wir lieben Kinder, allerdings ist die Feier als Erwachsenenfeier geplant."
+        },
+        {
+          "question": "Gibt es vegetarische oder vegane Optionen?",
+          "answer": "Ja natürlich. Bitte gebt eure Wünsche und Allergien einfach im RSVP an."
+        },
+        {
+          "question": "Wo kann ich übernachten?",
+          "answer": "In der Location-Sektion findet ihr einige Empfehlungen für Unterkünfte in der Nähe."
+        },
+        {
+          "question": "Was wünscht ihr euch zur Hochzeit?",
+          "answer": "Das Wichtigste für uns ist, dass ihr dabei seid. Falls ihr uns etwas schenken möchtet, freuen wir uns über einen Beitrag zu unserer Hochzeitsreise."
+        }
+      ]
+    },
+    "contacts": {
+      "eyebrow": "Eure Ansprechpartner",
+      "title": "Wir sind für euch da",
+      "bottomText": "Ob organisatorische Fragen, Unterkunft oder einfach nur ein netter Plausch – diese wunderbaren Menschen helfen euch gerne weiter.",
+      "items": [
+        {
+          "name": "Max Müller",
+          "role": "Trauzeuge",
+          "emoji": "🤵",
+          "email": "max@example.com",
+          "phone": "+49 123 456789"
+        },
+        {
+          "name": "Sophie Schmidt",
+          "role": "Trauzeugin",
+          "emoji": "👰",
+          "email": "sophie@example.com",
+          "phone": "+49 123 456789"
+        },
+        {
+          "name": "Anna Hansen",
+          "role": "Mutter der Braut",
+          "emoji": "💐",
+          "email": "anna@example.com",
+          "phone": "+49 123 456789"
+        },
+        {
+          "name": "Lars Petersen",
+          "role": "Vater des Bräutigams",
+          "emoji": "🎩",
+          "email": "lars@example.com",
+          "phone": "+49 123 456789"
+        },
+        {
+          "name": "Emma Weber",
+          "role": "Brautjungfer",
+          "emoji": "🌸",
+          "email": "emma@example.com",
+          "phone": "+49 123 456789"
+        },
+        {
+          "name": "Tom Fischer",
+          "role": "Bester Freund",
+          "emoji": "🎉",
+          "email": "tom@example.com",
+          "phone": "+49 123 456789"
+        }
+      ]
+    },
+    "footer": {
+      "date": "15. Mai 2027 · Tornesch",
+      "subtitle": "Mit Liebe gestaltet für unsere Gäste 💛",
+      "cta": "Fragen? Schreibt uns gerne",
+      "email": "kontakt@example.com"
     }
   }
