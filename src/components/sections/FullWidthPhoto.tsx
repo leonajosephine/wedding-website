@@ -7,7 +7,7 @@ export function FullWidthPhoto() {
         src="/images/fullWidth.jpg"
         alt="Merle und Lasse"
         fill
-        className="object-cover"
+        className="object-cover grayscale contrast-[0.92] brightness-[1.02]"
         sizes="100vw"
         priority={false}
       />
