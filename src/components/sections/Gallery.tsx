@@ -23,6 +23,7 @@ export function Gallery() {
   const items = t.raw('items') as GalleryItem[];
 
   const scrollRef = useRef<HTMLDivElement>(null);
+
   const [activeIndex, setActiveIndex] = useState(0);
   const [isUserInteracting, setIsUserInteracting] = useState(false);
 
@@ -53,6 +54,7 @@ export function Gallery() {
         );
 
         const closestCard = cards[closest];
+
         const closestDistance = Math.abs(
           closestCard.offsetLeft - container.scrollLeft - 24
         );
@@ -74,7 +76,9 @@ export function Gallery() {
     const interval = setInterval(() => {
       setActiveIndex((current) => {
         const next = current === images.length - 1 ? 0 : current + 1;
+
         scrollToIndex(next);
+
         return next;
       });
     }, 2600);
@@ -85,26 +89,33 @@ export function Gallery() {
   return (
     <section
       id="gallery"
-      className="section overflow-hidden bg-[var(--background-soft)]"
+      className="section overflow-hidden bg-[var(--background)]"
     >
-      <div className="container">
+      <div className="container max-w-220">
         <div className="mb-14 text-center">
-          <p className="eyebrow mb-3">{t('eyebrow')}</p>
+          <p className="mb-3 text-[var(--text-soft)]">
+            {t('eyebrow')}
+          </p>
 
-          <h2 className="script text-6xl leading-[0.95] text-[var(--text)] md:text-7xl lg:text-8xl">
-            {t('title')}
+          <h2 className="serif text-6xl leading-[0.95] text-[var(--text)] md:text-7xl lg:text-8xl">
+            Our Favorite <span className="script"> memories </span>
+            over <span className="script"> the </span> years.
           </h2>
 
-          <div className="mx-auto mt-6 h-px w-14 bg-[var(--olive-light)]" />
+          <div className="mx-auto mt-6 h-px w-14 bg-[rgba(42,37,34,0.22)]" />
         </div>
       </div>
 
       <div
         ref={scrollRef}
         onPointerDown={() => setIsUserInteracting(true)}
-        onPointerUp={() => setTimeout(() => setIsUserInteracting(false), 2500)}
+        onPointerUp={() =>
+          setTimeout(() => setIsUserInteracting(false), 2500)
+        }
         onTouchStart={() => setIsUserInteracting(true)}
-        onTouchEnd={() => setTimeout(() => setIsUserInteracting(false), 2500)}
+        onTouchEnd={() =>
+          setTimeout(() => setIsUserInteracting(false), 2500)
+        }
         className="hide-scrollbar flex w-screen snap-x snap-mandatory gap-5 overflow-x-auto px-6 pb-6 md:px-12"
       >
         {images.map((src, index) => (
@@ -121,27 +132,38 @@ export function Gallery() {
           <button
             key={src}
             onClick={() => scrollToIndex(index)}
-            className={`h-2 rounded-full transition-all duration-300 ${
+            className={`transition-all duration-300 ${
               activeIndex === index
-                ? 'w-7 bg-[var(--olive-dark)]'
-                : 'w-2 bg-[rgba(65,82,63,0.25)]'
+                ? 'h-[2px] w-8 bg-[var(--text)]'
+                : 'h-[2px] w-3 bg-[rgba(42,37,34,0.18)]'
             }`}
             aria-label={`Bild ${index + 1} anzeigen`}
           />
         ))}
       </div>
+
+      {/* divider */}
+      <div className="container mt-20">
+        <div className="h-px w-full bg-[rgba(42,37,34,0.10)]" />
+      </div>
     </section>
   );
 }
 
-function GalleryCard({src, item}: {src: string; item: GalleryItem}) {
+function GalleryCard({
+  src,
+  item
+}: {
+  src: string;
+  item: GalleryItem;
+}) {
   return (
     <article className="group relative aspect-[3/4] min-w-[72vw] snap-center overflow-hidden rounded-sm md:min-w-[36vw] lg:min-w-[28vw]">
       <Image
         src={src}
         alt={item.caption}
         fill
-        className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+        className="object-cover grayscale contrast-[0.92] brightness-[1.02] transition-transform duration-700 group-hover:scale-[1.03] group-hover:grayscale-0"
         sizes="(max-width: 768px) 72vw, 28vw"
       />
 
