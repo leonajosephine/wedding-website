@@ -1,5 +1,6 @@
 import {Navigation} from '@/components/layout/Navigation';
 import { Hero } from '@/components/sections/Hero';
+import { CountdownDivider } from '@/components/sections/CountdownDivider';
 import { Story } from '@/components/sections/Story';
 import { FullWidthPhoto } from '@/components/sections/FullWidthPhoto';
 import { Schedule } from '@/components/sections/Schedule';
@@ -20,13 +21,14 @@ export default function HomePage() {
       <main>
         <Hero />
         <Story />
-        <FullWidthPhoto />
         <Schedule />
         <Gallery />
         <Location />
+        <CountdownDivider />
         <Dresscode />
         <RSVP />
         <Message />
+        <FullWidthPhoto />
         <FAQ />
         <Contacts />
       </main>
