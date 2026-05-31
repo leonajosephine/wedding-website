@@ -5,38 +5,65 @@ export function Message() {
   const t = useTranslations('message');
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-[#dfe8df] via-[#f5efe3] to-[#ddd0af] px-6 py-20 md:px-12 md:py-28">
-      <div className="relative z-10 mx-auto max-w-5xl">
-        <div className="mb-12">
-          <div className="relative mx-auto aspect-[16/10] max-w-3xl overflow-hidden rounded-[2rem] shadow-[var(--shadow)]">
-            <Image
-              src="/images/gallery/3.jpg"
-              alt={t('imageAlt')}
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 900px"
-            />
-          </div>
-        </div>
+    <section className="section relative overflow-hidden bg-[var(--background)]">
+      {/* decorative floral */}
+      <Image
+        src="/images/decor/eucalyptus2.png"
+        alt=""
+        width={800}
+        height={600}
+        className="pointer-events-none absolute left-20 top-10 opacity-75"
+      />
 
-        <div className="card mx-auto max-w-3xl rounded-[2rem] border border-[rgba(93,103,78,0.18)] bg-[rgba(252,245,234,0.82)] p-8 text-center backdrop-blur-xl md:p-14">
-          <div className="mb-6 text-5xl md:text-6xl">
-            💌
-          </div>
+      <Image
+        src="/images/decor/eucalyptus2.png"
+        alt=""
+        width={800}
+        height={600}
+        className="pointer-events-none absolute bottom-0 rotate-180 right-0 opacity-70"
+      />
 
-          <div className="space-y-5 text-sm leading-8 text-[var(--text-soft)] md:text-base">
-            <p>{t('paragraphOne')}</p>
+      <div className="container relative z-10 flex justify-center">
+        <div className="relative w-full max-w-3xl">
+          {/* paper background */}
+          <Image
+            src="/images/paperNew.png"
+            alt=""
+            width={1800}
+            height={1400}
+            className="pointer-events-none select-none opacity-95"
+          />
 
-            <p>{t('paragraphTwo')}</p>
+          {/* content */}
+          <div className="absolute inset-0 flex flex-col items-center justify-center px-10 py-16 text-center md:px-24">
+            {/* quote mark */}
+            <div className="mb-5 text-[3rem] leading-none text-[rgba(42,37,34,0.22)] md:text-[4rem]">
+              “
+            </div>
 
-            <p className="hand text-xl italic leading-relaxed text-[var(--olive-dark)] md:text-2xl">
-              {t('highlight')}
-            </p>
-          </div>
+            {/* quote */}
+            <blockquote className="max-w-xl">
+                {/* text */}
+            <div className="mx-auto max-w-2xl space-y-5 text-center text-sm leading-8 text-[var(--text-soft)] md:text-[15px]">
+                <p>{t('paragraphOne')}</p>
 
-          <div className="mt-8 border-t border-[rgba(93,103,78,0.18)] pt-6">
-            <p className="script text-5xl text-[var(--olive-dark)] md:text-6xl">
-              Merle <span className="ampersand ">&</span> Lasse
+                
+            </div>
+
+            {/* highlight */}
+              <p className="hand text-lg leading-9 text-[var(--text-soft)] md:text-2xl md:leading-[2.2rem]">
+                {t('highlight')}
+              </p>
+            </blockquote>
+
+            {/* heart */}
+            <div className="mt-6 text-[var(--brand-400)]">
+              ♡
+            </div>
+
+            {/* names */}
+            <p className="script mt-4 text-4xl text-[var(--text)] md:text-5xl">
+              Merle <span className="ampersand">&</span> Lasse
             </p>
           </div>
         </div>
