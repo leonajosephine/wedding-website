@@ -7,12 +7,7 @@ type DressColor = {
   hex: string;
 };
 
-const inspirationImages = [
-  '/images/dresscode/sage_4.webp',
-  '/images/dresscode/sage_7.webp',
-  '/images/dresscode/sage_6.jpg',
-  '/images/dresscode/sage_8.jpg'
-];
+const largeImage = '/images/dresscode/dresscodepainted5.png'; // Replace with the path to your large image
 
 export function Dresscode() {
   const t = useTranslations('dressCode');
@@ -41,21 +36,15 @@ export function Dresscode() {
           ))}
         </div>
 
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-          {inspirationImages.map((src, index) => (
-            <div
-              key={src}
-              className="relative aspect-[3/4] overflow-hidden rounded-sm shadow-[var(--shadow)]"
-            >
-              <Image
-                src={src}
-                alt={`${t('imageAlt')} ${index + 1}`}
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 50vw, 240px"
-              />
-            </div>
-          ))}
+        {/* Replace the grid of images with one large image */}
+        <div className="relative mx-auto mt-10 aspect-[16/9] w-full max-w-4xl overflow-visible rounded-lg ">
+          <Image
+            src={largeImage}
+            alt={t('imageAlt')}
+            fill
+            className="object-cover overflow-visible"
+            sizes="(max-width: 768px) 100vw, 1024px"
+          />
         </div>
 
         <div className="mx-auto mt-10 max-w-2xl text-center">
