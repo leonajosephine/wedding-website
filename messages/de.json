@@ -36,49 +36,55 @@
       "days": [
         {
           "label": "Freitag · 14. Mai 2027",
-          "title": "Polterabend 🎉",
+          "title": "Polterabend",
           "events": [
             {
               "time": "18:00 Uhr",
               "title": "Ankommen",
               "description": "Wir starten entspannt mit Drinks, Musik und den ersten gemeinsamen Momenten.",
-              "tag": "Casual"
+              "tag": "Casual",
+              "icon": "/images/icons/Icons_ribbon.png"
             },
             {
               "time": "20:00 Uhr",
               "title": "Poltern & Buffet",
               "description": "Gemeinsam feiern, anstoßen und den Abend genießen.",
-              "tag": ""
+              "tag": "",
+              "icon": "/images/icons/Icons_glasses.png"
             }
           ]
         },
         {
           "label": "Samstag · 15. Mai 2027",
-          "title": "Hochzeitstag 💒",
+          "title": "Hochzeitstag",
           "events": [
             {
               "time": "14:00 Uhr",
               "title": "Standesamtliche Trauung",
               "description": "Der offizielle Beginn unseres gemeinsamen Weges – Heimathaus Tornesch.",
-              "tag": "Elegant & Bunt"
+              "tag": "Elegant & Bunt",
+              "icon": "/images/icons/Icons_rings.png"
             },
             {
               "time": "15:30 Uhr",
               "title": "Sektempfang & Fotos",
               "description": "Anstoßen, Fotos machen und den Moment genießen.",
-              "tag": ""
+              "tag": "",
+              "icon": "/images/icons/Icons_glasses2.png"
             },
             {
               "time": "18:00 Uhr",
               "title": "Abendessen & Programm",
               "description": "Festtafel, Reden, Überraschungen und unvergessliche Momente.",
-              "tag": ""
+              "tag": "",
+              "icon": "/images/icons/Icons_pizza.png"
             },
             {
               "time": "21:00 Uhr",
               "title": "Erster Tanz & Party",
               "description": "Tanzen bis die Schuhe qualmen.",
-              "tag": ""
+              "tag": "",
+              "icon": "/images/icons/Icons_disco.png"
             }
           ]
         }
