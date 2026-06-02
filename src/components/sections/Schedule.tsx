@@ -1,12 +1,10 @@
 import Image from 'next/image';
 import {useTranslations} from 'next-intl';
-import {Badge} from '@/components/ui/Badge';
 
 type TimelineEvent = {
   time: string;
   title: string;
   description: string;
-  tag?: string;
   icon?: string;
 };
 
@@ -24,140 +22,192 @@ export function Schedule() {
   const mainDay = days[1] ?? days[0];
 
   return (
-    <section id="schedule" className="section relative overflow-hidden">
-      <div className="absolute inset-0">
-        <Image
-          src="/images/schedule-bg.jpg"
-          alt=""
-          fill
-          className="object-cover opacity-[0.30] saturate-[0.65] contrast-[0.9]"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-[rgba(83,99,75,0.90)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.12),transparent_45%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(20,18,16,0.08),rgba(20,18,16,0.20))]" />
-      </div>
+    <section id="schedule" className="section relative overflow-hidden bg-[var(--background)]">
+      <div className="container-wide relative">
+        <div className="mx-auto mb-16 max-w-4xl text-center lg:text-left xl:text-center">
+          <p className="eyebrow mb-4">{t('eyebrow')}</p>
 
-      <div className="container relative z-10">
-        <div className="mb-16 max-w-3xl">
-          <p className="eyebrow mb-4 text-[var(--dark-text-soft)]">
-            {t('eyebrow')}
-          </p>
-
-          <h2 className="serif text-5xl leading-[0.95] tracking-[0.12em] text-[var(--dark-text)] md:text-7xl">
-            Unsere <span className="script tracking-normal">Planung </span>für <span className="script tracking-normal">die</span> Woche
+          <h2 className="serif text-6xl leading-[0.95] text-[var(--text)] md:text-8xl">
+            Unser <span className="script">Tag</span>
+            <br />
+            im <span className="script">Überblick</span>
           </h2>
 
-          <div className="mt-8 h-px w-24 bg-[rgba(245,240,231,0.32)]" />
+          <div className="mx-auto mt-8 h-px w-24 bg-[rgba(42,37,34,0.22)]" />
         </div>
 
-        <div className="grid items-start gap-8 lg:grid-cols-[0.34fr_0.66fr]">
-          {sideDay && (
-            <aside className="relative border  rounded-sm border-[rgba(255,250,242,0.38)] bg-[rgba(255,248,240,0.82)] p-7 text-[var(--text)] shadow-[0_22px_70px_rgba(20,18,16,0.16)] backdrop-blur-md before:pointer-events-none before:absolute before:inset-[12px] before:border before:border-[rgba(42,37,34,0.06)] before:content-['']">
-              <div className="relative">
-                <p className="mb-3 text-[0.68rem] uppercase tracking-[0.22em] text-[var(--text-muted)]">
-                  {sideDay.label}
-                </p>
+        <div className="relative mx-auto max-w-6xl">
+          <div className="mb-10 text-center">
+            <p className="mb-3 text-[0.68rem] uppercase tracking-[0.22em] text-[var(--text-muted)]">
+              {mainDay.label}
+            </p>
 
-                <h3 className="serif mb-6 text-3xl leading-tight text-[var(--text)]">
-                  {sideDay.title}
-                </h3>
+            <h3 className="serif text-4xl leading-tight text-[var(--text)] md:text-5xl">
+              {mainDay.title} 15. Mai. 2027
+            </h3>
+          </div>
 
-                <div className="space-y-5">
-                  {sideDay.events.slice(0, 3).map((event) => (
-                    <div
-                      key={`${sideDay.label}-${event.time}-${event.title}`}
-                      className="border-t border-[rgba(42,37,34,0.10)] pt-4"
-                    >
-                      <p className="mb-1 text-[0.65rem] uppercase tracking-[0.18em] text-[var(--text-muted)]">
-                        {event.time}
-                      </p>
-                      <h4 className="serif text-xl leading-tight text-[var(--text)]">
-                        {event.title}
-                      </h4>
-                      <p className="mt-2 text-sm leading-6 text-[var(--text-soft)]">
-                        {event.description}
-                      </p>
+          {/* Desktop horizontal timeline */}
+          <div className="relative hidden desk:block">
+            <div className="absolute left-0 right-0 top-[204px] h-px bg-[rgba(42,37,34,0.18)]" />
+
+            <div className="grid grid-cols-4 gap-10">
+              {mainDay.events.slice(0, 4).map((event) => (
+                <article
+                  key={`${mainDay.label}-${event.time}-${event.title}`}
+                  className="relative pt-2 text-center"
+                >
+                  <div className="mb-10 flex h-48 items-center justify-center">
+                    {event.icon && (
+                      <Image
+                        src={event.icon}
+                        alt=""
+                        width={300}
+                        height={300}
+                        className="h-48 w-48 object-contain opacity-95"
+                      />
+                    )}
+                  </div>
+
+                  <span className="absolute left-1/2 top-[197px] z-10 h-4 w-4 -translate-x-1/2 rounded-full border border-[rgba(42,37,34,0.18)] bg-[var(--background)]" />
+
+                  <div className="pt-8">
+                    <p className="serif mb-2 text-2xl leading-none text-[var(--brand-600)]">
+                      {event.time}
+                    </p>
+
+                    <h4 className="serif mb-3 text-2xl leading-tight text-[var(--text)]">
+                      {event.title}
+                    </h4>
+
+                    <p className="mx-auto max-w-[250px] text-sm leading-7 text-[var(--text-soft)]">
+                      {event.description}
+                    </p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          {/* Mobile / tablet vertical timeline */}
+          <div className="relative desk:hidden">
+            <div className="absolute bottom-0 left-1/2 top-0 w-px -translate-x-1/2 bg-[rgba(42,37,34,0.16)]" />
+
+            <div className="space-y-12">
+              {mainDay.events.slice(0, 4).map((event, index) => {
+                const textLeft = index % 2 === 0;
+
+                return (
+                  <article
+                    key={`${mainDay.label}-${event.time}-${event.title}`}
+                    className="relative grid grid-cols-[1fr_32px_1fr] items-center gap-3"
+                  >
+                    <div className={textLeft ? 'text-right' : 'text-left flex justify-end'}>
+                      {textLeft ? (
+                        <>
+                          <p className="serif mb-2 text-2xl leading-none text-[var(--brand-600)]">
+                            {event.time}
+                          </p>
+
+                          <h4 className="serif mb-2 text-xl leading-tight text-[var(--text)]">
+                            {event.title}
+                          </h4>
+
+                          <p className="text-xs leading-6 text-[var(--text-soft)]">
+                            {event.description}
+                          </p>
+                        </>
+                      ) : (
+                        event.icon && (
+                          <Image
+                            src={event.icon}
+                            alt=""
+                            width={180}
+                            height={180}
+                            className="h-24 w-24 object-contain opacity-95 "
+                          />
+                        )
+                      )}
                     </div>
-                  ))}
-                </div>
-              </div>
-            </aside>
-          )}
 
-          <article className="relative overflow-hidden border rounded-sm border-[rgba(255,250,242,0.42)] bg-[rgba(255,248,240,0.90)] p-8 text-[var(--text)] shadow-[0_26px_90px_rgba(20,18,16,0.20)] backdrop-blur-md before:pointer-events-none before:absolute before:inset-[14px] before:border before:border-[rgba(42,37,34,0.07)] before:content-[''] md:p-12">
+                    <div className="relative z-10 col-start-2 flex h-full items-center justify-center">
+                      <span className="h-3.5 w-3.5 rounded-full border border-[rgba(42,37,34,0.18)] bg-[var(--background)]" />
+                    </div>
+
+                    <div className={textLeft ? 'text-left' : 'text-left'}>
+                      {textLeft ? (
+                        event.icon && (
+                          <Image
+                            src={event.icon}
+                            alt=""
+                            width={180}
+                            height={180}
+                            className="h-24 w-24 object-contain opacity-95"
+                          />
+                        )
+                      ) : (
+                        <>
+                          <p className="serif mb-2 text-2xl leading-none text-[var(--brand-600)]">
+                            {event.time}
+                          </p>
+
+                          <h4 className="serif mb-2 text-xl leading-tight text-[var(--text)]">
+                            {event.title}
+                          </h4>
+
+                          <p className="text-xs leading-6 text-[var(--text-soft)]">
+                            {event.description}
+                          </p>
+                        </>
+                      )}
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+
+        {sideDay && (
+          <aside className="relative mx-auto mt-16 max-w-xs rotate-[1.5deg] overflow-hidden bg-[var(--brand-400)] p-6 text-[var(--dark-text)] shadow-[0_20px_55px_rgba(42,37,34,0.16)] lg:absolute lg:right-3 lg:top-6 xl:right-8 xl:top-20 lg:mt-0 lg:w-[300px]">
             <Image
               src="/images/paperNew.png"
               alt=""
               fill
-              className="pointer-events-none object-cover opacity-[0.25] mix-blend-multiply"
-              sizes="1400px"
+              className="pointer-events-none object-cover opacity-[0.40] mix-blend-multiply"
+              sizes="800px"
             />
 
+            <div className="pointer-events-none absolute inset-3 border border-[rgba(245,240,231,0.26)]" />
+
             <div className="relative">
-              <div className="mb-10 flex items-start justify-between gap-8 border-b border-[rgba(42,37,34,0.10)] pb-7">
-                <div>
-                  <p className="mb-3 text-[0.68rem] uppercase tracking-[0.22em] text-[var(--text-muted)]">
-                    {mainDay.label}
-                  </p>
+              <p className="mb-3 text-[0.68rem] uppercase tracking-[0.22em] text-[rgba(245,240,231,0.76)]">
+                {sideDay.label}
+              </p>
 
-                  <h3 className="serif text-4xl leading-tight text-[var(--text)] md:text-5xl">
-                    {mainDay.title}
-                  </h3>
-                </div>
+              <h3 className="serif mb-5 text-2xl leading-tight text-[var(--dark-text)]">
+                {sideDay.title}
+              </h3>
 
-                <span className="script hidden text-6xl leading-none text-[rgba(42,37,34,0.18)] md:block">
-                  M&L
-                </span>
-              </div>
-
-              <div className="space-y-3">
-                {mainDay.events.map((event, index) => (
+              <div className="space-y-4">
+                {sideDay.events.slice(0, 3).map((event) => (
                   <div
-                    key={`${mainDay.label}-${event.time}-${event.title}`}
-                    className={`grid gap-6 border-b border-[rgba(42,37,34,0.08)] py-7 last:border-b-0 md:grid-cols-[150px_1fr] ${
-                      index % 2 === 1 ? 'md:pl-10' : ''
-                    }`}
+                    key={`${sideDay.label}-${event.time}-${event.title}`}
+                    className="border-t border-[rgba(245,240,231,0.22)] pt-3"
                   >
-                    <div className="flex items-center justify-start md:justify-center">
-                      {event.icon ? (
-                        <Image
-                          src={event.icon}
-                          alt=""
-                          width={180}
-                          height={180}
-                          className="h-28 w-28 object-contain opacity-90 md:h-36 md:w-36"
-                        />
-                      ) : (
-                        <div className="h-2 w-2 rounded-full bg-[var(--brand-400)]" />
-                      )}
-                    </div>
+                    <p className="serif text-xl leading-none text-[var(--dark-text)]">
+                      {event.time}
+                    </p>
 
-                    <div>
-                      <p className="mb-2 text-[0.68rem] uppercase tracking-[0.18em] text-[var(--text-muted)]">
-                        {event.time}
-                      </p>
-
-                      <h4 className="serif mb-2 text-2xl leading-tight text-[var(--text)] md:text-3xl">
-                        {event.title}
-                      </h4>
-
-                      <p className="max-w-xl text-sm leading-7 text-[var(--text-soft)]">
-                        {event.description}
-                      </p>
-
-                      {event.tag && (
-                        <div className="mt-3">
-                          <Badge variant="brand">{event.tag}</Badge>
-                        </div>
-                      )}
-                    </div>
+                    <p className="mt-2 text-sm leading-6 text-[rgba(245,240,231,0.78)]">
+                      {event.title}
+                    </p>
                   </div>
                 ))}
               </div>
             </div>
-          </article>
-        </div>
+          </aside>
+        )}
       </div>
     </section>
   );
