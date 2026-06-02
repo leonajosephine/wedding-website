@@ -12,6 +12,8 @@ import { Message } from '@/components/sections/Message';
 import { FAQ } from '@/components/sections/FAQ';
 import { Contacts } from '@/components/sections/Contacts';
 import { Footer } from '@/components/layout/Footer';
+import { QuoteDivider } from '@/components/sections/QuoteDivider';
+import { EucalyptusDivider } from '@/components/sections/EucalyptusDivider';
 
 export default function HomePage() {
   return (
@@ -21,10 +23,12 @@ export default function HomePage() {
       <main>
         <Hero />
         <Story />
+        <CountdownDivider />
         <Schedule />
         <Gallery />
         <Location />
-        <CountdownDivider />
+        <QuoteDivider />
+        {/*<EucalyptusDivider /> */}
         <Dresscode />
         <RSVP />
         <Message />

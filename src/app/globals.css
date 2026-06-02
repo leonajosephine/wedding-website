@@ -69,6 +69,8 @@
 html {
   scroll-behavior: smooth;
   background: var(--background);
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
@@ -81,6 +83,7 @@ body {
   font-family: var(--font-body);
   font-weight: 200;
   overflow-x: hidden;
+  max-width: 100%;
   -webkit-font-smoothing: antialiased;
   text-rendering: geometricPrecision;
 }
@@ -224,4 +227,8 @@ img {
   body::before {
     opacity: 0.16;
   }
+}
+
+@theme {
+  --breakpoint-desk: 900px;
 }

@@ -77,7 +77,7 @@
               "title": "Abendessen & Programm",
               "description": "Festtafel, Reden, Überraschungen und unvergessliche Momente.",
               "tag": "",
-              "icon": "/images/icons/Icons_pizza.png"
+              "icon": "/images/icons/Icons_cake.png"
             },
             {
               "time": "21:00 Uhr",
@@ -99,8 +99,11 @@
         {"date": "September 2023", "caption": "Zusammen"},
         {"date": "November 2023", "caption": "Abenteuer"},
         {"date": "Januar 2024", "caption": "Wintermomente"},
-        {"date": "Mai 2024", "caption": "Für immer"}
-      ]
+        {"date": "Mai 2024", "caption": "Für immer"},
+        {"date": "Juni 2024", "caption": "Unsere Reise"},
+        {"date": "September 2024", "caption": "Glücksmomente"},
+        {"date": "Dezember 2024", "caption": "Weihnachten"},
+        {"date": "März 2025", "caption": "Frühlingserwachen"}      ]
     },
     "location": {
       "eyebrow": "Wo es passiert",
