@@ -80,7 +80,7 @@ export function Location() {
               src="/images/location.png"
               alt=""
               fill
-              className="object-cover opacity-90 transition duration-700 group-hover:scale-[1.03]"
+              className="object-cover opacity-90 transition grayscale-15 duration-700 group-hover:scale-[1.03]"
               sizes="100vw"
             />
 
@@ -129,7 +129,7 @@ export function Location() {
                     src={`/images/accommodations/${index + 1}.png`}
                     alt={item.name}
                     fill
-                    className="object-cover transition duration-500 group-hover:scale-[1.03]"
+                    className="object-cover transition duration-500 group-hover:scale-[1.03] grayscale-25"
                     sizes="(max-width: 768px) 78vw, 360px"
                   />
 

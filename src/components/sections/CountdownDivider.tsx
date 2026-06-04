@@ -54,7 +54,7 @@ export function CountdownDivider() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 gap-y-8 divide-x-0 md:grid-cols-4 md:divide-x md:divide-[rgba(245,240,231,0.25)]">
+          <div className="grid grid-cols-4 divide-x divide-[rgba(245,240,231,0.25)]">
             <CountdownItem value={countdown.days} label="days" />
             <CountdownItem value={countdown.hours} label="hours" />
             <CountdownItem value={countdown.minutes} label="minutes" />
@@ -67,15 +67,15 @@ export function CountdownDivider() {
 }
 
 function CountdownItem({value, label}: {value: number; label: string}) {
-  return (
-    <div className="px-3 text-center md:px-5 desk:px-8">
-      <div className="serif text-5xl leading-none text-[var(--dark-text)] sm:text-6xl desk:text-7xl">
-        {String(value).padStart(2, '0')}
+    return (
+      <div className="px-1 text-center sm:px-3 md:px-5 desk:px-8">
+        <div className="serif text-3xl leading-none text-[var(--dark-text)] sm:text-5xl md:text-6xl desk:text-7xl">
+          {String(value).padStart(2, '0')}
+        </div>
+  
+        <div className="mt-2 text-[0.48rem] uppercase tracking-[0.14em] text-[rgba(245,240,231,0.72)] sm:text-[0.58rem] md:text-[0.65rem]">
+          {label}
+        </div>
       </div>
-
-      <div className="mt-2 text-[0.58rem] uppercase tracking-[0.18em] text-[rgba(245,240,231,0.72)] md:text-[0.65rem]">
-        {label}
-      </div>
-    </div>
-  );
-}
+    );
+  }
