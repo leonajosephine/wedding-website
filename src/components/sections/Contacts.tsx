@@ -1,12 +1,15 @@
-import {Mail, Phone} from 'lucide-react';
+'use client';
+
+import Image from 'next/image';
+import {Phone} from 'lucide-react';
 import {useTranslations} from 'next-intl';
+import {Button} from '@/components/ui/Button';
 
 type ContactPerson = {
   name: string;
   role: string;
-  emoji: string;
-  email: string;
-  phone: string;
+  image: string;
+  funFact?: string;
 };
 
 export function Contacts() {
@@ -20,7 +23,8 @@ export function Contacts() {
           <p className="eyebrow mb-4">{t('eyebrow')}</p>
 
           <h2 className="script text-6xl leading-[0.95] text-[var(--text)] md:text-7xl">
-            Wir <span className="serif">sind für</span> euch <span className="serif">da</span> 
+            Wir <span className="serif">sind für</span> euch{' '}
+            <span className="serif">da</span>
           </h2>
 
           <div className="mx-auto mt-7 h-px w-20 bg-[rgba(42,37,34,0.22)]" />
@@ -29,14 +33,20 @@ export function Contacts() {
         <div className="mx-auto grid max-w-6xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {contacts.map((contact) => (
             <article
-              key={contact.email}
-              className="relative border rounded-md border-[var(--border-soft)] bg-[rgba(255,250,242,0.68)] p-6 text-center shadow-[var(--shadow-paper)] transition duration-300 before:pointer-events-none before:absolute before:inset-[10px] before:border before:border-[rgba(42,37,34,0.05)] before:content-[''] hover:-translate-y-1"
+              key={`${contact.name}-${contact.role}`}
+              className="group relative overflow-hidden rounded-md border border-[var(--border-soft)] bg-[rgba(255,250,242,0.68)] shadow-[var(--shadow-paper)] transition duration-300 hover:-translate-y-1"
             >
-              <div className="relative">
-                <div className="mx-auto mb-5 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-[rgba(184,196,170,0.45)] to-[rgba(83,99,75,0.20)] text-4xl">
-                  {contact.emoji}
-                </div>
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <Image
+                  src={contact.image}
+                  alt={contact.name}
+                  fill
+                  className="object-cover grayscale contrast-[0.95] transition duration-700 group-hover:scale-[1.03] group-hover:grayscale-0"
+                  sizes="(max-width: 768px) 100vw, 380px"
+                />
+              </div>
 
+              <div className="p-6 text-center">
                 <h3 className="serif text-2xl text-[var(--text)]">
                   {contact.name}
                 </h3>
@@ -45,31 +55,29 @@ export function Contacts() {
                   {contact.role}
                 </p>
 
-                <div className="mt-5 space-y-3">
-                  <a
-                    href={`mailto:${contact.email}`}
-                    className="flex items-center justify-center gap-2 text-sm text-[var(--text-soft)] transition-colors hover:text-[var(--text)]"
-                  >
-                    <Mail className="h-4 w-4" />
-                    <span>{contact.email}</span>
-                  </a>
-
-                  <a
-                    href={`tel:${contact.phone}`}
-                    className="flex items-center justify-center gap-2 text-sm text-[var(--text-soft)] transition-colors hover:text-[var(--text)]"
-                  >
-                    <Phone className="h-4 w-4" />
-                    <span>{contact.phone}</span>
-                  </a>
-                </div>
+                {contact.funFact && (
+                  <p className="mx-auto mt-4 max-w-xs text-sm leading-7 text-[var(--text-soft)] hidden group-hover:block transform transition-transform duration-500 ease-out">
+                    {contact.funFact}
+                  </p>
+                )}
               </div>
             </article>
           ))}
         </div>
 
-        <p className="mx-auto mt-12 max-w-2xl text-center text-sm leading-7 text-[var(--text-soft)]">
-          {t('bottomText')}
-        </p>
+        <div className="mx-auto mt-12 max-w-2xl text-center">
+          <p className="mb-5 text-sm leading-7 text-[var(--text-soft)]">
+            {t('bottomText')}
+          </p>
+
+          <Button
+            variant="secondary"
+            onClick={() => window.location.href = `tel:${t('urgentPhone')}`}
+          >
+            <Phone className="h-4 w-4" />
+            {t('urgentCta')}
+          </Button>
+        </div>
       </div>
     </section>
   );
