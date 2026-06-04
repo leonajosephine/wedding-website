@@ -232,3 +232,23 @@ img {
 @theme {
   --breakpoint-desk: 900px;
 }
+
+@keyframes gallery-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.gallery-marquee {
+  animation: gallery-marquee 55s linear infinite;
+  will-change: transform;
+}
+
+.gallery-marquee:hover,
+.gallery-marquee:active {
+  animation-play-state: paused;
+}

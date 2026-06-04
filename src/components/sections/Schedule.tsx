@@ -43,7 +43,7 @@ export function Schedule() {
             </p>
 
             <h3 className="serif text-4xl leading-tight text-[var(--text)] md:text-5xl">
-              {mainDay.title} 15. Mai. 2027
+              
             </h3>
           </div>
 
@@ -72,16 +72,16 @@ export function Schedule() {
                   <span className="absolute left-1/2 top-[197px] z-10 h-4 w-4 -translate-x-1/2 rounded-full border border-[rgba(42,37,34,0.18)] bg-[var(--background)]" />
 
                   <div className="pt-8">
-                    <p className="serif mb-2 text-2xl leading-none text-[var(--brand-600)]">
+                    <p className="serif mb-2 text-xl leading-none text-[var(--brand-600)]">
                       {event.time}
                     </p>
 
-                    <h4 className="serif mb-3 text-2xl leading-tight text-[var(--text)]">
+                    <h4 className="script mb-3 text-2xl leading-tight text-[var(--text)]">
                       {event.title}
                     </h4>
 
-                    <p className="mx-auto max-w-[250px] text-sm leading-7 text-[var(--text-soft)]">
-                      {event.description}
+                    <p className="mx-auto max-w-[250px] text- leading-7 text-[var(--text-soft)]">
+                         {event.description} 
                     </p>
                   </div>
                 </article>
@@ -105,16 +105,16 @@ export function Schedule() {
                     <div className={textLeft ? 'text-right' : 'text-left flex justify-end'}>
                       {textLeft ? (
                         <>
-                          <p className="serif mb-2 text-2xl leading-none text-[var(--brand-600)]">
+                          <p className="serif mb-2 text-xl leading-none text-[var(--brand-600)]">
                             {event.time}
                           </p>
 
-                          <h4 className="serif mb-2 text-xl leading-tight text-[var(--text)]">
+                          <h4 className="script mb-2 text-2xl leading-tight text-[var(--text)]">
                             {event.title}
                           </h4>
 
                           <p className="text-xs leading-6 text-[var(--text-soft)]">
-                            {event.description}
+                             {event.description} 
                           </p>
                         </>
                       ) : (
@@ -147,11 +147,11 @@ export function Schedule() {
                         )
                       ) : (
                         <>
-                          <p className="serif mb-2 text-2xl leading-none text-[var(--brand-600)]">
+                          <p className="serif mb-2 text-xl leading-none text-[var(--brand-600)]">
                             {event.time}
                           </p>
 
-                          <h4 className="serif mb-2 text-xl leading-tight text-[var(--text)]">
+                          <h4 className="script mb-2 text-2xl leading-tight text-[var(--text)]">
                             {event.title}
                           </h4>
 

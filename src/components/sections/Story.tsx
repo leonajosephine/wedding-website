@@ -39,7 +39,19 @@ export function Story() {
                 className="image-soft object-cover"
                 sizes="(max-width: 1000px) 78vw, 520px"
               />
+              
             </div>
+            <div className="absolute bottom-10 right-6 z-20 aspect-[4/5] w-[34%] rotate-[4deg] border-[8px] border-[var(--surface)] bg-[var(--surface)] shadow-[var(--shadow-paper)]">
+                <Tape className="-top-4 left-1/2 -translate-x-1/2 rotate-[5deg]" />
+
+                <Image
+                    src="/images/engaged.png"
+                    alt={t('imageAlt')}
+                    fill
+                    className="image-soft object-cover grayscale contrast-[0.92]"
+                    sizes="240px"
+                />
+                </div>
           </div>
         </div>
       </div>
