@@ -1,75 +1,125 @@
 {
   "navigation": {
     "home": "Hjem",
-    "story": "Vores historie",
+    "story": "Vores Historie",
     "schedule": "Program",
-    "gallery": "Billeder",
+    "gallery": "Galleri",
     "location": "Lokation",
     "faq": "FAQ",
     "rsvp": "RSVP",
     "openMenu": "Åbn menu",
     "closeMenu": "Luk menu",
-    "homeLabel": "Gå til forsiden"
+    "homeLabel": "Til forsiden"
   },
-    "hero": {
-      "nameOne": "Merle",
-      "nameTwo": "Lasse",
-      "eyebrow": "Vi skal giftes",
-      "date": "15. maj 2027",
-      "location": "Heimathaus Tornesch · Schleswig-Holstein",
-      "days": "Dage",
-      "hours": "Timer",
-      "minutes": "Minutter",
-      "cta": "Svar nu"
-    },
-    "story": {
-      "eyebrow": "Vores historie",
-      "title": "Hvordan det hele begyndte",
-      "paragraphOne": "Det, der begyndte som et tilfældigt møde, blev til den smukkeste historie i vores liv. Merle og Lasse mødte hinanden, da livet havde andre planer – og alligevel føltes alt præcis, som det skulle.",
-      "paragraphTwo": "Sammen har vi grinet, diskuteret, rejst og drømt. Hvert øjeblik sammen er en gave. Og nu glæder vi os til at fejre den smukkeste dag med de mennesker, der betyder allermest for os.",
-      "quote": "Jeg vælger dig – i dag, i morgen og alle dage derefter.",
-      "imageAlt": "Merle og Lasse"
-    },
-    "schedule": {
-      "eyebrow": "Den store dag",
-      "title": "Program · 15. maj 2027",
-      "events": [
-        {
-          "time": "14:00",
-          "title": "Borgerlig vielse",
-          "description": "Den officielle begyndelse på vores fælles rejse – Heimathaus Tornesch",
-          "tag": "Dresscode: Elegant & Farverigt"
-        },
-        {
-          "time": "15:30",
-          "title": "Reception & billeder",
-          "description": "Skål, tag billeder og nyd øjeblikket – ingen billeder under ceremonien",
-          "tag": ""
-        },
-        {
-          "time": "18:00",
-          "title": "Middag & program",
-          "description": "Festmiddag, taler, overraskelser og øjeblikke vi aldrig vil glemme",
-          "tag": ""
-        },
-        {
-          "time": "21:00",
-          "title": "Første dans & fest",
-          "description": "Dans til skoene ryger af – og lidt længere endnu",
-          "tag": ""
-        }
-      ]
-    },
-    "gallery": {
-      "eyebrow": "Øjeblikke",
-      "title": "Vores billeder",
-      "items": [
-        {"date": "Juli 2023", "caption": "Forlovelse"},
-        {"date": "August 2023", "caption": "Vores sommer"},
-        {"date": "September 2023", "caption": "Sammen"},
-        {"date": "November 2023", "caption": "Eventyr"},
-        {"date": "Januar 2024", "caption": "Vinterøjeblikke"},
-        {"date": "Maj 2024", "caption": "For altid"}
-      ]
-    }
+
+  "hero": {
+    "nameOne": "Merle",
+    "nameTwo": "Lasse",
+    "eyebrow": "Vi skal giftes",
+    "date": "15. maj 2027",
+    "location": "Heimathaus Tornesch · Slesvig-Holsten",
+    "days": "Dage",
+    "hours": "Timer",
+    "minutes": "Minutter",
+    "cta": "Svar nu"
+  },
+
+  "story": {
+    "eyebrow": "Vores Historie",
+    "title": "Hvordan det hele begyndte",
+    "paragraphOne": "Det, der begyndte som et tilfældigt møde, blev den smukkeste historie i vores liv.",
+    "paragraphTwo": "Sammen har vi grinet, diskuteret, rejst og drømt. Hvert øjeblik sammen er en gave.",
+    "quote": "Jeg vælger dig – i dag, i morgen og alle dagene derefter.",
+    "imageAlt": "Merle og Lasse"
+  },
+
+  "schedule": {
+    "eyebrow": "Program",
+    "title": "Vores Bryllupsweekend"
+  },
+
+  "gallery": {
+    "eyebrow": "Øjeblikke",
+    "title": "Vores Billeder"
+  },
+
+  "location": {
+    "eyebrow": "Hvor det sker",
+    "title": "Lokation & Transport"
+  },
+
+  "dressCode": {
+    "eyebrow": "Hvad skal man have på?",
+    "title": "Dresscode",
+    "intro": "Vi glæder os til at se jer i elegant festtøj. Her er vores farvepalette til inspiration.",
+    "imageAlt": "Dresscode inspiration",
+    "noteLabel": "Bemærk:",
+    "note": "Dette er kun inspiration. Vi beder jer venligst undgå helt hvid, sort eller rød."
+  },
+
+  "message": {
+    "imageAlt": "Merle og Lasse",
+    "paragraphOne": "Ethvert forhold er en rejse, og vi er utroligt taknemmelige for, at I er en del af vores.",
+    "paragraphTwo": "Fra de første fælles øjeblikke til denne særlige dag har I været ved vores side.",
+    "highlight": "Tak fordi I fejrer med os. Vi glæder os til uforglemmelige minder sammen med jer.",
+    "signature": "Merle & Lasse"
+  },
+
+  "faq": {
+    "eyebrow": "Spørgsmål & Svar",
+    "title": "FAQ"
+  },
+
+  "contacts": {
+    "eyebrow": "Jeres Kontaktpersoner",
+    "title": "Vi er her for jer",
+    "bottomText": "Uanset om I har praktiske spørgsmål eller leder efter overnatning – disse fantastiske mennesker hjælper gerne.",
+    "items": [
+      {
+        "name": "Mie Maleen",
+        "role": "Brudepige",
+        "image": "/images/contacts/mie.png",
+        "funFact": "Mie er Merles søster og altid klar på sjov ☀️"
+      },
+      {
+        "name": "Gitte & Marco",
+        "role": "Brudens forældre",
+        "image": "/images/contacts/gittemarco.png",
+        "funFact": "Gitte og Marco er fantastiske værter og kender stedet ud og ind."
+      },
+      {
+        "name": "Matti",
+        "role": "Forlover",
+        "image": "/images/contacts/max.png",
+        "funFact": "Matti er Lasses bror og den perfekte person til spørgsmål om festen."
+      },
+      {
+        "name": "Beate & Peter",
+        "role": "Brudgommens forældre",
+        "image": "/images/contacts/gittemarco.png",
+        "funFact": ""
+      },
+      {
+        "name": "Bobby",
+        "role": "Humørchef",
+        "image": "/images/contacts/bobby.png",
+        "funFact": "Bobby er vores trofaste hund og elsker opmærksomhed."
+      },
+      {
+        "name": "Leona",
+        "role": "Brudepige",
+        "image": "/images/contacts/leona.png",
+        "funFact": "Merles bedste veninde og soulmate – hun glæder sig til at fejre dagen med jer."
+      }
+    ],
+    "urgentPhone": "+49123456789",
+    "urgentCta": "Akut spørgsmål? Ring til Gitte"
+  },
+
+  "footer": {
+    "date": "15. maj 2027 · Tornesch",
+    "subtitle": "Lavet med kærlighed til vores gæster 💛",
+    "cta": "Har du spørgsmål? Skriv til os",
+    "email": "kontakt@example.com"
   }
+}

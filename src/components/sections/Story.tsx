@@ -48,8 +48,8 @@ export function Story() {
                     src="/images/engaged.png"
                     alt={t('imageAlt')}
                     fill
-                    className="image-soft object-cover grayscale contrast-[0.92]"
-                    sizes="240px"
+                    className=" object-cover grayscale contrast-[0.96] brightness-95"
+                    sizes="280px"
                 />
                 </div>
           </div>

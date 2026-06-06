@@ -61,21 +61,21 @@
             {
               "time": "14:00 Uhr",
               "title": "Standesamtliche Trauung",
-              "description": "Der offizielle Beginn unseres gemeinsamen Weges – Heimathaus Tornesch.",
+              "description": "Standesamt Altona City.",
               "tag": "Elegant & Bunt",
               "icon": "/images/icons/Icons_rings.png"
             },
             {
               "time": "15:30 Uhr",
               "title": "Sektempfang & Fotos",
-              "description": "Anstoßen, Fotos machen und den Moment genießen.",
+              "description": "Treffpunkt beim Heimathaus Tornesch.",
               "tag": "",
               "icon": "/images/icons/Icons_glasses2.png"
             },
             {
               "time": "18:00 Uhr",
               "title": "Abendessen & Programm",
-              "description": "Festtafel, Reden, Überraschungen und unvergessliche Momente.",
+              "description": "Festtafel, Reden und unvergessliche Momente.",
               "tag": "",
               "icon": "/images/icons/Icons_cake.png"
             },
@@ -240,48 +240,44 @@
       "bottomText": "Ob organisatorische Fragen, Unterkunft oder einfach nur ein netter Plausch – diese wunderbaren Menschen helfen euch gerne weiter.",
       "items": [
         {
-          "name": "Max Müller",
-          "role": "Trauzeuge",
-          "emoji": "🤵",
-          "email": "max@example.com",
-          "phone": "+49 123 456789"
-        },
-        {
-          "name": "Sophie Schmidt",
+          "name": "Mie Maleen",
           "role": "Trauzeugin",
-          "emoji": "👰",
-          "email": "sophie@example.com",
-          "phone": "+49 123 456789"
+          "image": "/images/contacts/mie.png",
+          "funFact": "Mie ist Merles Schwester und für jeden Spaß zu haben☀️"
         },
         {
-          "name": "Anna Hansen",
-          "role": "Mutter der Braut",
-          "emoji": "💐",
-          "email": "anna@example.com",
-          "phone": "+49 123 456789"
+          "name": "Gitte & Marco",
+          "role": "Brauteltern",
+          "image": "/images/contacts/gittemarco.png",
+          "funFact": "Gitte und Marco sind die besten Gastgeber – sie kennen die Location wie ihre Westentasche."
         },
         {
-          "name": "Lars Petersen",
-          "role": "Vater des Bräutigams",
-          "emoji": "🎩",
-          "email": "lars@example.com",
-          "phone": "+49 123 456789"
+          "name": "Matti",
+          "role": "Trauzeuge",
+          "image": "/images/contacts/max.png",
+          "funFact": "Matti ist Lasses Bruder und der perfekte Ansprechpartner für alle Fragen rund um die Feier."
         },
         {
-          "name": "Emma Weber",
+          "name": "Beate & Peter ",
+          "role": "Eltern des Bräutigams",
+          "image": "/images/contacts/gittemarco.png",
+          "funFact": ""
+        },
+        {
+          "name": "Bobby",
+          "role": "Feel Good Manager",
+          "image": "/images/contacts/bobby.png",
+          "funFact": "Bobby ist unser treuer Hund und sorgt für gute Stimmung – er freut sich über Streicheleinheiten von euch!"
+        },
+        {
+          "name": "Leona",
           "role": "Brautjungfer",
-          "emoji": "🌸",
-          "email": "emma@example.com",
-          "phone": "+49 123 456789"
-        },
-        {
-          "name": "Tom Fischer",
-          "role": "Bester Freund",
-          "emoji": "🎉",
-          "email": "tom@example.com",
-          "phone": "+49 123 456789"
+          "image": "/images/contacts/leona.png",
+          "funFact": "Bestie und Seelenverwandte von Merle – sie kennt alle Geheimnisse und freut sich auf die Feier mit euch!"
         }
-      ]
+      ],
+      "urgentPhone": "+49123456789",
+      "urgentCta": "Dringende Frage? Gitte anrufen"
     },
     "footer": {
       "date": "15. Mai 2027 · Tornesch",
