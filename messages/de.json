@@ -17,9 +17,6 @@
       "eyebrow": "Wir heiraten",
       "date": "15. Mai 2027",
       "location": "Heimathaus Tornesch · Schleswig-Holstein",
-      "days": "Tage",
-      "hours": "Stunden",
-      "minutes": "Minuten",
       "cta": "Jetzt zusagen"
     },
     "story": {
@@ -103,7 +100,8 @@
         {"date": "Juni 2024", "caption": "Unsere Reise"},
         {"date": "September 2024", "caption": "Glücksmomente"},
         {"date": "Dezember 2024", "caption": "Weihnachten"},
-        {"date": "März 2025", "caption": "Frühlingserwachen"}      ]
+        {"date": "März 2025", "caption": "Frühlingserwachen"}      
+      ]
     },
     "location": {
       "eyebrow": "Wo es passiert",
