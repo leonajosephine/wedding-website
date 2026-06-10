@@ -66,9 +66,9 @@ VERSION:2.0
 BEGIN:VEVENT
 DTSTART:20270515T140000
 DTEND:20270516T020000
-SUMMARY:Hochzeit Merle & Lasse
-DESCRIPTION:Wir heiraten! Feiert mit uns diesen besonderen Tag.
-LOCATION:Heimathaus Tornesch, Schleswig-Holstein
+SUMMARY:${t('calendarSummary')}
+DESCRIPTION:${t('calendarDescription')}
+LOCATION:${t('calendarLocation')}
 END:VEVENT
 END:VCALENDAR`;
 
@@ -77,7 +77,7 @@ END:VCALENDAR`;
 
     const link = document.createElement('a');
     link.href = url;
-    link.download = 'hochzeit-merle-lasse.ics';
+    link.download = t('calendarFileName');
     link.click();
 
     URL.revokeObjectURL(url);
@@ -107,12 +107,12 @@ END:VCALENDAR`;
               {formData.attending === 'yes' && (
                 <Button variant="primary" onClick={addToCalendar} className="w-full sm:w-auto">
                   <Calendar className="h-4 w-4" />
-                  Zum Kalender hinzufügen
+                  {t('calendarCta')}
                 </Button>
               )}
 
               <Button variant="secondary" onClick={resetForm} className="w-full sm:w-auto">
-                Weitere Person hinzufügen
+                {t('addAnotherCta')}
               </Button>
             </div>
           </div>
@@ -213,7 +213,7 @@ END:VCALENDAR`;
               </label>
 
               <div className="space-y-4">
-                <Select label={t('menu')} value={formData.menu} onChange={(value) => setFormData({...formData, menu: value})} />
+                <Select label={t('menu')} value={formData.menu} onChange={(value) => setFormData({...formData, menu: value})} t={t} />
                 <Input label={t('allergies')} value={formData.allergies} onChange={(value) => setFormData({...formData, allergies: value})} />
                 <Input label={t('songWish')} value={formData.songWish} onChange={(value) => setFormData({...formData, songWish: value})} />
               </div>
@@ -256,20 +256,20 @@ END:VCALENDAR`;
 function Input({label, value, onChange, type = 'text'}: {label: string; value: string; onChange: (value: string) => void; type?: string}) {
   return (
     <label className="block">
-      <span className="mb-2 block text-xs uppercase tracking-[0.14em] text-[var(--text-soft)]">
+      <span className="mb-2 block text-xs uppercase tracking-[0.14em] text-(--text-soft)">
         {label}
       </span>
       <input
         type={type}
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full border border-[var(--border)] bg-[rgba(255,250,242,0.72)] px-4 py-3 text-sm outline-none transition focus:border-[var(--brand-600)]"
+        className="w-full border border-(--border) bg-[rgba(255,250,242,0.72)] px-4 py-3 text-sm outline-none transition focus:border-(--brand-600)"
       />
     </label>
   );
 }
 
-function Select({label, value, onChange}: {label: string; value: string; onChange: (value: string) => void}) {
+function Select({label, value, onChange, t}: {label: string; value: string; onChange: (value: string) => void; t: (key: string) => string}) {
   return (
     <label className="block">
       <span className="mb-2 block text-xs uppercase tracking-[0.14em] text-[var(--text-soft)]">
@@ -280,10 +280,10 @@ function Select({label, value, onChange}: {label: string; value: string; onChang
         onChange={(e) => onChange(e.target.value)}
         className="w-full border border-[var(--border)] bg-[rgba(255,250,242,0.72)] px-4 py-3 text-sm outline-none transition focus:border-[var(--brand-600)]"
       >
-        <option value="">–</option>
-        <option value="meat">Fleisch</option>
-        <option value="vegetarian">Vegetarisch</option>
-        <option value="vegan">Vegan</option>
+        <option value="">{t('menuPlaceholder')}</option>
+        <option value="meat">{t('menuMeat')}</option>
+        <option value="vegetarian">{t('menuVegetarian')}</option>
+        <option value="vegan">{t('menuVegan')}</option>
       </select>
     </label>
   );

@@ -28,9 +28,9 @@ export function Schedule() {
           <p className="eyebrow mb-4">{t('eyebrow')}</p>
 
           <h2 className="serif text-6xl leading-[0.95] text-[var(--text)] md:text-8xl">
-            Unser <span className="script">Tag</span>
+            {t('headingPartOne')} <span className="script">{t('headingScriptOne')}</span>
             <br />
-            im <span className="script">Überblick</span>
+            {t('headingPartTwo')} <span className="script">{t('headingScriptTwo')}</span>
           </h2>
 
           <div className="mx-auto mt-8 h-px w-24 bg-[rgba(42,37,34,0.22)]" />

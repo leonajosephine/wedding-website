@@ -13,9 +13,8 @@ export function Story() {
         <div className="grid items-center gap-14 desk:grid-cols-[0.9fr_1.1fr]">
           <div className="mx-auto max-w-md text-center desk:mx-0 desk:text-left">
             <h2 className="script mb-8 text-5xl tracking-wide text-[var(--text)] md:text-6xl desk:text-7xl">
-              Unsere <span className="serif">Geschichte</span>
+                {t('headingScript')} <span className="serif">{t('headingSerif')}</span>
             </h2>
-
             <div className="mx-auto mb-8 h-px w-16 bg-[rgba(42,37,34,0.24)] desk:mx-0" />
 
             <div className="space-y-5 text-sm leading-8 text-[var(--text-soft)]">

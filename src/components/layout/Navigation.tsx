@@ -37,9 +37,15 @@ export function Navigation() {
   };
 
   const switchLanguage = (nextLocale: string) => {
-    const segments = pathname.split('/');
-    segments[1] = nextLocale;
-    router.push(segments.join('/'));
+    const segments = pathname.split('/').filter(Boolean);
+    const hasLocale = locales.some((item) => item.value === segments[0]);
+  
+    const pathWithoutLocale = hasLocale
+      ? segments.slice(1).join('/')
+      : segments.join('/');
+  
+    router.push(`/${nextLocale}${pathWithoutLocale ? `/${pathWithoutLocale}` : ''}`);
+  
     setLanguageOpen(false);
     setMobileMenuOpen(false);
   };

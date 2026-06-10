@@ -32,8 +32,9 @@ export function Gallery() {
           <p className="mb-3 text-[var(--text-soft)]">{t('eyebrow')}</p>
 
           <h2 className="serif text-6xl leading-[0.95] text-[var(--text)] md:text-7xl lg:text-8xl">
-            Our Favorite <span className="script"> memories </span>
-            over <span className="script"> the </span> years.
+            {t('headingPartOne')} <span className="script">{t('headingScriptOne')}</span>{' '}
+            {t('headingPartTwo')} <span className="script">{t('headingScriptTwo')}</span>{' '}
+            {t('headingPartThree')}
           </h2>
 
           <div className="mx-auto mt-6 h-px w-14 bg-[rgba(42,37,34,0.22)]" />

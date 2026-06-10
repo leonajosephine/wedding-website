@@ -1,3 +1,5 @@
+import { setRequestLocale } from 'next-intl/server';
+
 import {Navigation} from '@/components/layout/Navigation';
 import { Hero } from '@/components/sections/Hero';
 import { CountdownDivider } from '@/components/sections/CountdownDivider';
@@ -15,7 +17,15 @@ import { Footer } from '@/components/layout/Footer';
 import { QuoteDivider } from '@/components/sections/QuoteDivider';
 import { EucalyptusDivider } from '@/components/sections/EucalyptusDivider';
 
-export default function HomePage() {
+type Props = {
+  params: Promise<{locale:string}>;
+}
+
+export default async function HomePage({params}: Props) {
+  const {locale} = await params;
+
+  setRequestLocale(locale);
+  
   return (
     <>
       <Navigation />

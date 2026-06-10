@@ -21,7 +21,8 @@
     },
     "story": {
       "eyebrow": "Unsere Geschichte",
-      "title": "Wie alles begann",
+      "headingScript": "Unsere",
+      "headingSerif": "Geschichte",
       "paragraphOne": "Was als zufällige Begegnung begann, wurde zur schönsten Geschichte unseres Lebens. Merle und Lasse lernten sich kennen, als das Leben andere Pläne hatte – und doch schien alles genau so zu sein, wie es sein sollte.",
       "paragraphTwo": "Gemeinsam haben wir gelacht, gestritten, gereist und geträumt. Jeder Moment miteinander ist ein Geschenk. Und jetzt freuen wir uns darauf, den schönsten Tag mit all den Menschen zu feiern, die uns am meisten bedeuten.",
       "quote": "Ich wähle dich – heute, morgen und all die Tage danach.",
@@ -29,7 +30,10 @@
     },
     "schedule": {
       "eyebrow": "Programm",
-      "title": "Unser Wochenende",
+      "headingPartOne": "Unser",
+      "headingScriptOne": "Tag",
+      "headingPartTwo": "im",
+      "headingScriptTwo": "Überblick",
       "days": [
         {
           "label": "Freitag · 14. Mai 2027",
@@ -89,7 +93,11 @@
     },
     "gallery": {
       "eyebrow": "Momente",
-      "title": "Unsere Bilder",
+      "headingPartOne": "Unsere liebsten",
+      "headingScriptOne": "Momente",
+      "headingPartTwo": "über",
+      "headingScriptTwo": "die",
+      "headingPartThree": "Jahre.",
       "items": [
         {"date": "Juli 2023", "caption": "Verlobung"},
         {"date": "August 2023", "caption": "Unser Sommer"},
@@ -103,6 +111,8 @@
         {"date": "März 2025", "caption": "Frühlingserwachen"}      
       ]
     },
+
+
     "location": {
       "eyebrow": "Wo es passiert",
       "title": "Location & Anreise",
@@ -193,7 +203,18 @@
       "submit": "Absenden",
 
       "successTitle": "Vielen Dank!",
-      "successText": "Wir haben deine Antwort erhalten und freuen uns riesig auf euch."
+      "successText": "Wir haben deine Antwort erhalten und freuen uns riesig auf euch.",
+      
+      "calendarCta": "Zum Kalender hinzufügen",
+      "addAnotherCta": "Weitere Person hinzufügen",
+      "calendarSummary": "Hochzeit Merle & Lasse",
+      "calendarDescription": "Wir heiraten! Feiert mit uns diesen besonderen Tag.",
+      "calendarLocation": "Heimathaus Tornesch, Schleswig-Holstein",
+      "calendarFileName": "hochzeit-merle-lasse.ics",
+      "menuPlaceholder": "–",
+      "menuMeat": "Fleisch",
+      "menuVegetarian": "Vegetarisch",
+      "menuVegan": "Vegan"
     },
     "message": {
       "imageAlt": "Merle und Lasse",
@@ -234,7 +255,10 @@
     },
     "contacts": {
       "eyebrow": "Eure Ansprechpartner",
-      "title": "Wir sind für euch da",
+      "headingPartOne": "Wir",
+      "headingPartTwo": "sind für",
+      "headingPartThree": "euch",
+      "headingPartFour": "da",
       "bottomText": "Ob organisatorische Fragen, Unterkunft oder einfach nur ein netter Plausch – diese wunderbaren Menschen helfen euch gerne weiter.",
       "items": [
         {
@@ -282,5 +306,27 @@
       "subtitle": "Mit Liebe gestaltet für unsere Gäste 💛",
       "cta": "Fragen? Schreibt uns gerne",
       "email": "kontakt@example.com"
+    },
+    "countdown": {
+      "title": "countdown to the big day",
+      "date": "the 15th of may, 2027",
+      "days": "Tage",
+      "hours": "Stunden",
+      "minutes": "Minuten",
+      "seconds": "Sekunden"
+    },
+    "eucalyptusDivider": {
+      "eyebrow": "save the date",
+      "date": "15 · 05 · 2027",
+      "title": "a weekend to remember"
+    },
+    "fullWidthPhoto": {
+      "imageAlt": "Merle und Lasse"
+    },
+
+    "quoteDivider": {
+      "eyebrow": "a little note",
+      "lineOne": "to the stars that listen,",
+      "lineTwo": "and the dreams that are answered."
     }
   }

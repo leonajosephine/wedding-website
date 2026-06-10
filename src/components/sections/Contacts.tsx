@@ -23,8 +23,10 @@ export function Contacts() {
           <p className="eyebrow mb-4">{t('eyebrow')}</p>
 
           <h2 className="script text-6xl leading-[0.95] text-[var(--text)] md:text-7xl">
-            Wir <span className="serif">sind für</span> euch{' '}
-            <span className="serif">da</span>
+            {t('headingPartOne')}{' '}
+            <span className="serif">{t('headingPartTwo')}</span>{' '}
+            {t('headingPartThree')}{' '}
+            <span className="serif">{t('headingPartFour')}</span>
           </h2>
 
           <div className="mx-auto mt-7 h-px w-20 bg-[rgba(42,37,34,0.22)]" />
@@ -56,7 +58,7 @@ export function Contacts() {
                 </p>
 
                 {contact.funFact && (
-                  <p className="mx-auto mt-4 max-w-xs text-sm leading-7 text-[var(--text-soft)] hidden group-hover:block transform transition-transform duration-500 ease-out">
+                  <p className="mx-auto mt-4 hidden max-w-xs text-sm leading-7 text-[var(--text-soft)] transition duration-500 group-hover:block">
                     {contact.funFact}
                   </p>
                 )}
@@ -72,7 +74,7 @@ export function Contacts() {
 
           <Button
             variant="secondary"
-            onClick={() => window.location.href = `tel:${t('urgentPhone')}`}
+            onClick={() => (window.location.href = `tel:${t('urgentPhone')}`)}
           >
             <Phone className="h-4 w-4" />
             {t('urgentCta')}
