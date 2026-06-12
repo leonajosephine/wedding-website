@@ -152,7 +152,7 @@
   },
   "dressCode": {
     "eyebrow": "What to Wear?",
-    "title": "Dress Code",
+    "title": "Dresscode",
     "intro": "We would love to see you in elegant festive attire. Here is our colour palette for inspiration.",
     "colors": [
       {"name": "Mint", "hex": "#b8d4c6"},
