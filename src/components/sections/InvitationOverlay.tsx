@@ -71,13 +71,13 @@ export function InvitationOverlay() {
 
       <div className="relative z-10 flex min-h-screen items-center justify-center px-6 py-10">
         {step === 'closed' && (
-          <div className="flex w-full max-w-3xl flex-col items-center text-center">
+          <div className="flex w-full max-w-4xl flex-col items-center text-center">
             <LanguageSelector locale={locale} onChange={switchLanguage} />
 
             <button
               type="button"
               onClick={openInvitation}
-              className="group mt-10 block w-full max-w-md md:max-w-lg desk:max-w-2xl"
+              className="group mt-10 block w-full max-w-md md:max-w-xl desk:max-w-3xl"
               aria-label={t('openCta')}
             >
               <Image
@@ -105,7 +105,7 @@ export function InvitationOverlay() {
 
         {step === 'opened' && (
           <div className="flex w-full flex-col items-center">
-            <div className="relative w-full max-w-md md:max-w-lg desk:max-w-2xl animate-[invitationFadeIn_0.5s_ease_forwards]">
+            <div className="relative w-full max-w-md animate-[invitationFadeIn_0.5s_ease_forwards] md:max-w-[560px] desk:max-w-[720px]">
               <Image
                 src="/images/intro/envelope-open3.png"
                 alt=""
@@ -116,10 +116,10 @@ export function InvitationOverlay() {
               />
 
               <div
-                className={`absolute left-1/2 top-[9%] z-30 w-[76%] max-w-[460px] -translate-x-[50%] md:top-[6%] md:w-[72%] desk:top-[7%] desk:w-[66%] ${
+                className={`absolute left-1/2 top-1/2 z-30 w-[90%] max-w-[520px] md:w-[86%] desk:w-[82%] ${
                   letterVisible
-                    ? 'animate-[letterPullOutSoft_1.45s_ease-in-out_forwards]'
-                    : 'opacity-0'
+                    ? 'animate-[letterPullOutCentered_1.55s_ease-in-out_forwards]'
+                    : 'opacity-0 -translate-x-1/2 translate-y-[18%] scale-[0.86]'
                 }`}
               >
                 <Image
@@ -156,7 +156,7 @@ export function InvitationOverlay() {
                     Schleswig-Holstein
                   </p>
 
-                  <div className="mt-6 hidden flex-col items-center md:flex">
+                  <div className="mt-20 hidden flex-col items-center md:flex">
                     <EnterButton label={t('enterCta')} onClick={enterWebsite} />
                     <div className="mt-4 h-px w-14 bg-[rgba(183,138,111,0.55)]" />
                   </div>
@@ -186,7 +186,7 @@ function EnterButton({
     <button
       type="button"
       onClick={onClick}
-      className="group inline-flex animate-[softPulse_2.8s_ease-in-out_infinite] items-center gap-3 text-xs uppercase tracking-[0.28em] text-[var(--text)] transition hover:text-[var(--brand-600)]"
+      className="group inline-flex animate-[softPulse_2.1s_ease-in-out_infinite] items-center gap-3 text-xs uppercase tracking-[0.28em] text-[var(--text)] transition hover:text-[var(--brand-600)]"
     >
       {label}
       <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
