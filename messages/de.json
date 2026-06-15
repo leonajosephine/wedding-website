@@ -1,4 +1,10 @@
-{
+{   
+    "invitationOverlay": {
+      "openCta": "Einladung öffnen",
+      "cardEyebrow": "Gemeinsam mit unseren Familien",
+      "cardIntro": "laden wir euch herzlich ein, unsere Hochzeit mit uns zu feiern",
+      "enterCta": "Website betreten"
+    },
     "navigation": {
       "home": "Home",
       "story": "Unsere Geschichte",
@@ -204,7 +210,7 @@
 
       "successTitle": "Vielen Dank!",
       "successText": "Wir haben deine Antwort erhalten und freuen uns riesig auf euch.",
-      
+
       "calendarCta": "Zum Kalender hinzufügen",
       "addAnotherCta": "Weitere Person hinzufügen",
       "calendarSummary": "Hochzeit Merle & Lasse",

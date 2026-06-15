@@ -1,4 +1,10 @@
-{
+{ 
+  "invitationOverlay": {
+    "openCta": "Åbn invitationen",
+    "cardEyebrow": "Sammen med vores familier",
+    "cardIntro": "inviterer vi jer hjerteligt til at fejre vores bryllup med os",
+    "enterCta": "Gå til hjemmesiden"
+  },
   "navigation": {
     "home": "Hjem",
     "story": "Vores Historie",

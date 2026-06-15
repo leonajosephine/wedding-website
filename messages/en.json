@@ -1,4 +1,10 @@
 {
+  "invitationOverlay": {
+    "openCta": "Open Invitation",
+    "cardEyebrow": "Together with our families",
+    "cardIntro": "we warmly invite you to celebrate our wedding with us",
+    "enterCta": "Enter Website"
+  },
   "navigation": {
     "home": "Home",
     "story": "Our Story",

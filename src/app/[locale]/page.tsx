@@ -1,5 +1,6 @@
 import { setRequestLocale } from 'next-intl/server';
 
+import { InvitationOverlay } from '@/components/sections/InvitationOverlay';
 import {Navigation} from '@/components/layout/Navigation';
 import { Hero } from '@/components/sections/Hero';
 import { CountdownDivider } from '@/components/sections/CountdownDivider';
@@ -25,12 +26,13 @@ export default async function HomePage({params}: Props) {
   const {locale} = await params;
 
   setRequestLocale(locale);
-  
+
   return (
     <>
       <Navigation />
 
       <main>
+        <InvitationOverlay />
         <Hero />
         <Story />
         <CountdownDivider />
