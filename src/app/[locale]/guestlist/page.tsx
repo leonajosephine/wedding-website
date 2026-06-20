@@ -1,22 +1,51 @@
 'use client';
 
-import {useEffect, useMemo, useState} from 'react';
-import {Check, X, Users, PartyPopper} from 'lucide-react';
+import {useMemo, useSyncExternalStore} from 'react';
+import {Check, X, Users, PartyPopper, Beef, Leaf, Sprout} from 'lucide-react';
 import {getRsvpResponses, RsvpResponse} from '@/lib/rsvpStorage';
 
+function subscribe(callback: () => void) {
+  window.addEventListener('storage', callback);
+  window.addEventListener('rsvp-storage-change', callback);
+
+  return () => {
+    window.removeEventListener('storage', callback);
+    window.removeEventListener('rsvp-storage-change', callback);
+  };
+}
+
+function getSnapshot() {
+  return JSON.stringify(getRsvpResponses());
+}
+
+function getServerSnapshot() {
+  return JSON.stringify([]);
+}
+
 export default function GuestlistPage() {
-  const [responses] = useState<RsvpResponse[]>(() => getRsvpResponses());
+  const responsesJson = useSyncExternalStore(
+    subscribe,
+    getSnapshot,
+    getServerSnapshot
+  );
+
+  const responses = useMemo<RsvpResponse[]>(
+    () => JSON.parse(responsesJson),
+    [responsesJson]
+  );
 
   const stats = useMemo(() => {
     const attending = responses.filter((item) => item.attending === 'yes');
     const declined = responses.filter((item) => item.attending === 'no');
-    const polterabend = responses.filter((item) => item.polterabend);
 
     return {
       total: responses.length,
       attending: attending.length,
       declined: declined.length,
-      polterabend: polterabend.length
+      polterabend: responses.filter((item) => item.polterabend).length,
+      meat: attending.filter((item) => item.menu === 'meat').length,
+      vegetarian: attending.filter((item) => item.menu === 'vegetarian').length,
+      vegan: attending.filter((item) => item.menu === 'vegan').length
     };
   }, [responses]);
 
@@ -43,6 +72,12 @@ export default function GuestlistPage() {
           <StatCard icon={<PartyPopper />} label="Polterabend" value={stats.polterabend} />
         </div>
 
+        <div className="mb-10 grid gap-4 sm:grid-cols-3">
+          <StatCard icon={<Beef />} label="Fleisch" value={stats.meat} />
+          <StatCard icon={<Leaf />} label="Vegetarisch" value={stats.vegetarian} />
+          <StatCard icon={<Sprout />} label="Vegan" value={stats.vegan} />
+        </div>
+
         <div className="overflow-hidden rounded-sm border border-[var(--border-soft)] bg-[rgba(255,250,242,0.72)] shadow-[var(--shadow-paper)]">
           <div className="overflow-x-auto">
             <table className="w-full min-w-[900px] border-collapse text-left text-sm">
@@ -60,39 +95,20 @@ export default function GuestlistPage() {
 
               <tbody>
                 {responses.map((item) => (
-                  <tr
-                    key={item.id}
-                    className="border-b border-[var(--border-soft)] last:border-b-0"
-                  >
+                  <tr key={item.id} className="border-b border-[var(--border-soft)] last:border-b-0">
                     <td className="px-5 py-4 serif text-xl text-[var(--text)]">
                       {item.firstName} {item.lastName}
                     </td>
-
                     <td className="px-5 py-4">
                       {item.attending === 'yes' ? 'Kommt' : 'Kommt nicht'}
                     </td>
-
-                    <td className="px-5 py-4">
-                      {item.polterabend ? 'Ja' : 'Nein'}
-                    </td>
-
+                    <td className="px-5 py-4">{item.polterabend ? 'Ja' : 'Nein'}</td>
                     <td className="px-5 py-4">{item.menu || '–'}</td>
                     <td className="px-5 py-4">{item.allergies || '–'}</td>
                     <td className="px-5 py-4">{item.songWish || '–'}</td>
                     <td className="px-5 py-4">{item.email}</td>
                   </tr>
                 ))}
-
-                {responses.length === 0 && (
-                  <tr>
-                    <td
-                      colSpan={7}
-                      className="px-5 py-12 text-center text-[var(--text-soft)]"
-                    >
-                      Noch keine Antworten vorhanden.
-                    </td>
-                  </tr>
-                )}
               </tbody>
             </table>
           </div>
