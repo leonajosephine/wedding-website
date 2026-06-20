@@ -5,6 +5,7 @@ import {useState} from 'react';
 import {Calendar, Check, ChevronLeft, ChevronRight} from 'lucide-react';
 import {useTranslations} from 'next-intl';
 import {Button} from '@/components/ui/Button';
+import {saveRsvpResponse} from '@/lib/rsvpStorage';
 
 type FormData = {
   firstName: string;
@@ -12,7 +13,7 @@ type FormData = {
   email: string;
   attending: 'yes' | 'no' | '';
   polterabend: boolean;
-  menu: string;
+  menu: 'meat' | 'vegetarian' | 'vegan' | '';
   allergies: string;
   songWish: string;
 };
@@ -50,7 +51,19 @@ export function RSVP() {
   };
 
   const handleSubmit = () => {
-    console.log('RSVP submitted:', formData);
+    if (formData.attending !== 'yes' && formData.attending !== 'no') return;
+  
+    saveRsvpResponse({
+      firstName: formData.firstName,
+      lastName: formData.lastName,
+      email: formData.email,
+      attending: formData.attending,
+      polterabend: formData.attending === 'yes' ? formData.polterabend : false,
+      menu: formData.attending === 'yes' ? (formData.menu as FormData['menu']) : '',
+      allergies: formData.attending === 'yes' ? formData.allergies : '',
+      songWish: formData.attending === 'yes' ? formData.songWish : ''
+    });
+  
     setSubmitted(true);
   };
 
@@ -213,7 +226,7 @@ END:VCALENDAR`;
               </label>
 
               <div className="space-y-4">
-                <Select label={t('menu')} value={formData.menu} onChange={(value) => setFormData({...formData, menu: value})} t={t} />
+                <Select label={t('menu')} value={formData.menu} onChange={(value) => setFormData({...formData, menu: value as FormData['menu']})} t={t} />
                 <Input label={t('allergies')} value={formData.allergies} onChange={(value) => setFormData({...formData, allergies: value})} />
                 <Input label={t('songWish')} value={formData.songWish} onChange={(value) => setFormData({...formData, songWish: value})} />
               </div>
