@@ -7,7 +7,7 @@ type DressColor = {
   hex: string;
 };
 
-const largeImage = '/images/dresscode/dresscodepainted5.png'; // Replace with the path to your large image
+const largeImage = '/images/dresscode/dresscodePaintedNew.png'; // Replace with the path to your large image
 
 export function Dresscode() {
   const t = useTranslations('dressCode');
