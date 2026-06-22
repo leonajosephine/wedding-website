@@ -138,6 +138,13 @@ END:VCALENDAR`;
     <section
       id="rsvp"
       className="section relative overflow-hidden bg-[linear-gradient(135deg,var(--brand-100),var(--background-soft)_52%,var(--sand))]"
+      style={{
+        backgroundImage: `url('/images/intro/bg.png')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        opacity: 0.9
+      }}
     >
       <div className="container relative z-10 max-w-2xl">
         <div className="mx-auto mb-10 max-w-2xl text-center md:mb-14">
@@ -161,7 +168,7 @@ END:VCALENDAR`;
           <div className="h-2 overflow-hidden rounded-full bg-[rgba(83,99,75,0.18)]">
             <div
               className="h-full rounded-full bg-[var(--brand-600)] transition-all duration-300"
-              style={{width: `${(step / totalSteps) * 100}%`}}
+              style={{ width: `${(step / totalSteps) * 100}%` }}
             />
           </div>
         </div>
@@ -178,12 +185,25 @@ END:VCALENDAR`;
               </p>
 
               <div className="grid gap-4 sm:grid-cols-2">
-                <Input label={t('firstName')} value={formData.firstName} onChange={(value) => setFormData({...formData, firstName: value})} />
-                <Input label={t('lastName')} value={formData.lastName} onChange={(value) => setFormData({...formData, lastName: value})} />
+                <Input
+                  label={t('firstName')}
+                  value={formData.firstName}
+                  onChange={(value) => setFormData({ ...formData, firstName: value })}
+                />
+                <Input
+                  label={t('lastName')}
+                  value={formData.lastName}
+                  onChange={(value) => setFormData({ ...formData, lastName: value })}
+                />
               </div>
 
               <div className="mt-4">
-                <Input type="email" label={t('email')} value={formData.email} onChange={(value) => setFormData({...formData, email: value})} />
+                <Input
+                  type="email"
+                  label={t('email')}
+                  value={formData.email}
+                  onChange={(value) => setFormData({ ...formData, email: value })}
+                />
               </div>
             </div>
           )}
@@ -199,8 +219,18 @@ END:VCALENDAR`;
               </p>
 
               <div className="grid gap-4">
-                <ChoiceCard active={formData.attending === 'yes'} onClick={() => setFormData({...formData, attending: 'yes'})} title={t('yesTitle')} text={t('yesText')} />
-                <ChoiceCard active={formData.attending === 'no'} onClick={() => setFormData({...formData, attending: 'no'})} title={t('noTitle')} text={t('noText')} />
+                <ChoiceCard
+                  active={formData.attending === 'yes'}
+                  onClick={() => setFormData({ ...formData, attending: 'yes' })}
+                  title={t('yesTitle')}
+                  text={t('yesText')}
+                />
+                <ChoiceCard
+                  active={formData.attending === 'no'}
+                  onClick={() => setFormData({ ...formData, attending: 'no' })}
+                  title={t('noTitle')}
+                  text={t('noText')}
+                />
               </div>
             </div>
           )}
@@ -219,16 +249,33 @@ END:VCALENDAR`;
                 <input
                   type="checkbox"
                   checked={formData.polterabend}
-                  onChange={(e) => setFormData({...formData, polterabend: e.target.checked})}
+                  onChange={(e) =>
+                    setFormData({ ...formData, polterabend: e.target.checked })
+                  }
                   className="mt-1 accent-[var(--brand-600)]"
                 />
                 <span>{t('polterabend')}</span>
               </label>
 
               <div className="space-y-4">
-                <Select label={t('menu')} value={formData.menu} onChange={(value) => setFormData({...formData, menu: value as FormData['menu']})} t={t} />
-                <Input label={t('allergies')} value={formData.allergies} onChange={(value) => setFormData({...formData, allergies: value})} />
-                <Input label={t('songWish')} value={formData.songWish} onChange={(value) => setFormData({...formData, songWish: value})} />
+                <Select
+                  label={t('menu')}
+                  value={formData.menu}
+                  onChange={(value) =>
+                    setFormData({ ...formData, menu: value as FormData['menu'] })
+                  }
+                  t={t}
+                />
+                <Input
+                  label={t('allergies')}
+                  value={formData.allergies}
+                  onChange={(value) => setFormData({ ...formData, allergies: value })}
+                />
+                <Input
+                  label={t('songWish')}
+                  value={formData.songWish}
+                  onChange={(value) => setFormData({ ...formData, songWish: value })}
+                />
               </div>
             </div>
           )}
