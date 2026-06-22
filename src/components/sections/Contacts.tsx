@@ -36,31 +36,36 @@ export function Contacts() {
           {contacts.map((contact) => (
             <article
               key={`${contact.name}-${contact.role}`}
-              className="group relative overflow-hidden rounded-md border border-[var(--border-soft)] bg-[rgba(255,250,242,0.68)] shadow-[var(--shadow-paper)] transition duration-300 hover:-translate-y-1"
+              className="group relative overflow-hidden rounded-md border border-[var(--border-soft)] bg-[rgba(255,250,242,0.68)] shadow-[var(--shadow-paper)] transition duration-300 hover:shadow-lg hover:scale-[1.02]"
             >
+              {/* Image Section */}
               <div className="relative aspect-[4/3] overflow-hidden">
                 <Image
                   src={contact.image}
                   alt={contact.name}
                   fill
-                  className="object-cover grayscale contrast-[0.95] transition duration-700 group-hover:scale-[1.03] group-hover:grayscale-0"
+                  className="object-cover grayscale contrast-[0.95] transition duration-500 group-hover:scale-[1.05] group-hover:grayscale-0 group-hover:contrast-100"
                   sizes="(max-width: 768px) 100vw, 380px"
                 />
               </div>
 
+              {/* Text Section */}
               <div className="p-6 text-center">
-                <h3 className="serif text-2xl text-[var(--text)]">
-                  {contact.name}
-                </h3>
+                <h3 className="serif text-2xl text-[var(--text)]">{contact.name}</h3>
 
                 <p className="mt-1 text-xs uppercase tracking-[0.16em] text-[var(--text-muted)]">
                   {contact.role}
                 </p>
 
+                {/* Fun Fact Section */}
                 {contact.funFact && (
-                  <p className="mx-auto mt-4 hidden max-w-xs text-sm leading-7 text-[var(--text-soft)] transition duration-500 group-hover:block">
-                    {contact.funFact}
-                  </p>
+                  <div className="relative">
+                    <p
+                      className="absolute top-0 left-0 w-full opacity-0 transition-all duration-500 group-hover:relative group-hover:opacity-100 group-hover:mt-4"
+                    >
+                      {contact.funFact}
+                    </p>
+                  </div>
                 )}
               </div>
             </article>
