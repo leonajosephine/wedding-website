@@ -70,7 +70,7 @@ export default function GuestlistPage() {
           <p className="eyebrow mb-4">Admin</p>
 
           <h1 className="serif text-5xl text-[var(--text)] md:text-7xl">
-            Guestlist
+            Guestlist 💒
           </h1>
 
           <p className="mt-4 max-w-2xl text-sm leading-7 text-[var(--text-soft)]">
