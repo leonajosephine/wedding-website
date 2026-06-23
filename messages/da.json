@@ -129,7 +129,9 @@
     },
     "stay": {
       "title": "Overnatning i nærheden",
-      "description": "Vi har samlet nogle overnatningsmuligheder i nærheden. Book venligst tidligt, da tilgængeligheden kan være begrænset."
+      "description": "Vi har samlet nogle overnatningsmuligheder i nærheden. Book venligst tidligt, da tilgængeligheden kan være begrænset.",
+      "moreCta": "Se flere overnatningsmuligheder",
+      "moreLink": "https://www.booking.com/searchresults.html?ss=Tornesch"
     },
     "accommodations": [
       {

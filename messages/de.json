@@ -131,7 +131,9 @@
       },
       "stay": {
         "title": "Unterkunft in der Nähe",
-        "description": "Wir haben einige Unterkünfte in der Nähe gesammelt. Bitte bucht frühzeitig, da die Verfügbarkeit begrenzt sein kann."
+        "description": "Wir haben einige Unterkünfte in der Nähe gesammelt. Bitte bucht frühzeitig, da die Verfügbarkeit begrenzt sein kann.",
+        "moreCta": "Mehr Unterkünfte ansehen",
+        "moreLink": "https://www.booking.com/searchresults.html?ss=Tornesch"
       },
       "accommodations": [
         {

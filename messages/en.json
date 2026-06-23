@@ -129,7 +129,9 @@
     },
     "stay": {
       "title": "Accommodation Nearby",
-      "description": "We have collected a few nearby accommodation options. Please book early, as availability may be limited."
+      "description": "We have collected a few nearby accommodation options. Please book early, as availability may be limited.",
+      "moreCta": "See more on Booking.com",
+      "moreLink": "https://www.booking.com/searchresults.html?ss=Tornesch"
     },
     "accommodations": [
       {
