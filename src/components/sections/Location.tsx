@@ -44,8 +44,8 @@ export function Location() {
 
               <div className="absolute inset-0 bg-[rgba(252,245,234,0.10)]" />
 
-              <div className="absolute left-1/2 top-1/2 flex h-13 w-13 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[rgba(255,250,242,0.88)] shadow-[var(--shadow-soft)] backdrop-blur-sm">
-                <MapPin className="h-6 w-6 text-[var(--brand-600)]" />
+              <div className="absolute left-1/2 top-1/2 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[rgba(255,250,242,0.9)] shadow-[var(--shadow-soft)] backdrop-blur-sm md:h-18 md:w-18">
+                <MapPin className="h-8 w-8 text-[var(--brand-600)] md:h-9 md:w-9" />
               </div>
             </a>
 
@@ -98,15 +98,15 @@ export function Location() {
                 </div>
 
                 <div className="hide-scrollbar -mx-5 flex snap-x snap-mandatory gap-3 overflow-x-auto px-5 pb-2 sm:-mx-7 sm:px-7 desk:mx-0 desk:grid desk:grid-cols-3 desk:overflow-visible desk:px-0 desk:pb-0">
-                  {accommodations.map((item, index) => (
+                  {accommodations.slice(0, 3).map((item, index) => (
                     <a
                       key={item.name}
                       href={item.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group min-w-[64vw] snap-center rounded-sm border border-[rgba(42,37,34,0.09)] bg-[rgba(255,250,242,0.54)] p-3 transition duration-300 hover:-translate-y-0.5 hover:border-[rgba(42,37,34,0.22)] sm:min-w-[38vw] desk:min-w-0"
+                      className="group min-w-[38vw] snap-center rounded-sm border border-[rgba(42,37,34,0.09)] bg-[rgba(255,250,242,0.54)] p-2.5 transition duration-300 hover:-translate-y-0.5 hover:border-[rgba(42,37,34,0.22)] sm:min-w-[12vw] desk:min-w-0"
                     >
-                      <div className="relative mb-3 h-24 overflow-hidden rounded-sm desk:h-20">
+                      <div className="relative mb-2.5 h-22 overflow-hidden rounded-sm md:h-24 desk:h-22">
                         <Image
                           src={`/images/accommodations/${index + 1}.png`}
                           alt={item.name}
@@ -118,13 +118,13 @@ export function Location() {
                         <div className="absolute inset-0 bg-[rgba(252,245,234,0.08)]" />
                       </div>
 
-                      <div className="flex items-start justify-between gap-3">
-                        <div>
-                          <h5 className="serif text-lg leading-tight text-[var(--text)]">
+                      <div className="flex items-start justify-between gap-2">
+                        <div className="min-w-0">
+                          <h5 className="serif text-base leading-tight text-[var(--text)] md:text-lg">
                             {item.name}
                           </h5>
 
-                          <p className="mt-1 text-[0.58rem] uppercase tracking-[0.14em] text-[var(--text-muted)]">
+                          <p className="mt-1 text-[0.54rem] uppercase tracking-[0.12em] text-[var(--text-muted)]">
                             {item.distance}
                           </p>
                         </div>
@@ -137,6 +137,18 @@ export function Location() {
                       </p>
                     </a>
                   ))}
+                </div>
+
+                <div className="mt-5 flex justify-center desk:justify-end">
+                  <a
+                    href={t('stay.moreLink')}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 border-b border-[rgba(42,37,34,0.25)] pb-1 text-xs uppercase tracking-[0.16em] text-[var(--text)] transition hover:opacity-65"
+                  >
+                    {t('stay.moreCta')}
+                    <ExternalLink className="h-3.5 w-3.5" />
+                  </a>
                 </div>
               </div>
             </div>
