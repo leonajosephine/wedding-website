@@ -18,7 +18,7 @@ export function Hero() {
       className="relative flex min-h-screen items-end justify-center overflow-hidden bg-[var(--background)] lg:items-center lg:justify-end"
     >
       {/* Background image */}
-      <div className="image-soft absolute inset-0 bg-[url('/images/heroNew.png')] bg-cover bg-[position:25%_center] bg-no-repeat xl:bg-center" />
+      <div className="image-soft absolute inset-0 bg-[url('/images/heroML.png')] bg-cover bg-[position:25%_center] bg-no-repeat xl:bg-center" />
 
       {/* Soft image wash */}
       <div className="absolute inset-0 bg-[rgba(252,245,234,0.16)]" />
