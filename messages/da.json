@@ -6,16 +6,16 @@
     "enterCta": "Gå til hjemmesiden"
   },
   "navigation": {
-    "home": "Hjem",
     "story": "Vores Historie",
     "schedule": "Program",
-    "gallery": "Billeder",
+    "dresscode": "Dresscode",
     "location": "Sted",
+    "contact": "Kontakt",
     "faq": "FAQ",
     "rsvp": "RSVP",
     "openMenu": "Åbn menu",
     "closeMenu": "Luk menu",
-    "homeLabel": "Til startsiden"
+    "homeLabel": "Tilbage til forsiden"
   },
   "hero": {
     "nameOne": "Merle",

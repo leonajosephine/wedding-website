@@ -1,31 +1,16 @@
 import './globals.css';
 
 import {
-  Pinyon_Script,
-  Meie_Script ,
   Parisienne,
-  Cedarville_Cursive,
   Abhaya_Libre,
   Manrope,
-  //Dawning_of_a_New_Day ersatz für Cedarville_Cursive
+  Just_Another_Hand
 } from 'next/font/google';
-
-const pinyon = Pinyon_Script({
-  subsets: ['latin'],
-  weight: '400',
-  variable: '--font-pinyon'
-});
 
 const parisienne = Parisienne({
   subsets: ['latin'],
   weight: '400',
   variable: '--font-parisienne'
-});
-
-const cedarville = Cedarville_Cursive({
-  subsets: ['latin'],
-  weight: '400',
-  variable: '--font-cedarville'
 });
 
 const abhaya = Abhaya_Libre({
@@ -39,6 +24,12 @@ const manrope = Manrope({
   variable: '--font-manrope'
 });
 
+const justAnotherHand = Just_Another_Hand({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-handwritten'
+});
+
 export default function RootLayout({
   children
 }: {
@@ -47,7 +38,7 @@ export default function RootLayout({
   return (
     <html lang="de" data-scroll-behavior="smooth">
       <body
-        className={`${pinyon.variable} ${parisienne.variable} ${cedarville.variable} ${abhaya.variable} ${manrope.variable}`}
+        className={`${parisienne.variable} ${abhaya.variable} ${manrope.variable} ${justAnotherHand.variable}`}
       >
         {children}
       </body>

@@ -6,11 +6,11 @@
     "enterCta": "Enter Website"
   },
   "navigation": {
-    "home": "Home",
     "story": "Our Story",
     "schedule": "Schedule",
-    "gallery": "Photos",
+    "dresscode": "Dresscode",
     "location": "Location",
+    "contact": "Contact",
     "faq": "FAQ",
     "rsvp": "RSVP",
     "openMenu": "Open menu",

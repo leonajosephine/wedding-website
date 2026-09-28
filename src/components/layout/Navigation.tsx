@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import {useState} from 'react';
 import {Globe2, Menu, X} from 'lucide-react';
 import {useLocale, useTranslations} from 'next-intl';
@@ -9,8 +10,9 @@ import {Button} from '@/components/ui/Button';
 const navItems = [
   {key: 'story', href: '#story'},
   {key: 'schedule', href: '#schedule'},
-  {key: 'gallery', href: '#gallery'},
+  {key: 'dresscode', href: '#dresscode'},
   {key: 'location', href: '#location'},
+  {key: 'contact', href: '#contact'},
   {key: 'faq', href: '#faq'}
 ] as const;
 
@@ -32,46 +34,59 @@ export function Navigation() {
   const activeLocale = locales.find((item) => item.value === locale);
 
   const scrollToSection = (href: string) => {
-    document.querySelector(href)?.scrollIntoView({behavior: 'smooth'});
+    document.querySelector(href)?.scrollIntoView({
+      behavior: 'smooth'
+    });
+
     setMobileMenuOpen(false);
   };
 
   const switchLanguage = (nextLocale: string) => {
     const segments = pathname.split('/').filter(Boolean);
     const hasLocale = locales.some((item) => item.value === segments[0]);
-  
+
     const pathWithoutLocale = hasLocale
       ? segments.slice(1).join('/')
       : segments.join('/');
-  
-    router.push(`/${nextLocale}${pathWithoutLocale ? `/${pathWithoutLocale}` : ''}`);
-  
+
+    router.push(
+      `/${nextLocale}${pathWithoutLocale ? `/${pathWithoutLocale}` : ''}`
+    );
+
     setLanguageOpen(false);
     setMobileMenuOpen(false);
   };
 
   return (
     <>
-      <nav className="fixed left-0 right-0 top-0 z-50 border-b border-[rgba(42,37,34,0.07)] bg-[rgba(252,245,234,0.38)] px-6 py-4 backdrop-blur-xl lg:px-12">
+      <nav className="fixed left-0 right-0 top-0 z-50 border-b border-[rgba(72,67,63,0.07)] bg-[rgba(252,245,234,0.38)] px-6 py-3 backdrop-blur-xl lg:px-12">
         <div className="mx-auto flex max-w-7xl items-center justify-between">
           <button
             type="button"
             onClick={() => scrollToSection('#home')}
-            className="serif border-0 bg-transparent p-0 text-3xl leading-none tracking-[0.18em] text-[var(--text)] outline-none transition hover:opacity-70 focus-visible:ring-2 focus-visible:ring-[var(--brand-500)] focus-visible:ring-offset-4 focus-visible:ring-offset-[var(--background)]"
+            className="group relative h-12 w-20 overflow-hidden bg-transparent outline-none transition duration-300 hover:scale-[1.03] hover:opacity-90 focus-visible:ring-2 focus-visible:ring-[var(--brand-500)] focus-visible:ring-offset-4 focus-visible:ring-offset-[var(--background)]"
             aria-label={t('homeLabel')}
           >
-            M&L
+            <Image
+              src="/images/monogramm.png"
+              alt=""
+              fill
+              priority
+              className="object-cover transition duration-500 group-hover:scale-[1.05]"
+              sizes="80px"
+            />
           </button>
 
-          <ul className="hidden items-center gap-7 lg:flex">
+          <ul className="hidden items-center gap-6 xl:flex xl:gap-7">
             {navItems.map((item) => (
               <li key={item.href}>
                 <button
                   type="button"
                   onClick={() => scrollToSection(item.href)}
-                  className="group relative bg-transparent p-0 text-[0.65rem] uppercase tracking-[0.2em] text-[var(--text-soft)] outline-none transition hover:text-[var(--text)] focus-visible:text-[var(--text)]"
+                  className="group relative bg-transparent p-0 text-[0.65rem] uppercase tracking-[0.19em] text-[var(--text-soft)] outline-none transition hover:text-[var(--text)] focus-visible:text-[var(--text)]"
                 >
                   {t(item.key)}
+
                   <span className="absolute -bottom-2 left-0 h-px w-0 bg-[var(--text)] transition-all duration-300 group-hover:w-full group-focus-visible:w-full" />
                 </button>
               </li>
@@ -81,7 +96,7 @@ export function Navigation() {
               <Button
                 variant="primary"
                 onClick={() => scrollToSection('#rsvp')}
-                className="min-h-9 px-5 py-2"
+                className="min-h-9 px-5 py-2 font-bold"
               >
                 {t('rsvp')}
               </Button>
@@ -95,7 +110,10 @@ export function Navigation() {
                 aria-expanded={languageOpen}
               >
                 <Globe2 className="h-4 w-4" />
-                <span>{activeLocale?.label ?? locale.toUpperCase()}</span>
+
+                <span>
+                  {activeLocale?.label ?? locale.toUpperCase()}
+                </span>
               </button>
 
               {languageOpen && (
@@ -122,30 +140,38 @@ export function Navigation() {
           <button
             type="button"
             onClick={() => setMobileMenuOpen((prev) => !prev)}
-            className="border-0 bg-transparent p-2 outline-none transition hover:opacity-70 focus-visible:ring-2 focus-visible:ring-[var(--brand-500)] focus-visible:ring-offset-4 focus-visible:ring-offset-[var(--background)] lg:hidden"
+            className="border-0 bg-transparent p-2 outline-none transition hover:opacity-70 focus-visible:ring-2 focus-visible:ring-[var(--brand-500)] focus-visible:ring-offset-4 focus-visible:ring-offset-[var(--background)] xl:hidden"
             aria-label={mobileMenuOpen ? t('closeMenu') : t('openMenu')}
             aria-expanded={mobileMenuOpen}
           >
-            {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            {mobileMenuOpen ? (
+              <X className="h-5 w-5" />
+            ) : (
+              <Menu className="h-5 w-5" />
+            )}
           </button>
         </div>
       </nav>
 
       {mobileMenuOpen && (
-        <div className="fixed left-4 right-4 top-[76px] z-40 border border-[var(--border)] bg-[rgba(252,245,234,0.94)] p-5 backdrop-blur-xl lg:hidden">
+        <div className="fixed left-4 right-4 top-[72px] z-40 border border-[var(--border)] bg-[rgba(252,245,234,0.96)] p-5 shadow-[var(--shadow-soft)] backdrop-blur-xl xl:hidden">
           <div className="flex flex-col gap-3">
             {navItems.map((item) => (
               <button
                 type="button"
                 key={item.href}
                 onClick={() => scrollToSection(item.href)}
-                className="border-b border-[var(--border-soft)] bg-transparent py-2 text-left text-xs uppercase tracking-[0.18em] text-[var(--text-soft)]"
+                className="border-b border-[var(--border-soft)] bg-transparent py-2 text-left text-xs uppercase tracking-[0.18em] text-[var(--text-soft)] transition hover:text-[var(--text)]"
               >
                 {t(item.key)}
               </button>
             ))}
 
-            <Button variant="primary" onClick={() => scrollToSection('#rsvp')}>
+            <Button
+              variant="primary"
+              onClick={() => scrollToSection('#rsvp')}
+              className="font-bold"
+            >
               {t('rsvp')}
             </Button>
 

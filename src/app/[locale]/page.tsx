@@ -37,13 +37,13 @@ export default async function HomePage({params}: Props) {
         <Story />
         <CountdownDivider />
         <Schedule />
-        <Gallery />
         <Location />
+        <Gallery />
         <QuoteDivider />
         {/*<EucalyptusDivider /> */}
         <Dresscode />
         <RSVP />
-        <Message />
+        {/*<Message />*/}
         <FullWidthPhoto />
         <FAQ />
         <Contacts />

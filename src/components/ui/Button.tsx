@@ -32,7 +32,7 @@ export function Button({
       'border border-[var(--brand-400)] bg-[var(--brand-400)] text-[var(--background)] hover:-translate-y-0.5 hover:bg-[var(--brand-700)] hover:border-[var(--brand-700)] rounded-lg':
         variant === 'primary',
 
-      'border border-[rgba(42,37,34,0.28)] bg-transparent text-[var(--text)] hover:-translate-y-0.5 hover:border-[var(--text)] hover:bg-[rgba(42,37,34,0.04)]':
+      'border border-[rgba(42,37,34,0.28)] bg-[rgba(255,255,255,0.7)] backdrop-blur-md text-[var(--text)] hover:-translate-y-0.5 hover:border-[var(--text)] hover:bg-[rgba(255,255,255,0.9)]':
         variant === 'secondary',
 
       'border border-transparent bg-transparent px-0 text-[var(--text)] hover:opacity-65':

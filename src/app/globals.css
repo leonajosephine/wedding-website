@@ -14,7 +14,7 @@
   --brand-100: #d8dfcf;
   --brand-200: #b8c4aa;
   --brand-300: #94a181;
-  --brand-400: #6f7f61;
+  --brand-400: #a2aca1;
   --brand-500: #53634b;
   --brand-600: #3f4d3a;
   --brand-700: #2e392b;
@@ -25,10 +25,10 @@
   --clay: #b78a6f;
 
   /* Text */
-  --text: #2a2522;
-  --text-strong: #171412;
-  --text-soft: #5e5a56;
-  --text-muted: #8c857c;
+  --text: #48433f;
+  --text-strong: #37322f;
+  --text-soft: #68635f;
+  --text-muted: #918a82;
   --black: #111111;
 
   /* Dark sections */
@@ -40,22 +40,22 @@
   --white: #fbf6f6;
 
   /* Borders / Shadows */
-  --border: rgba(42, 37, 34, 0.12);
-  --border-soft: rgba(42, 37, 34, 0.08);
+  --border: rgba(72, 67, 63, 0.12);
+  --border-soft: rgba(72, 67, 63, 0.08);
   --border-brand: rgba(83, 99, 75, 0.18);
 
-  --shadow-soft: 0 18px 50px rgba(42, 37, 34, 0.08);
-  --shadow: 0 24px 80px rgba(42, 37, 34, 0.11);
+  --shadow-soft: 0 18px 50px rgba(72, 67, 63, 0.07);
+  --shadow: 0 24px 80px rgba(72, 67, 63, 0.1);
   --shadow-paper:
-    0 16px 45px rgba(42, 37, 34, 0.08),
+    0 16px 45px rgba(72, 67, 63, 0.07),
     inset 0 1px 0 rgba(255, 255, 255, 0.42);
 
   /* Fonts */
   --font-body: var(--font-manrope), sans-serif;
-  --font-script: var(--font-pinyon), cursive;
+  --font-script: var(--font-parisienne), cursive;
   --font-ampersand: var(--font-parisienne), cursive;
   --font-serif: var(--font-abhaya), serif;
-  --font-hand: var(--font-cedarville), cursive;
+  --font-hand: var(--font-handwritten), cursive;
 
   /* Layout */
   --container: 1180px;
@@ -76,14 +76,25 @@ html {
 body {
   margin: 0;
   background:
-    radial-gradient(circle at top left, rgba(184, 196, 170, 0.22), transparent 34rem),
-    radial-gradient(circle at 85% 18%, rgba(83, 99, 75, 0.08), transparent 30rem),
+    radial-gradient(
+      circle at top left,
+      rgba(184, 196, 170, 0.22),
+      transparent 34rem
+    ),
+    radial-gradient(
+      circle at 85% 18%,
+      rgba(83, 99, 75, 0.08),
+      transparent 30rem
+    ),
     var(--background);
+
   color: var(--text);
-  font-family: var(--font-body);
-  font-weight: 200;
+  font-family: var(--font-manrope), sans-serif;
+  font-weight: 300;
+
   overflow-x: hidden;
   max-width: 100%;
+
   -webkit-font-smoothing: antialiased;
   text-rendering: geometricPrecision;
 }
@@ -95,9 +106,18 @@ body::before {
   pointer-events: none;
   z-index: 9999;
   opacity: 0.24;
+
   background-image:
-    linear-gradient(rgba(42, 37, 34, 0.022) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(42, 37, 34, 0.018) 1px, transparent 1px);
+    linear-gradient(
+      rgba(72, 67, 63, 0.022) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(72, 67, 63, 0.018) 1px,
+      transparent 1px
+    );
+
   background-size: 72px 72px;
   mix-blend-mode: multiply;
 }
@@ -132,6 +152,10 @@ img {
   display: block;
 }
 
+/* -------------------------------------------------------
+   Layout
+------------------------------------------------------- */
+
 .section {
   padding: clamp(88px, 10vw, 150px) 24px;
 }
@@ -150,8 +174,12 @@ img {
   margin-inline: auto;
 }
 
+/* -------------------------------------------------------
+   Typography
+------------------------------------------------------- */
+
 .eyebrow {
-  font-family: var(--font-body);
+  font-family: var(--font-manrope), sans-serif;
   font-size: 0.68rem;
   font-weight: 500;
   letter-spacing: 0.26em;
@@ -160,7 +188,7 @@ img {
 }
 
 .script {
-  font-family: var(--font-pinyon), cursive;
+  font-family: var(--font-parisienne), cursive;
   font-weight: 400;
 }
 
@@ -170,7 +198,7 @@ img {
 }
 
 .hand {
-  font-family: var(--font-cedarville), cursive;
+  font-family: var(--font-handwritten), cursive;
   font-weight: 400;
 }
 
@@ -178,6 +206,15 @@ img {
   font-family: var(--font-parisienne), cursive;
   font-weight: 400;
 }
+
+.muted-text {
+  color: var(--text-soft);
+  line-height: 1.85;
+}
+
+/* -------------------------------------------------------
+   Cards / surfaces
+------------------------------------------------------- */
 
 .paper-card,
 .card {
@@ -194,13 +231,12 @@ img {
 .fine-line {
   height: 1px;
   width: 56px;
-  background: rgba(42, 37, 34, 0.22);
+  background: rgba(72, 67, 63, 0.22);
 }
 
-.muted-text {
-  color: var(--text-soft);
-  line-height: 1.85;
-}
+/* -------------------------------------------------------
+   Utilities
+------------------------------------------------------- */
 
 .hide-scrollbar {
   scrollbar-width: none;
@@ -209,6 +245,10 @@ img {
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
+/* -------------------------------------------------------
+   Responsive
+------------------------------------------------------- */
 
 @media (max-width: 768px) {
   .section {
@@ -233,6 +273,10 @@ img {
   --breakpoint-desk: 900px;
 }
 
+/* -------------------------------------------------------
+   Gallery
+------------------------------------------------------- */
+
 @keyframes gallery-marquee {
   from {
     transform: translateX(0);
@@ -252,6 +296,10 @@ img {
 .gallery-marquee:active {
   animation-play-state: paused;
 }
+
+/* -------------------------------------------------------
+   Invitation animations
+------------------------------------------------------- */
 
 @keyframes envelopeFloat {
   0%,
@@ -351,6 +399,7 @@ img {
     opacity: 0;
     transform: translateY(20px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -359,5 +408,5 @@ img {
 
 .animate-fadeInUp {
   animation: fadeInUp 0.8s ease-out forwards;
-  opacity: 0; /* Ensure it's hidden initially */
+  opacity: 0;
 }
