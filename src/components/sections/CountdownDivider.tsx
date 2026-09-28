@@ -38,6 +38,7 @@ export function CountdownDivider() {
     };
 
     updateCountdown();
+
     const interval = setInterval(updateCountdown, 1000);
 
     return () => clearInterval(interval);
@@ -48,20 +49,35 @@ export function CountdownDivider() {
       <div className="container">
         <div className="grid items-center gap-10 text-center desk:grid-cols-[0.9fr_1.6fr] desk:text-left">
           <div className="mx-auto max-w-md desk:mx-0">
-            <p className="hand text-3xl leading-none text-[rgba(245,240,231,0.86)] md:text-4xl">
+            <p className="hand text-4xl leading-[1.05] tracking-[0.055em] text-[rgba(245,240,231,0.86)] md:text-5xl desk:text-6xl">
               {t('title')}
             </p>
 
-            <p className="mx-auto mt-2 max-w-xs text-xs uppercase tracking-[0.22em] text-[rgba(245,240,231,0.78)] desk:mx-0">
+            <p className="mx-auto mt-3 max-w-xs text-xs uppercase tracking-[0.22em] text-[rgba(245,240,231,0.78)] desk:mx-0">
               {t('date')}
             </p>
           </div>
 
           <div className="grid grid-cols-4 divide-x divide-[rgba(245,240,231,0.25)]">
-            <CountdownItem value={countdown.days} label={t('days')} />
-            <CountdownItem value={countdown.hours} label={t('hours')} />
-            <CountdownItem value={countdown.minutes} label={t('minutes')} />
-            <CountdownItem value={countdown.seconds} label={t('seconds')} />
+            <CountdownItem
+              value={countdown.days}
+              label={t('days')}
+            />
+
+            <CountdownItem
+              value={countdown.hours}
+              label={t('hours')}
+            />
+
+            <CountdownItem
+              value={countdown.minutes}
+              label={t('minutes')}
+            />
+
+            <CountdownItem
+              value={countdown.seconds}
+              label={t('seconds')}
+            />
           </div>
         </div>
       </div>
@@ -69,7 +85,13 @@ export function CountdownDivider() {
   );
 }
 
-function CountdownItem({value, label}: {value: number; label: string}) {
+function CountdownItem({
+  value,
+  label
+}: {
+  value: number;
+  label: string;
+}) {
   return (
     <div className="px-1 text-center sm:px-3 md:px-5 desk:px-8">
       <div className="serif text-3xl leading-none text-[var(--dark-text)] sm:text-5xl md:text-6xl desk:text-7xl">
