@@ -43,23 +43,11 @@
     "days": [
       {
         "label": "Friday · May 14, 2027",
-        "title": "Welcome Party",
-        "events": [
-          {
-            "time": "6:00 PM",
-            "title": "Arrival",
-            "description": "We'll start relaxed with drinks, music and the first shared moments.",
-            "tag": "Casual",
-            "icon": "/images/icons/Icons_ribbon.png"
-          },
-          {
-            "time": "8:00 PM",
-            "title": "Polterabend & Buffet",
-            "description": "Celebrating, raising a glass and enjoying the evening together.",
-            "tag": "",
-            "icon": "/images/icons/Icons_glasses.png"
-          }
-        ]
+        "title": "Polterabend",
+        "startTime": "from 6:00 PM",
+        "location": "ENTER LOCATION HERE",
+        "mapLink": "ENTER GOOGLE MAPS LINK HERE",
+        "events": []
       },
       {
         "label": "Saturday · May 15, 2027",

@@ -44,22 +44,10 @@
         {
           "label": "Freitag · 14. Mai 2027",
           "title": "Polterabend",
-          "events": [
-            {
-              "time": "18:00 Uhr",
-              "title": "Ankommen",
-              "description": "Wir starten entspannt mit Drinks, Musik und den ersten gemeinsamen Momenten.",
-              "tag": "Casual",
-              "icon": "/images/icons/Icons_ribbon.png"
-            },
-            {
-              "time": "20:00 Uhr",
-              "title": "Poltern & Buffet",
-              "description": "Gemeinsam feiern, anstoßen und den Abend genießen.",
-              "tag": "",
-              "icon": "/images/icons/Icons_glasses.png"
-            }
-          ]
+          "startTime": "ab 18:00 Uhr",
+          "location": "HIER DEN ORT EINTRAGEN",
+          "mapLink": "HIER DEN GOOGLE-MAPS-LINK EINTRAGEN",
+          "events": []
         },
         {
           "label": "Samstag · 15. Mai 2027",

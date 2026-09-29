@@ -44,22 +44,10 @@
       {
         "label": "Fredag · 14. maj 2027",
         "title": "Polterabend",
-        "events": [
-          {
-            "time": "18:00",
-            "title": "Ankomst",
-            "description": "Vi starter afslappet med drinks, musik og de første fælles øjeblikke.",
-            "tag": "Casual",
-            "icon": "/images/icons/Icons_ribbon.png"
-          },
-          {
-            "time": "20:00",
-            "title": "Polter & Buffet",
-            "description": "Festen starter med skål og nydelse af aftenen.",
-            "tag": "",
-            "icon": "/images/icons/Icons_glasses.png"
-          }
-        ]
+        "startTime": "fra kl. 18:00",
+        "location": "HER INDSÆTTES STEDET",
+        "mapLink": "HER INDSÆTTES GOOGLE-MAPS-LINKET",
+        "events": []
       },
       {
         "label": "Lørdag · 15. maj 2027",
