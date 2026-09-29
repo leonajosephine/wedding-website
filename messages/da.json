@@ -94,18 +94,19 @@
     "headingPartTwo": "gennem",
     "headingScriptTwo": "årene",
     "headingPartThree": ".",
+    "intro": "Vi har samlet nogle af vores yndlingsøjeblikke gennem årene.",
     "items": [
-      {"date": "Juli 2023", "caption": "Forlovelse"},
-      {"date": "August 2023", "caption": "Vores Sommer"},
-      {"date": "September 2023", "caption": "Sammen"},
-      {"date": "November 2023", "caption": "Eventyr"},
-      {"date": "Januar 2024", "caption": "Vinterøjeblikke"},
-      {"date": "Maj 2024", "caption": "For Evigt"},
-      {"date": "Juni 2024", "caption": "Vores Rejse"},
-      {"date": "September 2024", "caption": "Lykkelige Øjeblikke"},
-      {"date": "December 2024", "caption": "Jul"},
-      {"date": "Marts 2025", "caption": "Forårsvågen"}
-    ]
+        {"date": "2017"},
+        {"date": "2018"},
+        {"date": "2019"},
+        {"date": "2020"},
+        {"date": "2021"},
+        {"date": "2022"},
+        {"date": "2023"},
+        {"date": "2024"},
+        {"date": "2025"},
+        {"date": "2026"}
+      ]
   },
   "location": {
     "eyebrow": "Hvor det sker",

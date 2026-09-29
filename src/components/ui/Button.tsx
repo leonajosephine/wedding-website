@@ -29,10 +29,10 @@ export function Button({
     'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-500)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]',
     disabled && 'pointer-events-none opacity-45',
     {
-      'border border-[var(--brand-400)] bg-[var(--brand-400)] text-[var(--background)] hover:-translate-y-0.5 hover:bg-[var(--brand-700)] hover:border-[var(--brand-700)] rounded-lg':
+      'rounded-lg border border-[var(--brand-400)] bg-[var(--brand-400)] text-[var(--background)] hover:-translate-y-0.5 hover:border-[var(--brand-700)] hover:bg-[var(--brand-700)]':
         variant === 'primary',
 
-      'border border-[rgba(42,37,34,0.28)] bg-[rgba(255,255,255,0.7)] backdrop-blur-md text-[var(--text)] hover:-translate-y-0.5 hover:border-[var(--text)] hover:bg-[rgba(255,255,255,0.9)]':
+      'border border-[var(--border)] bg-[var(--surface-soft)] text-[var(--text)] shadow-[0_8px_30px_rgba(72,67,63,0.06)] backdrop-blur-md hover:-translate-y-0.5 hover:border-[rgba(72,67,63,0.24)] hover:bg-[var(--surface)]':
         variant === 'secondary',
 
       'border border-transparent bg-transparent px-0 text-[var(--text)] hover:opacity-65':
@@ -46,14 +46,23 @@ export function Button({
 
   if (href) {
     return (
-      <Link href={href} className={classes} aria-disabled={disabled}>
+      <Link
+        href={href}
+        className={classes}
+        aria-disabled={disabled}
+      >
         {children}
       </Link>
     );
   }
 
   return (
-    <button type={type} onClick={onClick} disabled={disabled} className={classes}>
+    <button
+      type={type}
+      onClick={onClick}
+      disabled={disabled}
+      className={classes}
+    >
       {children}
     </button>
   );

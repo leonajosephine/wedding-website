@@ -5,7 +5,7 @@ export type RsvpResponse = {
     email: string;
     attending: 'yes' | 'no';
     polterabend: boolean;
-    menu: 'meat' | 'vegetarian' | 'vegan' | '';
+    vegan: boolean;
     allergies: string;
     songWish: string;
     submittedAt: string;
@@ -21,7 +21,7 @@ export type RsvpResponse = {
       email: 'leona@example.com',
       attending: 'yes',
       polterabend: true,
-      menu: 'vegetarian',
+      vegan: false,
       allergies: 'Gluten',
       songWish: 'Dancing Queen',
       submittedAt: new Date().toISOString()
@@ -33,7 +33,7 @@ export type RsvpResponse = {
       email: 'alex@example.com',
       attending: 'yes',
       polterabend: true,
-      menu: 'meat',
+      vegan: true,
       allergies: '',
       songWish: 'Mr. Brightside',
       submittedAt: new Date().toISOString()
@@ -45,7 +45,7 @@ export type RsvpResponse = {
       email: 'anna@example.com',
       attending: 'no',
       polterabend: false,
-      menu: '',
+      vegan: false,
       allergies: '',
       songWish: '',
       submittedAt: new Date().toISOString()

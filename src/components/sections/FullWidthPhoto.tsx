@@ -7,7 +7,7 @@ export function FullWidthPhoto() {
   return (
     <section className="relative h-[50vh] w-full overflow-hidden md:h-[72vh]">
       <Image
-        src="/images/fullWidth.jpg"
+        src="/images/fullWidthML.jpg"
         alt={t('imageAlt')}
         fill
         className="object-cover grayscale contrast-[0.92] brightness-[1.02]"

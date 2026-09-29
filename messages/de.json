@@ -94,17 +94,18 @@
       "headingPartTwo": "über",
       "headingScriptTwo": "die",
       "headingPartThree": "Jahre.",
+      "intro": "Zehn Bilder und zehn Jahre.",
       "items": [
-        {"date": "Juli 2023", "caption": "Verlobung"},
-        {"date": "August 2023", "caption": "Unser Sommer"},
-        {"date": "September 2023", "caption": "Zusammen"},
-        {"date": "November 2023", "caption": "Abenteuer"},
-        {"date": "Januar 2024", "caption": "Wintermomente"},
-        {"date": "Mai 2024", "caption": "Für immer"},
-        {"date": "Juni 2024", "caption": "Unsere Reise"},
-        {"date": "September 2024", "caption": "Glücksmomente"},
-        {"date": "Dezember 2024", "caption": "Weihnachten"},
-        {"date": "März 2025", "caption": "Frühlingserwachen"}      
+        {"date": "2017"},
+        {"date": "2018"},
+        {"date": "2019"},
+        {"date": "2020"},
+        {"date": "2021"},
+        {"date": "2022"},
+        {"date": "2023"},
+        {"date": "2024"},
+        {"date": "2025"},
+        {"date": "2026"}
       ]
     },
 
@@ -120,17 +121,23 @@
         "mapLink": "https://maps.google.com/?q=Riedweg+3,+25436+Tornesch"
       },
       "stay": {
-        "title": "Unterkunft in der Nähe",
-        "description": "Wir haben einige Unterkünfte in der Nähe gesammelt. Bitte bucht frühzeitig, da die Verfügbarkeit begrenzt sein kann.",
+        "eyebrow": "Übernachten",
+        "title": "Unterkünfte in der Nähe",
+        "description": "Für unsere Gäste haben wir einige Möglichkeiten in der Umgebung zusammengestellt. Bei der ersten Unterkunft ist ein Kontingent für unsere Hochzeitsgesellschaft reserviert.",
+        "priceLabel": "Preis",
+        "moreTitle": "Weitere Unterkünfte",
+        "moreDescription": "Weitere Hotels und Ferienwohnungen in Tornesch, Pinneberg und Umgebung findet ihr bei Booking.com.",
         "moreCta": "Mehr Unterkünfte ansehen",
-        "moreLink": "https://www.booking.com/searchresults.html?ss=Tornesch"
+        "moreLink": "DEIN BESTEHENDER BOOKING-LINK"
       },
       "accommodations": [
         {
           "name": "Hotel Esinger Hof",
           "distance": "ca. 10 Minuten entfernt",
-          "description": "Gemütliche Unterkunft in der Umgebung von Tornesch.",
-          "link": "https://www.google.com/search?q=Hotel+Esinger+Hof+Tornesch"
+          "description": "Hier haben wir für unsere Hochzeitsgäste Zimmer reserviert. Weitere Informationen zur Buchung folgen.",
+          "reservationNote": "Zimmer für unsere Gäste reserviert",
+          "price": "PREIS EINTRAGEN",
+          "link": "DEIN BESTEHENDER HOTEL-LINK"
         },
         {
           "name": "Hotel Dias",
@@ -151,19 +158,77 @@
       }
     },
     "dressCode": {
-      "eyebrow": "Was anziehen?",
+      "eyebrow": "Farbwelt",
       "title": "Dresscode",
-      "intro": "Wir freuen uns über festliche, elegante Kleidung. Hier ist unsere Farbpalette zur Inspiration.",
-      "colors": [
-        {"name": "Mint", "hex": "#b8d4c6"},
-        {"name": "Light Sage", "hex": "#a8c4b5"},
-        {"name": "Sage Green", "hex": "#7a9e8a"},
-        {"name": "Moss Green", "hex": "#5f7a6b"},
-        {"name": "Forest", "hex": "#4a6b58"}
+
+      "intro": "Wir freuen uns, wenn ihr euch farblich an unserer natürlichen, warmen Farbwelt orientiert. So entsteht ein harmonisches Gesamtbild und ihr fühlt euch trotzdem ganz individuell und wohl.",
+
+      "mainColorsLabel": "Unsere Hauptfarben",
+
+      "mainColors": [
+        {
+          "name": "Sage Green",
+          "hex": "#AEB3A0"
+        },
+        {
+          "name": "Eukalyptus",
+          "hex": "#8F9D8C"
+        },
+        {
+          "name": "Salbei",
+          "hex": "#A5AEA0"
+        },
+        {
+          "name": "Olivgrün",
+          "hex": "#7D8064"
+        },
+        {
+          "name": "Dunkelgrün",
+          "hex": "#3F5141"
+        }
       ],
-      "imageAlt": "Dresscode Inspiration",
+
+      "alternativeColorsLabel": "Weitere passende Töne",
+
+      "alternativeColors": [
+        {
+          "name": "Sand",
+          "hex": "#C4B39C"
+        },
+        {
+          "name": "Greige",
+          "hex": "#B0A596"
+        },
+        {
+          "name": "Braun",
+          "hex": "#857568"
+        },
+        {
+          "name": "Hellblau",
+          "hex": "#B8C9CF"
+        },
+        {
+          "name": "Dusty Blue",
+          "hex": "#A5B9BE"
+        },
+        {
+          "name": "Dusty Rose",
+          "hex": "#C7A09E"
+        },
+        {
+          "name": "Mauve",
+          "hex": "#B09499"
+        },
+        {
+          "name": "Grau",
+          "hex": "#A7A5A0"
+        }
+      ],
+
+      "imageAlt": "Inspiration für unseren Dress Code",
+
       "noteLabel": "Wichtig:",
-      "note": "Das Ganze dient natürlich nur zur Orientierung und wir haben vollstes Verständnis, wenn ihr diese Farben nicht zu Hause habt. Bitte vermeidet reines Weiß, Schwarz oder Rot – alle anderen Farben sind herzlich willkommen."
+      "note": "Die Farbpalette ist eine Inspiration und keine feste Vorgabe."
     },
     "rsvp": {
       "eyebrow": "Bitte bis 15. April zusagen",
@@ -192,9 +257,10 @@
 
       "polterabend": "Ich komme auch zum Polterabend am Freitag. 🎉",
 
-      "menu": "Menü-Wunsch 🌱",
+      "vegan": "Ich esse vegan",
+      "veganHint": "Bitte nicht ankreuzen, wenn du vegetarisch isst.",
       "allergies": "Allergien / Unverträglichkeiten",
-      "songWish": "Song-Wunsch für die Party",
+      "songWish": "Dieser Song bringt mich sofort auf die Tanzfläche 💃",
 
       "back": "Zurück",
       "next": "Weiter",
@@ -208,11 +274,7 @@
       "calendarSummary": "Hochzeit Merle & Lasse",
       "calendarDescription": "Wir heiraten! Feiert mit uns diesen besonderen Tag.",
       "calendarLocation": "Heimathaus Tornesch, Schleswig-Holstein",
-      "calendarFileName": "hochzeit-merle-lasse.ics",
-      "menuPlaceholder": "–",
-      "menuMeat": "Fleisch",
-      "menuVegetarian": "Vegetarisch",
-      "menuVegan": "Vegan"
+      "calendarFileName": "hochzeit-merle-lasse.ics"
     },
     "message": {
       "imageAlt": "Merle und Lasse",
@@ -323,8 +385,8 @@
     },
 
     "quoteDivider": {
-      "eyebrow": "a little note",
-      "lineOne": "to the stars that listen,",
-      "lineTwo": "and the dreams that are answered."
+      "eyebrow": "Von uns an euch",
+      "paragraphOne": "Von den ersten gemeinsamen Momenten bis zu diesem besonderen Tag – ihr habt uns begleitet, unterstützt und mit uns gelacht.",
+      "highlight": "Danke, dass ihr mit uns feiert. Wir freuen uns auf unvergessliche Momente mit euch allen."
     }
   }
