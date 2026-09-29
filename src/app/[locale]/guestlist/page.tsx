@@ -51,9 +51,7 @@ export default function GuestlistPage() {
       attending: attending.length,
       declined: declined.length,
       polterabend: attending.filter((item) => item.polterabend).length,
-      meat: attending.filter((item) => item.menu === 'meat').length,
-      vegetarian: attending.filter((item) => item.menu === 'vegetarian').length,
-      vegan: attending.filter((item) => item.menu === 'vegan').length
+      vegan: attending.filter((item) => item.vegan === true).length
     };
   }, [responses]);
 
@@ -136,9 +134,7 @@ export default function GuestlistPage() {
             />
 
             <MenuSummary
-              meat={stats.meat}
-              vegetarian={stats.vegetarian}
-              vegan={stats.vegan}
+              vegan={stats.vegan > 0}
             />
           </section>
         </div>
@@ -173,7 +169,7 @@ export default function GuestlistPage() {
                     <td className="px-5 py-4">
                       {item.polterabend ? 'Ja' : 'Nein'}
                     </td>
-                    <td className="px-5 py-4">{item.menu || '–'}</td>
+                    <td className="px-5 py-4">{item.vegan || '–'}</td>
                     <td className="px-5 py-4">{item.allergies || '–'}</td>
                     <td className="px-5 py-4">{item.songWish || '–'}</td>
                     <td className="px-5 py-4">{item.email}</td>
@@ -317,13 +313,9 @@ function MiniStat({
 }
 
 function MenuSummary({
-  meat,
-  vegetarian,
   vegan
 }: {
-  meat: number;
-  vegetarian: number;
-  vegan: number;
+  vegan: boolean;
 }) {
   return (
     <article className="relative overflow-hidden rounded-sm border border-[var(--border-soft)] bg-[rgba(255,250,242,0.72)] p-5 shadow-[var(--shadow-paper)] sm:col-span-2">
@@ -332,9 +324,7 @@ function MenuSummary({
       <div className="relative">
         <p className="eyebrow mb-5">Menüauswahl</p>
 
-        <MenuRow icon={<Beef />} label="Fleisch" value={meat} />
-        <MenuRow icon={<Leaf />} label="Vegetarisch" value={vegetarian} />
-        <MenuRow icon={<Sprout />} label="Vegan" value={vegan} />
+        <MenuRow icon={<Sprout />} label="Vegan" value={vegan ? 1 : 0} />
       </div>
     </article>
   );
