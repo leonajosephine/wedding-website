@@ -58,7 +58,9 @@
             "title": "Civil Ceremony",
             "description": "Altona City Registry Office.",
             "tag": "Elegant & Colourful",
-            "icon": "/images/icons/Icons_rings.png"
+            "icon": "/images/icons/Icons_rings.png",
+            "anchor": "#location",
+            "linkLabel": "Location"
           },
           {
             "time": "3:30 PM",

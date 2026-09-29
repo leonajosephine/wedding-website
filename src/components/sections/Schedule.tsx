@@ -7,6 +7,8 @@ type TimelineEvent = {
   title: string;
   description: string;
   icon?: string;
+  anchor?: string;
+  linkLabel?: string;
 };
 
 type ScheduleDay = {
@@ -24,6 +26,8 @@ export function Schedule() {
 
   const sideDay = days[0];
   const mainDay = days[1] ?? days[0];
+
+  const mainEvents = mainDay.events.slice(0, 5);
 
   return (
     <section
@@ -65,8 +69,14 @@ export function Schedule() {
           <div className="relative hidden desk:block">
             <div className="absolute left-0 right-0 top-[204px] h-px bg-[rgba(72,67,63,0.18)]" />
 
-            <div className="grid grid-cols-4 gap-10">
-              {mainDay.events.slice(0, 4).map((event) => (
+            <div
+              className={
+                mainEvents.length === 5
+                  ? 'grid grid-cols-5 gap-6'
+                  : 'grid grid-cols-4 gap-10'
+              }
+            >
+              {mainEvents.map((event) => (
                 <article
                   key={`${mainDay.label}-${event.time}-${event.title}`}
                   className="relative pt-2 text-center"
@@ -97,6 +107,13 @@ export function Schedule() {
                     <p className="mx-auto max-w-[250px] text-sm leading-7 text-[var(--text-soft)]">
                       {event.description}
                     </p>
+
+                    {event.anchor && event.linkLabel && (
+                      <EventAnchor
+                        anchor={event.anchor}
+                        label={event.linkLabel}
+                      />
+                    )}
                   </div>
                 </article>
               ))}
@@ -108,7 +125,7 @@ export function Schedule() {
             <div className="absolute bottom-0 left-1/2 top-0 w-px -translate-x-1/2 bg-[rgba(72,67,63,0.16)]" />
 
             <div className="space-y-12">
-              {mainDay.events.slice(0, 4).map((event, index) => {
+              {mainEvents.map((event, index) => {
                 const textLeft = index % 2 === 0;
 
                 return (
@@ -136,6 +153,14 @@ export function Schedule() {
                           <p className="text-xs leading-6 text-[var(--text-soft)]">
                             {event.description}
                           </p>
+
+                          {event.anchor && event.linkLabel && (
+                            <EventAnchor
+                              anchor={event.anchor}
+                              label={event.linkLabel}
+                              align="right"
+                            />
+                          )}
                         </>
                       ) : (
                         event.icon && (
@@ -178,6 +203,13 @@ export function Schedule() {
                           <p className="text-xs leading-6 text-[var(--text-soft)]">
                             {event.description}
                           </p>
+
+                          {event.anchor && event.linkLabel && (
+                            <EventAnchor
+                              anchor={event.anchor}
+                              label={event.linkLabel}
+                            />
+                          )}
                         </>
                       )}
                     </div>
@@ -250,6 +282,28 @@ export function Schedule() {
         )}
       </div>
     </section>
+  );
+}
+
+function EventAnchor({
+  anchor,
+  label,
+  align = 'left'
+}: {
+  anchor: string;
+  label: string;
+  align?: 'left' | 'right';
+}) {
+  return (
+    <a
+      href={anchor}
+      className={`mt-3 inline-flex items-center gap-1.5 border-b border-[rgba(72,67,63,0.25)] pb-0.5 text-[0.62rem] uppercase tracking-[0.14em] text-[var(--brand-600)] transition hover:border-[var(--brand-600)] ${
+        align === 'right' ? 'flex-row-reverse' : ''
+      }`}
+    >
+      <MapPin className="h-3 w-3 shrink-0" />
+      {label}
+    </a>
   );
 }
 

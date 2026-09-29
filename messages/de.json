@@ -55,10 +55,12 @@
           "events": [
             {
               "time": "14:00 Uhr",
-              "title": "Standesamtliche Trauung",
-              "description": "Standesamt Altona City.",
+              "title": "Freie Trauung",
+              "description": "Location",
               "tag": "Elegant & Bunt",
-              "icon": "/images/icons/Icons_rings.png"
+              "icon": "/images/icons/Icons_rings.png",
+              "anchor": "#location",
+              "linkLabel": "Location ansehen"
             },
             {
               "time": "15:30 Uhr",

@@ -58,7 +58,9 @@
             "title": "Borgerlig Vielse",
             "description": "Rådhuset Altona City.",
             "tag": "Elegant & Farverigt",
-            "icon": "/images/icons/Icons_rings.png"
+            "icon": "/images/icons/Icons_rings.png",
+            "anchor": "#location",
+              "linkLabel": "Se sted"
           },
           {
             "time": "15:30",
