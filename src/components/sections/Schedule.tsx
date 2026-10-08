@@ -17,6 +17,7 @@ type ScheduleDay = {
   startTime?: string;
   location?: string;
   mapLink?: string;
+  note?: string;
   events: TimelineEvent[];
 };
 
@@ -35,6 +36,7 @@ export function Schedule() {
       className="section relative overflow-hidden bg-[var(--background)]"
     >
       <div className="container-wide relative">
+        {/* Heading */}
         <div className="mx-auto mb-16 max-w-4xl text-center lg:text-left xl:text-center">
           <p className="eyebrow mb-4">
             {t('eyebrow')}
@@ -57,6 +59,7 @@ export function Schedule() {
           <div className="mx-auto mt-8 h-px w-24 bg-[rgba(72,67,63,0.22)]" />
         </div>
 
+        {/* Wedding day */}
         <div className="relative mx-auto max-w-6xl">
           {/* Main wedding date */}
           <div className="mb-10 text-center">
@@ -133,6 +136,7 @@ export function Schedule() {
                     key={`${mainDay.label}-${event.time}-${event.title}`}
                     className="relative grid grid-cols-[1fr_32px_1fr] items-center gap-3"
                   >
+                    {/* Left */}
                     <div
                       className={
                         textLeft
@@ -175,10 +179,12 @@ export function Schedule() {
                       )}
                     </div>
 
+                    {/* Center line */}
                     <div className="relative z-10 col-start-2 flex h-full items-center justify-center">
                       <span className="h-3.5 w-3.5 rounded-full border border-[rgba(72,67,63,0.18)] bg-[var(--background)]" />
                     </div>
 
+                    {/* Right */}
                     <div className="text-left">
                       {textLeft ? (
                         event.icon && (
@@ -220,7 +226,7 @@ export function Schedule() {
           </div>
         </div>
 
-        {/* Polterabend note */}
+        {/* Polterabend card */}
         {sideDay && (
           <aside className="relative mx-auto mt-16 max-w-xs rotate-[1.5deg] bg-[var(--brand-400)] p-7 text-[var(--dark-text)] shadow-[0_20px_55px_rgba(72,67,63,0.16)] lg:absolute lg:right-3 lg:top-6 lg:mt-0 lg:w-[300px] xl:right-8 xl:top-20">
             <Tape className="-top-4 left-1/2 -translate-x-1/2 rotate-[-4deg]" />
@@ -241,16 +247,19 @@ export function Schedule() {
               </h3>
 
               <div className="mt-5 border-t border-[rgba(245,240,231,0.24)] pt-5">
-                <p className="text-xs uppercase tracking-[0.18em] text-[rgba(245,240,231,0.76)]">
+                {/* Date */}
+                <p className="serif text-xl leading-snug text-[var(--dark-text)]">
                   {sideDay.label}
                 </p>
 
+                {/* Time */}
                 {sideDay.startTime && (
-                  <p className="serif mt-3 text-2xl text-[var(--dark-text)]">
+                  <p className="mt-2 text-xs uppercase tracking-[0.16em] text-[rgba(245,240,231,0.76)]">
                     {sideDay.startTime}
                   </p>
                 )}
 
+                {/* Location */}
                 {sideDay.location && (
                   <div className="mt-5">
                     {sideDay.mapLink ? (
@@ -274,6 +283,22 @@ export function Schedule() {
                         <span>{sideDay.location}</span>
                       </div>
                     )}
+                  </div>
+                )}
+
+                {/* Bring something to smash */}
+                {sideDay.note && (
+                  <div className="mt-5 border-t border-[rgba(245,240,231,0.20)] pt-4">
+                    <p className="flex items-start gap-2 text-sm leading-6 text-[rgba(245,240,231,0.88)]">
+                      <span
+                        aria-hidden="true"
+                        className="mt-[1px] shrink-0 text-base leading-none"
+                      >
+                        ♡
+                      </span>
+
+                      <span>{sideDay.note}</span>
+                    </p>
                   </div>
                 )}
               </div>

@@ -1,6 +1,7 @@
 {
   "invitationOverlay": {
     "openCta": "Open Invitation",
+    "inviteImageSrc": "/images/intro/inviteen.jpeg",
     "cardEyebrow": "Together with our families",
     "cardIntro": "we warmly invite you to celebrate our wedding with us",
     "enterCta": "Enter Website"
@@ -8,309 +9,416 @@
   "navigation": {
     "story": "Our Story",
     "schedule": "Schedule",
-    "dresscode": "Dresscode",
+    "dresscode": "Dress Code",
     "location": "Location",
-    "contact": "Contact",
+    "contact": "Contacts",
     "faq": "FAQ",
     "rsvp": "RSVP",
-    "openMenu": "Open menu",
-    "closeMenu": "Close menu",
-    "homeLabel": "Back to home"
+    "openMenu": "Open Menu",
+    "closeMenu": "Close Menu",
+    "homeLabel": "Back to Homepage"
   },
   "hero": {
     "nameOne": "Merle",
     "nameTwo": "Lasse",
-    "eyebrow": "We're getting married",
+    "eyebrow": "We're Getting Married",
     "date": "May 15, 2027",
     "location": "Heimathaus Tornesch · Schleswig-Holstein",
-    "cta": "RSVP now"
+    "cta": "RSVP Now"
   },
   "story": {
     "eyebrow": "Our Story",
     "headingScript": "Our",
     "headingSerif": "Story",
-    "paragraphOne": "What began as a chance encounter became the most beautiful story of our lives. Merle and Lasse met when life had other plans – and yet everything seemed to be exactly as it was meant to be.",
-    "paragraphTwo": "Together we have laughed, argued, travelled and dreamed. Every moment together is a gift. And now we are looking forward to celebrating the most beautiful day with all the people who mean the most to us.",
-    "quote": "I choose you – today, tomorrow and every day after.",
+    "paragraphOne": "Our story actually began a little earlier than we knew at the time. Our paths first crossed long before we became 'us.' In January 2017, we met again, and a chance encounter quickly turned into something more. On February 14, 2017, we officially became a couple.",
+    "paragraphTwo": "Since then, many years, trips, adventures, and countless memories have passed. We've lived, laughed, made plans, and fulfilled our dream of owning a home. In early 2026, we got engaged and are now looking forward to the next chapter of our story – and especially to celebrating it with you. 🤍",
+    "quote": "Today, tomorrow, and every day to come – always you.",
     "imageAlt": "Merle and Lasse"
   },
   "schedule": {
-    "eyebrow": "Schedule",
+    "eyebrow": "Program",
     "headingPartOne": "Our",
     "headingScriptOne": "Day",
     "headingPartTwo": "at a",
     "headingScriptTwo": "Glance",
     "days": [
+    {
+      "label": "Wednesday · May 12, 2027",
+      "title": "Polterabend",
+      "startTime": "from 6:00 PM",
+      "location": "Köhnholz 35 · 25336 Elmshorn",
+      "mapLink": "INSERT GOOGLE MAPS LINK HERE",
+      "note": "Bring something to smash 🫖",
+      "events": []
+    },
+    {
+      "label": "Saturday · May 15, 2027",
+      "title": "Wedding Day",
+      "events": [
       {
-        "label": "Friday · May 14, 2027",
-        "title": "Polterabend",
-        "startTime": "from 6:00 PM",
-        "location": "ENTER LOCATION HERE",
-        "mapLink": "ENTER GOOGLE MAPS LINK HERE",
-        "events": []
+        "time": "2:30 PM",
+        "title": "Arrival & Ceremony",
+        "description": "Arrival at Heimathaus Tornesch followed by the ceremony around 3:00 PM",
+        "tag": "Elegant & Colorful",
+        "icon": "/images/icons/Icons_rings.png",
+        "anchor": "#location",
+        "linkLabel": "View Location"
       },
       {
-        "label": "Saturday · May 15, 2027",
-        "title": "Wedding Day",
-        "events": [
-          {
-            "time": "2:00 PM",
-            "title": "Civil Ceremony",
-            "description": "Altona City Registry Office.",
-            "tag": "Elegant & Colourful",
-            "icon": "/images/icons/Icons_rings.png",
-            "anchor": "#location",
-            "linkLabel": "Location"
-          },
-          {
-            "time": "3:30 PM",
-            "title": "Reception & Photos",
-            "description": "Meeting point at Heimathaus Tornesch.",
-            "tag": "",
-            "icon": "/images/icons/Icons_glasses2.png"
-          },
-          {
-            "time": "6:00 PM",
-            "title": "Dinner & Program",
-            "description": "A festive table, speeches and unforgettable moments.",
-            "tag": "",
-            "icon": "/images/icons/Icons_cake.png"
-          },
-          {
-            "time": "9:00 PM",
-            "title": "First Dance & Party",
-            "description": "Dancing until our shoes are on fire.",
-            "tag": "",
-            "icon": "/images/icons/Icons_disco.png"
-          }
-        ]
+        "time": "3:45 PM",
+        "title": "Champagne Reception & Photos",
+        "description": "Time to toast, chat, and enjoy – accompanied by music, small snacks, and some photos",
+        "tag": "",
+        "icon": "/images/icons/Icons_glasses2.png"
+      },
+      {
+        "time": "6:00 PM",
+        "title": "Dinner & Program",
+        "description": "Buffet, speeches, and many beautiful moments",
+        "tag": "",
+        "icon": "/images/icons/Icons_cake.png"
+      },
+      {
+        "time": "9:00 PM",
+        "title": "First Dance & Party",
+        "description": "From now on, it's dancing, celebrating, and laughing – until late at night",
+        "tag": "",
+        "icon": "/images/icons/Icons_disco.png"
       }
+      ]
+    }
     ]
   },
   "gallery": {
     "eyebrow": "Moments",
-    "headingPartOne": "Our favourite",
+    "headingPartOne": "Our Favorite",
     "headingScriptOne": "Moments",
-    "headingPartTwo": "through",
+    "headingPartTwo": "Over",
     "headingScriptTwo": "the",
     "headingPartThree": "Years.",
-    "intro": "10 images - 10 years.",
+    "intro": "Ten pictures and ten years.",
     "items": [
-        {"date": "2017"},
-        {"date": "2018"},
-        {"date": "2019"},
-        {"date": "2020"},
-        {"date": "2021"},
-        {"date": "2022"},
-        {"date": "2023"},
-        {"date": "2024"},
-        {"date": "2025"},
-        {"date": "2026"}
-      ]
-  },
-  "location": {
-    "eyebrow": "Where it happens",
-    "title": "Location & Travel",
-    "venue": {
-      "name": "Heimathaus Tornesch",
-      "address": "Riedweg 3\n25436 Tornesch\nSchleswig-Holstein",
-      "description": "The ceremony will take place outdoors, and the celebration will be under a tent. Please plan your journey in good time.",
-      "mapCta": "Open in Google Maps",
-      "mapLink": "https://maps.google.com/?q=Riedweg+3,+25436+Tornesch"
-    },
-    "stay": {
-      "title": "Accommodation Nearby",
-      "description": "We have collected a few nearby accommodation options. Please book early, as availability may be limited.",
-      "moreCta": "See more on Booking.com",
-      "moreLink": "https://www.booking.com/searchresults.html?ss=Tornesch"
-    },
-    "accommodations": [
-      {
-        "name": "Hotel Esinger Hof",
-        "distance": "approx. 10 minutes away",
-        "description": "Cosy accommodation in the Tornesch area.",
-        "link": "https://www.google.com/search?q=Hotel+Esinger+Hof+Tornesch"
-      },
-      {
-        "name": "Hotel Dias",
-        "distance": "approx. 15 minutes away",
-        "description": "A central option in Pinneberg with good connections.",
-        "link": "https://www.google.com/search?q=Hotel+Dias+Pinneberg"
-      },
-      {
-        "name": "Booking.com",
-        "distance": "more accommodation options",
-        "description": "More hotels and holiday rentals in Tornesch, Pinneberg and the surrounding area.",
-        "link": "https://www.booking.com/searchresults.html?ss=Tornesch"
-      }
-    ],
-    "info": {
-      "parking": "Free parking is available directly at or near the venue.",
-      "accessibility": "The venue is generally easy to access. If you have any special requirements, please let us know in advance."
-    }
-  },
-  "dressCode": {
-    "eyebrow": "What to Wear?",
-    "title": "Dresscode",
-    "intro": "We would love to see you in elegant festive attire. Here is our colour palette for inspiration.",
-    "colors": [
-      {"name": "Mint", "hex": "#b8d4c6"},
-      {"name": "Light Sage", "hex": "#a8c4b5"},
-      {"name": "Sage Green", "hex": "#7a9e8a"},
-      {"name": "Moss Green", "hex": "#5f7a6b"},
-      {"name": "Forest", "hex": "#4a6b58"}
-    ],
-    "imageAlt": "Dress code inspiration",
-    "noteLabel": "Important:",
-    "note": "This is only meant as guidance, and we completely understand if you do not have these colours at home. Please avoid pure white, black or red – all other colours are warmly welcome."
-  },
-  "rsvp": {
-    "eyebrow": "Please RSVP by April 15",
-    "title": "RSVP",
-    "step": "Step",
-    "contactTitle": "Your Contact Details 💌",
-    "contactText": "So we know who is coming and how we can reach you.",
-    "firstName": "First Name",
-    "lastName": "Last Name",
-    "email": "Email Address",
-    "attendanceTitle": "Will you be there?",
-    "attendanceText": "We would be delighted to welcome you to our wedding.",
-    "yesTitle": "Yes, I’ll be there! 🍾",
-    "yesText": "I’m looking forward to celebrating with you.",
-    "noTitle": "Unfortunately not 😢",
-    "noText": "Sadly, I won’t be able to attend.",
-    "detailsTitle": "A Few More Details",
-    "detailsText": "So we can prepare everything perfectly.",
-    "polterabend": "I will also join the Polterabend on Friday. 🎉",
-    "menu": "Menu Preference 🌱",
-    "allergies": "Allergies / Intolerances",
-    "songWish": "Song Request for the Party",
-    "back": "Back",
-    "next": "Next",
-    "submit": "Submit",
-    "successTitle": "Thank you!",
-    "successText": "We have received your response and are so excited to celebrate with you.",
-    "calendarCta": "Add to Calendar",
-    "addAnotherCta": "Add Another Person",
-    "calendarSummary": "Wedding of Merle & Lasse",
-    "calendarDescription": "We are getting married! Celebrate this special day with us.",
-    "calendarLocation": "Heimathaus Tornesch, Schleswig-Holstein",
-    "calendarFileName": "merle-lasse-wedding.ics",
-    "menuPlaceholder": "–",
-    "menuMeat": "Meat",
-    "menuVegetarian": "Vegetarian",
-    "menuVegan": "Vegan"
-  },
-  "message": {
-    "imageAlt": "Merle and Lasse",
-    "paragraphOne": "Every relationship is a journey, and we are incredibly grateful that you are part of our story.",
-    "paragraphTwo": "From the first shared moments to this special day – you have accompanied us, supported us and laughed with us.",
-    "highlight": "Thank you for celebrating with us. We are looking forward to unforgettable moments with all of you.",
-    "signature": "Merle & Lasse"
-  },
-  "faq": {
-    "eyebrow": "Questions & Answers",
-    "title": "FAQ",
-    "items": [
-      {
-        "question": "What should I wear?",
-        "answer": "We would love elegant attire in colourful shades. Most importantly, we want you to feel comfortable."
-      },
-      {
-        "question": "Can I take photos?",
-        "answer": "During the ceremony, we kindly ask you not to take photos. Afterwards, we would love to see your snapshots."
-      },
-      {
-        "question": "Can I bring children?",
-        "answer": "We love children, but the celebration is planned as an adults-only event."
-      },
-      {
-        "question": "Will there be vegetarian or vegan options?",
-        "answer": "Yes, of course. Please simply let us know your preferences and allergies in the RSVP."
-      },
-      {
-        "question": "Where can I stay overnight?",
-        "answer": "In the location section, you will find some recommendations for accommodation nearby."
-      },
-      {
-        "question": "What would you like as a wedding gift?",
-        "answer": "The most important thing for us is that you are there. If you would like to give us something, we would be happy about a contribution to our honeymoon."
-      }
+    {"date": "2017"},
+    {"date": "2018"},
+    {"date": "2019"},
+    {"date": "2020"},
+    {"date": "2021"},
+    {"date": "2022"},
+    {"date": "2023"},
+    {"date": "2024"},
+    {"date": "2025"},
+    {"date": "2026"}
     ]
   },
-  "contacts": {
-    "eyebrow": "Your Contacts",
-    "headingPartOne": "We",
-    "headingPartTwo": "are here",
-    "headingPartThree": "for",
-    "headingPartFour": "you",
-    "bottomText": "Whether it is about organisational questions, accommodation or simply a friendly chat – these wonderful people will be happy to help you.",
-    "items": [
-      {
-        "name": "Mie Maleen",
-        "role": "Maid of Honour",
-        "image": "/images/contacts/mie.png",
-        "funFact": "Mie is Merle’s sister and always up for fun ☀️"
+    "location": {
+      "eyebrow": "Where it happens",
+      "title": "Location & Arrival",
+
+      "venue": {
+        "name": "Heimathaus Tornesch",
+        "address": "Riedweg 3\n25436 Tornesch\nSchleswig-Holstein",
+        "description": "This is where we want to arrive, toast, celebrate, and spend an unforgettable day with you.",
+        "mapCta": "Open in Google Maps",
+        "mapLink": "https://maps.google.com/?q=Riedweg+3,+25436+Tornesch"
       },
-      {
-        "name": "Gitte & Marco",
-        "role": "Bride’s Parents",
-        "image": "/images/contacts/gittemarco.png",
-        "funFact": "Gitte and Marco are the best hosts – they know the venue like the back of their hand."
+
+      "stay": {
+        "eyebrow": "Stay Overnight",
+        "title": "Accommodations Nearby",
+        "description": "For those who don't want to drive home after the celebration, we have reserved a room block and compiled other options in the area.",
+        "priceLabel": "Price per Night",
+        "hotelCta": "Visit Hotel Website",
+        "alternativeLabel": "Other Option",
+        "moreTitle": "More Accommodations",
+        "moreDescription": "Find more hotels and vacation rentals in Tornesch, Pinneberg, and the surrounding area on Booking.com.",
+        "moreCta": "View More Accommodations",
+        "moreLink": "YOUR EXISTING BOOKING LINK"
       },
-      {
-        "name": "Matti",
-        "role": "Best Man",
-        "image": "/images/contacts/max.png",
-        "funFact": "Matti is Lasse’s brother and the perfect person to contact for any questions about the celebration."
-      },
-      {
-        "name": "Beate & Peter ",
-        "role": "Groom’s Parents",
-        "image": "/images/contacts/gittemarco.png",
-        "funFact": ""
-      },
-      {
-        "name": "Bobby",
-        "role": "Feel Good Manager",
-        "image": "/images/contacts/bobby.png",
-        "funFact": "Bobby is our loyal dog and brings good vibes – he is looking forward to getting cuddles from you!"
-      },
-      {
-        "name": "Leona",
-        "role": "Bridesmaid",
-        "image": "/images/contacts/leona.png",
-        "funFact": "Merle’s bestie and soulmate – she knows all the secrets and is excited to celebrate with you!"
+
+      "accommodations": [
+        {
+          "name": "Hotel Esinger Hof",
+          "distance": "Approx. 5 minutes on foot",
+          "description": "You can book twin double rooms from our reserved block until February 15, 2027. Contact the hotel directly and mention the keyword 'Wedding Merle & Lasse.' Contact: Info@esingerhotel.de",
+          "reservationNote": "Room block for our guests",
+          "price": "103 € for 2 people including breakfast",
+          "link": "YOUR EXISTING HOTEL LINK"
+        },
+        {
+          "name": "Hotel Dias",
+          "distance": "Approx. 15 minutes away",
+          "description": "A central alternative in Pinneberg with good connections.",
+          "link": "https://www.google.com/search?q=Hotel+Dias+Pinneberg"
+        }
+      ],
+
+      "info": {
+        "parkingLabel": "Arriving by Car",
+        "parking": "Free parking is available right next to the venue. Simply enter the location into your GPS and follow the parking signs on-site.",
+        "trainLabel": "Arriving by Train",
+        "accessibility": "From Hamburg Central Station, you can reach Tornesch in about 25 minutes by train. From there, it's about 5 minutes by bus 6668 or alternatively by taxi."
       }
-    ],
-    "urgentPhone": "+49123456789",
-    "urgentCta": "Urgent question? Call Gitte"
-  },
-  "footer": {
-    "date": "May 15, 2027 · Tornesch",
-    "subtitle": "Made with love for our guests 💛",
-    "cta": "Questions? Feel free to write to us",
-    "email": "kontakt@example.com"
-  },
-  "countdown": {
-    "title": "countdown to the big day",
-    "date": "the 15th of May, 2027",
-    "days": "Days",
-    "hours": "Hours",
-    "minutes": "Minutes",
-    "seconds": "Seconds"
-  },
-  "eucalyptusDivider": {
-    "eyebrow": "save the date",
-    "date": "15 · 05 · 2027",
-    "title": "a weekend to remember"
-  },
-  "fullWidthPhoto": {
-    "imageAlt": "Merle and Lasse"
-  },
-  "quoteDivider": {
-    "eyebrow": "a little note",
-    "lineOne": "to the stars that listen,",
-    "lineTwo": "and the dreams that are answered."
+    },
+    "dressCode": {
+      "eyebrow": "Color Palette",
+      "title": "Dress Code",
+
+      "mainColorsLabel": "Our Main Colors",
+
+      "mainColors": [
+        {
+          "name": "Sage Green",
+          "hex": "#B8BBAA"
+        },
+        {
+          "name": "Eucalyptus",
+          "hex": "#909B8B"
+        },
+        {
+          "name": "Sage",
+          "hex": "#A4AC9D"
+        },
+        {
+          "name": "Olive Green",
+          "hex": "#7C7B5F"
+        },
+        {
+          "name": "Dark Green",
+          "hex": "#3F4D3E"
+        }
+      ],
+
+      "alternativeColorsLabel": "Other Matching Tones",
+
+      "alternativeColors": [
+        {
+          "name": "Sand",
+          "hex": "#C2B09A"
+        },
+        {
+          "name": "Greige",
+          "hex": "#B1A494"
+        },
+        {
+          "name": "Brown",
+          "hex": "#806D5C"
+        },
+        {
+          "name": "Light Blue",
+          "hex": "#C1CDD1"
+        },
+        {
+          "name": "Dusty Blue",
+          "hex": "#A8B6B9"
+        },
+        {
+          "name": "Gray",
+          "hex": "#AEAEAE"
+        },
+        {
+          "name": "Dusty Rose",
+          "hex": "#CAA8A6"
+        },
+        {
+          "name": "Mauve",
+          "hex": "#B59797"
+        }
+      ],
+
+      "imageAlt": "Inspiration for our Dress Code",
+
+      "noteLabel": "Important:",
+      "note": "The color palette is an inspiration and not a strict requirement. We are, of course, happy for anyone who comes in the suggested colors, but feel free to wear other colors you like. We want you to feel comfortable."
+    },
+    "rsvp": {
+      "eyebrow": "Please RSVP by April 15",
+      "title": "RSVP",
+
+      "step": "Step",
+
+      "contactTitle": "Your Contact Information 💌",
+      "contactText": "So we know who is coming and how to reach you.",
+
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email Address",
+
+      "attendanceTitle": "Will you be attending?",
+      "attendanceText": "We would love to welcome you to our wedding.",
+
+      "yesTitle": "Yes, I'm coming! 🍾",
+      "yesText": "I look forward to celebrating with you.",
+
+      "noTitle": "Unfortunately not 😢",
+      "noText": "I can't attend.",
+
+      "detailsTitle": "A Few More Details",
+      "detailsText": "So we can prepare everything perfectly.",
+
+      "polterabend": "I will also attend the Polterabend on Friday. 🎉",
+
+      "vegan": "I eat vegan",
+      "veganHint": "Please do not check if you eat vegetarian.",
+      "allergies": "Allergies / Intolerances",
+      "songWish": "This song gets me on the dance floor 💃",
+
+      "back": "Back",
+      "next": "Next",
+      "submit": "Submit",
+
+      "successTitle": "Thank You!",
+      "successText": "We have received your response and are very excited to see you.",
+
+      "calendarCta": "Add to Calendar",
+      "addAnotherCta": "Add Another Person",
+      "calendarSummary": "Wedding Merle & Lasse",
+      "calendarDescription": "We're getting married! Celebrate this special day with us.",
+      "calendarLocation": "Heimathaus Tornesch, Schleswig-Holstein",
+      "calendarFileName": "wedding-merle-lasse.ics"
+    },
+    "message": {
+      "imageAlt": "Merle and Lasse",
+      "paragraphOne": "Every relationship is a journey, and we are incredibly grateful that you are part of our story.",
+      "paragraphTwo": "From the first shared moments to this special day – you have accompanied us, supported us, and laughed with us.",
+      "highlight": "Thank you for celebrating with us. We look forward to unforgettable moments with all of you.",
+      "signature": "Merle & Lasse"
+    },
+    "faq": {
+      "eyebrow": "Questions & Answers",
+      "title": "FAQ",
+      "items": [
+        {
+          "question": "What should I wear?",
+          "answer": "We would love for you to orient yourself to our natural, warm color palette. 👗 A small note on shoe choice: Our ceremony will take place outside on the lawn before the evening program continues indoors.",
+          "link": "#dresscode",
+          "linkLabel": "To the Dress Code"
+        },
+        {
+          "question": "When does it start?",
+          "answer": "Feel free to arrive around 2:30 PM – there will already be a small drink, and Lasse will also be there. Our free ceremony begins at 3:00 PM. 🥂",
+          "link": "#schedule",
+          "linkLabel": "To the Schedule"
+        },
+        {
+          "question": "Can I bring children?",
+          "answer": "We would like to celebrate our special day in the circle of adults. 🤍"
+        },
+        {
+          "question": "Where can I park at the venue?",
+          "answer": "Free parking is available right next to the venue. Simply enter the location into your GPS and follow the parking signs on-site. 🚗",
+          "link": "#location",
+          "linkLabel": "To Location & Arrival"
+        },
+        {
+          "question": "Where can I stay after the celebration?",
+          "answer": "We have reserved a room block for our guests at Hotel Esinger Hof. You can stay there at our agreed special rate. 🏨 Alternatively, you can also sleep in your car in the parking lot.",
+          "link": "#location",
+          "linkLabel": "To Accommodations"
+        },
+        {
+          "question": "Are there vegetarian and vegan options?",
+          "answer": "Yes! Our buffet will include both vegetarian and vegan options. If you have allergies or other intolerances, please let us know via the RSVP tool when you respond. 🌿",
+          "link": "#rsvp",
+          "linkLabel": "To RSVP"
+        },
+        {
+          "question": "Can I take photos?",
+          "answer": "Absolutely! 📸 During the ceremony, we kindly ask you to keep your phones in your pockets and enjoy the moment with us – our photographer will take care of the pictures. Afterward, we look forward to your snapshots, which you can share with us via a photo QR code!"
+        },
+        {
+          "question": "What can we gift you?",
+          "answer": "Our biggest wish is to travel to Canada for a month after the wedding – this time to Vancouver, Vancouver Island, and the Rocky Mountains. 🇨🇦 If you would like to support us with a small contribution to our honeymoon, we would be very grateful. And if you prefer to gift something for our home, we have also created a small wish list for you. 🏡",
+          "link": "INSERT_WISHLIST_LINK_HERE",
+          "linkLabel": "View Our Wishlist"
+        },
+        {
+          "question": "I want to give a speech or contribute something – who should I contact?",
+          "answer": "Please contact our toastmaster Søren for this. He coordinates the evening program, plans the contributions, and will let you know in advance when it's your turn. This way, we can ensure everything finds its right place. 🎤",
+          "link": "#contacts",
+          "linkLabel": "To Contacts"
+        }
+      ]
+    },
+    "contacts": {
+      "eyebrow": "Your Contacts",
+      "headingPartOne": "We",
+      "headingPartTwo": "are here",
+      "headingPartThree": "for",
+      "headingPartFour": "you",
+      "bottomText": "Whether it's organizational questions, accommodations, or just a friendly chat – these wonderful people are happy to help you.",
+      "items": [
+        {
+          "name": "Merle's Sister Mie",
+          "role": "The Maid of Honor",
+          "image": "/images/contacts/mie.png",
+          "funFact": "Radiant, positive, and always in a good mood – she is your first point of contact for organizational questions. ☀️",
+          "phone": "+4915562877006",
+          "phoneLabel": "+49 15562 877006"
+        },
+        {
+          "name": "Gitte & Marco",
+          "role": "Merle's Mom & Dad",
+          "image": "/images/contacts/brauteltern.jpeg",
+          "funFact": "Warm, open, and always there for you – especially Gitte is happy to help with questions.",
+          "phone": "+491712938751",
+          "phoneLabel": "+49 171 2938751"
+        },
+        {
+          "name": "Matti – Lasse's Twin Brother",
+          "role": "Best Man",
+          "image": "/images/contacts/matti.jpeg",
+          "funFact": "Traveled all the way from Norway and the perfect person for questions you’d rather not ask the bride and groom directly. ;)",
+          "phone": "+4748917697",
+          "phoneLabel": "+47 489 17697"
+        },
+        {
+          "name": "Søren Callesen",
+          "role": "The Toastmaster – Merle's Danish Uncle",
+          "image": "/images/contacts/gittemarco.png",
+          "funFact": "He will guide you through our evening program. If you have a speech, contribution, or surprise planned, please contact him – he coordinates everything and will let you know when it's your turn."
+        },
+        {
+          "name": "Bobby 🐾",
+          "role": "Feel Good Manager",
+          "image": "/images/contacts/bobby.png",
+          "funFact": "Our specialist for good vibes and emotional support 💚"
+        },
+        {
+          "name": "Leona",
+          "role": "Bridesmaid – Merle's Best Friend",
+          "image": "/images/contacts/leona.png",
+          "funFact": "By Merle's side for many years, always there for organizational matters, and also the creative mind behind this website."
+        }
+      ],
+      "urgentPhone": "+49123456789",
+      "urgentCta": "Urgent Question? Call Gitte"
+    },
+    "footer": {
+      "date": "May 15, 2027 · Tornesch",
+      "subtitle": "Lovingly designed for our guests 💛",
+      "cta": "Questions? Feel free to write to us",
+      "email": "contact@example.com"
+    },
+    "countdown": {
+      "title": "Countdown to Our Big Day",
+      "date": "May 15, 2027",
+      "days": "Days",
+      "hours": "Hours",
+      "minutes": "Minutes",
+      "seconds": "Seconds"
+    },
+    "eucalyptusDivider": {
+      "eyebrow": "save the date",
+      "date": "15 · 05 · 2027",
+      "title": "a weekend to remember"
+    },
+    "fullWidthPhoto": {
+      "imageAlt": "Merle and Lasse"
+    },
+
+    "quoteDivider": {
+      "eyebrow": "From Us to You",
+      "paragraphOne": "From the first shared moments to this special day – you have accompanied us, supported us, and laughed with us.",
+      "highlight": "Thank you for celebrating with us. We look forward to unforgettable moments with all of you."
+    }
   }
-}

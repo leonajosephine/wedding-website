@@ -19,11 +19,6 @@ export function Footer() {
           {t('subtitle')}
         </p>
 
-        <div className="script mb-3 text-3xl text-[var(--brand-100)] md:text-5xl">
-          Merle <span className="ampersand text-[var(--brand-100)]">&</span>{' '}
-          Lasse
-        </div>
-
         <p className="mb-2 text-xs uppercase tracking-[0.18em]">
           {t('date')}
         </p>

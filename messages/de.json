@@ -1,6 +1,7 @@
 {   
     "invitationOverlay": {
       "openCta": "Einladung öffnen",
+      "inviteImageSrc": "/images/intro/invitede.jpeg",
       "cardEyebrow": "Gemeinsam mit unseren Familien",
       "cardIntro": "laden wir euch herzlich ein, unsere Hochzeit mit uns zu feiern",
       "enterCta": "Website betreten"
@@ -29,9 +30,9 @@
       "eyebrow": "Unsere Geschichte",
       "headingScript": "Unsere",
       "headingSerif": "Geschichte",
-      "paragraphOne": "Was als zufällige Begegnung begann, wurde zur schönsten Geschichte unseres Lebens. Merle und Lasse lernten sich kennen, als das Leben andere Pläne hatte – und doch schien alles genau so zu sein, wie es sein sollte.",
-      "paragraphTwo": "Gemeinsam haben wir gelacht, gestritten, gereist und geträumt. Jeder Moment miteinander ist ein Geschenk. Und jetzt freuen wir uns darauf, den schönsten Tag mit all den Menschen zu feiern, die uns am meisten bedeuten.",
-      "quote": "Ich wähle dich – heute, morgen und all die Tage danach.",
+      "paragraphOne": "Eigentlich begann unsere Geschichte schon ein kleines bisschen früher, als wir damals wussten. Unsere Wege kreuzten sich zum ersten Mal lange bevor aus uns „wir“ wurde. Im Januar 2017 begegneten wir uns wieder, und aus einer zufälligen Begegnung wurde schnell mehr. Am 14. Februar 2017 wurden wir schließlich ein Paar.",
+      "paragraphTwo": "Seitdem sind viele gemeinsame Jahre, Reisen, Abenteuer und unzählige Erinnerungen vergangen. Wir haben gemeinsam gelebt, gelacht, Pläne geschmiedet und uns schließlich den Traum vom eigenen Haus erfüllt. Anfang 2026 haben wir uns verlobt und freuen uns nun auf das nächste Kapitel unserer Geschichte – und ganz besonders darauf, es mit euch zu feiern. 🤍",
+      "quote": "Heute, morgen und an jedem Tag, der kommt – immer wieder du.",
       "imageAlt": "Merle und Lasse"
     },
     "schedule": {
@@ -42,44 +43,45 @@
       "headingScriptTwo": "Überblick",
       "days": [
         {
-          "label": "Freitag · 14. Mai 2027",
-          "title": "Polterabend",
-          "startTime": "ab 18:00 Uhr",
-          "location": "HIER DEN ORT EINTRAGEN",
-          "mapLink": "HIER DEN GOOGLE-MAPS-LINK EINTRAGEN",
-          "events": []
+            "label": "Mittwoch · 12. Mai 2027",
+            "title": "Polterabend",
+            "startTime": "ab 18:00 Uhr",
+            "location": "Köhnholz 35 · 25336 Elmshorn",
+            "mapLink": "HIER DEN GOOGLE-MAPS-LINK EINTRAGEN",
+            "note": "Bringt etwas zum Poltern mit 🫖",
+            "events": []
         },
         {
           "label": "Samstag · 15. Mai 2027",
           "title": "Hochzeitstag",
           "events": [
             {
-              "time": "14:00 Uhr",
-              "title": "Freie Trauung",
-              "description": "Location",
+              "time": "14:30 Uhr",
+              "title": "Ankommen & Freie Trauung",
+              "description": "Ankfunt am Heimathaus Tornesch mit anschließender freuen Trauung gegen 15:00 Uhr",
               "tag": "Elegant & Bunt",
               "icon": "/images/icons/Icons_rings.png",
               "anchor": "#location",
               "linkLabel": "Location ansehen"
             },
             {
-              "time": "15:30 Uhr",
+              "time": "15:45 Uhr",
               "title": "Sektempfang & Fotos",
-              "description": "Treffpunkt beim Heimathaus Tornesch.",
+              "description": "Zeit zum Anstoßen, Plaudern und Genießen - begleitet von Musik, kleinen Snacks und dem ein oder anderen Foto",
               "tag": "",
               "icon": "/images/icons/Icons_glasses2.png"
             },
             {
               "time": "18:00 Uhr",
               "title": "Abendessen & Programm",
-              "description": "Festtafel, Reden und unvergessliche Momente.",
+              "description": "Buffet, Reden und ganz viele schöne Momente",
               "tag": "",
               "icon": "/images/icons/Icons_cake.png"
             },
             {
               "time": "21:00 Uhr",
               "title": "Erster Tanz & Party",
-              "description": "Tanzen bis die Schuhe qualmen.",
+              "description": "Ab jetzt wird getanzt, gefeiert und gelacht - bis spät in die Nacht",
               "tag": "",
               "icon": "/images/icons/Icons_disco.png"
             }
@@ -113,78 +115,78 @@
     "location": {
       "eyebrow": "Wo es passiert",
       "title": "Location & Anreise",
+
       "venue": {
         "name": "Heimathaus Tornesch",
         "address": "Riedweg 3\n25436 Tornesch\nSchleswig-Holstein",
-        "description": "Die Zeremonie findet im Freien statt, die Feier unter einem Zelt. Bitte plant eure Anreise rechtzeitig.",
+        "description": "Hier möchten wir mit euch ankommen, anstoßen, feiern und einen unvergesslichen Tag verbringen.",
         "mapCta": "In Google Maps öffnen",
         "mapLink": "https://maps.google.com/?q=Riedweg+3,+25436+Tornesch"
       },
+
       "stay": {
         "eyebrow": "Übernachten",
         "title": "Unterkünfte in der Nähe",
-        "description": "Für unsere Gäste haben wir einige Möglichkeiten in der Umgebung zusammengestellt. Bei der ersten Unterkunft ist ein Kontingent für unsere Hochzeitsgesellschaft reserviert.",
-        "priceLabel": "Preis",
+        "description": "Für alle, die nach der Feier nicht mehr nach Hause fahren möchten, haben wir ein Zimmerkontingent reserviert und weitere Möglichkeiten in der Umgebung zusammengestellt.",
+        "priceLabel": "Preis pro Nacht",
+        "hotelCta": "Zur Hotel-Website",
+        "alternativeLabel": "Weitere Option",
         "moreTitle": "Weitere Unterkünfte",
         "moreDescription": "Weitere Hotels und Ferienwohnungen in Tornesch, Pinneberg und Umgebung findet ihr bei Booking.com.",
         "moreCta": "Mehr Unterkünfte ansehen",
         "moreLink": "DEIN BESTEHENDER BOOKING-LINK"
       },
+
       "accommodations": [
         {
           "name": "Hotel Esinger Hof",
-          "distance": "ca. 10 Minuten entfernt",
-          "description": "Hier haben wir für unsere Hochzeitsgäste Zimmer reserviert. Weitere Informationen zur Buchung folgen.",
-          "reservationNote": "Zimmer für unsere Gäste reserviert",
-          "price": "PREIS EINTRAGEN",
+          "distance": "ca. 5 Minuten zu Fuß entfernt",
+          "description": "Bis zum 15. Februar 2027 könnt ihr dort Twin-Doppelzimmer aus unserem reservierten Kontingent buchen. Meldet euch dafür direkt beim Hotel und gebt das Stichwort „Hochzeit Merle & Lasse“ an. Kontakt: Info@esingerhotel.de",
+          "reservationNote": "Zimmerkontingent für unsere Gäste",
+          "price": "103 € für 2 Personen inklusive Frühstück",
           "link": "DEIN BESTEHENDER HOTEL-LINK"
         },
         {
           "name": "Hotel Dias",
           "distance": "ca. 15 Minuten entfernt",
-          "description": "Zentrale Option in Pinneberg mit guter Anbindung.",
+          "description": "Zentrale Alternative in Pinneberg mit guter Anbindung.",
           "link": "https://www.google.com/search?q=Hotel+Dias+Pinneberg"
-        },
-        {
-          "name": "Booking.com",
-          "distance": "weitere Unterkünfte",
-          "description": "Weitere Hotels und Ferienwohnungen in Tornesch, Pinneberg und Umgebung.",
-          "link": "https://www.booking.com/searchresults.html?ss=Tornesch"
         }
       ],
+
       "info": {
-        "parking": "Kostenlose Parkplätze befinden sich direkt an oder in der Nähe der Location.",
-        "accessibility": "Die Location ist grundsätzlich gut zugänglich. Bei besonderen Bedürfnissen meldet euch gerne vorher."
+        "parkingLabel": "Anreise mit dem Auto",
+        "parking": "Direkt neben der Location stehen euch kostenlose Parkplätze zur Verfügung. Gebt einfach die Location ins Navi ein und folgt vor Ort der Parkplatz-Beschilderung.",
+        "trainLabel": "Anreise mit der Bahn",
+        "accessibility": "Vom Hamburger Hauptbahnhof erreicht ihr Tornesch in ca. 25 Minuten mit dem Zug. Von dort sind es anschließend etwa 5 Minuten mit dem Bus 6668 oder alternativ mit dem Taxi."
       }
     },
     "dressCode": {
       "eyebrow": "Farbwelt",
       "title": "Dresscode",
 
-      "intro": "Wir freuen uns, wenn ihr euch farblich an unserer natürlichen, warmen Farbwelt orientiert. So entsteht ein harmonisches Gesamtbild und ihr fühlt euch trotzdem ganz individuell und wohl.",
-
       "mainColorsLabel": "Unsere Hauptfarben",
 
       "mainColors": [
         {
           "name": "Sage Green",
-          "hex": "#AEB3A0"
+          "hex": "#B8BBAA"
         },
         {
           "name": "Eukalyptus",
-          "hex": "#8F9D8C"
+          "hex": "#909B8B"
         },
         {
           "name": "Salbei",
-          "hex": "#A5AEA0"
+          "hex": "#A4AC9D"
         },
         {
           "name": "Olivgrün",
-          "hex": "#7D8064"
+          "hex": "#7C7B5F"
         },
         {
           "name": "Dunkelgrün",
-          "hex": "#3F5141"
+          "hex": "#3F4D3E"
         }
       ],
 
@@ -193,42 +195,42 @@
       "alternativeColors": [
         {
           "name": "Sand",
-          "hex": "#C4B39C"
+          "hex": "#C2B09A"
         },
         {
           "name": "Greige",
-          "hex": "#B0A596"
+          "hex": "#B1A494"
         },
         {
           "name": "Braun",
-          "hex": "#857568"
+          "hex": "#806D5C"
         },
         {
           "name": "Hellblau",
-          "hex": "#B8C9CF"
+          "hex": "#C1CDD1"
         },
         {
           "name": "Dusty Blue",
-          "hex": "#A5B9BE"
-        },
-        {
-          "name": "Dusty Rose",
-          "hex": "#C7A09E"
-        },
-        {
-          "name": "Mauve",
-          "hex": "#B09499"
+          "hex": "#A8B6B9"
         },
         {
           "name": "Grau",
-          "hex": "#A7A5A0"
+          "hex": "#AEAEAE"
+        },
+        {
+          "name": "Dusty Rose",
+          "hex": "#CAA8A6"
+        },
+        {
+          "name": "Mauve",
+          "hex": "#B59797"
         }
       ],
 
       "imageAlt": "Inspiration für unseren Dress Code",
 
       "noteLabel": "Wichtig:",
-      "note": "Die Farbpalette ist eine Inspiration und keine feste Vorgabe."
+      "note": "Die Farbpalette ist eine Inspiration und keine feste Vorgabe. Wir freuen uns natürlich über jeden der in den vorgeschlagenen Farben kommt, aber fühlt euch frei, auch andere Farben zu tragen, die ihr mögt. Wir möchten, dass ihr euch wohlfühlt."
     },
     "rsvp": {
       "eyebrow": "Bitte bis 15. April zusagen",
@@ -289,27 +291,53 @@
       "items": [
         {
           "question": "Was soll ich anziehen?",
-          "answer": "Wir wünschen uns elegante Garderobe in bunten Farben. Wichtig ist vor allem, dass ihr euch wohlfühlt."
+          "answer": "Wir freuen uns, wenn ihr euch an unserer natürlichen, warmen Farbwelt orientiert. 👗 Kleiner Hinweis zur Schuhwahl: Unsere Trauung findet draußen auf der Wiese statt, bevor sich drinnen das Abendprogramm anschließt.",
+          "link": "#dresscode",
+          "linkLabel": "Zum Dresscode"
+        },
+        {
+          "question": "Ab wann geht’s los?",
+          "answer": "Kommt gerne gegen 14:30 Uhr an – dann gibt es schon ein kleines Getränk und Lasse ist ebenfalls schon da. Um 15:00 Uhr beginnt dann unsere freie Trauung. 🥂",
+          "link": "#schedule",
+          "linkLabel": "Zum Ablauf"
+        },
+        {
+          "question": "Darf ich Kinder mitbringen?",
+          "answer": "Wir möchten unseren besonderen Tag im Kreis der Erwachsenen feiern. 🤍"
+        },
+        {
+          "question": "Wo kann ich an der Location parken?",
+          "answer": "Direkt neben der Location stehen euch kostenlose Parkplätze zur Verfügung. Gebt einfach die Location ins Navi ein und folgt vor Ort der Parkplatz-Beschilderung. 🚗",
+          "link": "#location",
+          "linkLabel": "Zur Location & Anreise"
+        },
+        {
+          "question": "Wo kann ich nach der Feier übernachten?",
+          "answer": "Für unsere Gäste haben wir im Hotel Esinger Hof ein Zimmerkontingent reserviert. Dort könnt ihr zu unserem vereinbarten Sonderpreis übernachten. 🏨 Alternativ kann auf dem Parkplatz auch im Auto geschlafen werden.",
+          "link": "#location",
+          "linkLabel": "Zu den Unterkünften"
+        },
+        {
+          "question": "Gibt es vegetarische und vegane Optionen?",
+          "answer": "Ja! Bei unserem Buffet wird es sowohl vegetarische als auch vegane Optionen geben. Habt ihr Allergien oder andere Unverträglichkeiten, gebt uns diese bitte über das RSVP-Tool bei eurer Rückmeldung mit. 🌿",
+          "link": "#rsvp",
+          "linkLabel": "Zum RSVP"
         },
         {
           "question": "Darf ich Fotos machen?",
-          "answer": "Während der Zeremonie bitten wir euch, keine Fotos zu machen. Danach freuen wir uns sehr über eure Schnappschüsse."
+          "answer": "Sehr gerne! 📸 Während der Trauung würden wir euch nur bitten, die Handys in der Tasche zu lassen und den Moment mit uns zu genießen – unser Fotograf kümmert sich um die Bilder. Danach freuen wir uns umso mehr über eure Schnappschüsse, die ihr über einen Foto-QR-Code mit uns teilen könnt!"
         },
         {
-          "question": "Kann ich Kinder mitbringen?",
-          "answer": "Wir lieben Kinder, allerdings ist die Feier als Erwachsenenfeier geplant."
+          "question": "Was können wir euch schenken?",
+          "answer": "Unser größter Wunsch ist, im Anschluss an die Hochzeit wieder für einen Monat nach Kanada zu reisen – dieses Mal nach Vancouver, Vancouver Island und in die Rocky Mountains. 🇨🇦 Wenn ihr uns dabei mit einem kleinen Beitrag für unsere Flitterwochen unterstützen möchtet, würden wir uns sehr freuen. Und falls ihr lieber etwas für unser Zuhause schenken möchtet, haben wir auch eine kleine Wunschliste für euch zusammengestellt. 🏡",
+          "link": "HIER_WUNSCHLISTEN_LINK_EINTRAGEN",
+          "linkLabel": "Unsere Wunschliste ansehen"
         },
         {
-          "question": "Gibt es vegetarische oder vegane Optionen?",
-          "answer": "Ja natürlich. Bitte gebt eure Wünsche und Allergien einfach im RSVP an."
-        },
-        {
-          "question": "Wo kann ich übernachten?",
-          "answer": "In der Location-Sektion findet ihr einige Empfehlungen für Unterkünfte in der Nähe."
-        },
-        {
-          "question": "Was wünscht ihr euch zur Hochzeit?",
-          "answer": "Das Wichtigste für uns ist, dass ihr dabei seid. Falls ihr uns etwas schenken möchtet, freuen wir uns über einen Beitrag zu unserer Hochzeitsreise."
+          "question": "Ich möchte eine Rede halten oder etwas beitragen – an wen wende ich mich?",
+          "answer": "Meldet euch dafür gerne bei unserem Toastmaster Søren. Er koordiniert das Abendprogramm, plant die Beiträge und sagt euch rechtzeitig, wann ihr an der Reihe seid. So können wir gemeinsam dafür sorgen, dass alles seinen richtigen Platz findet. 🎤",
+          "link": "#contacts",
+          "linkLabel": "Zu den Ansprechpartnern"
         }
       ]
     },
@@ -322,40 +350,46 @@
       "bottomText": "Ob organisatorische Fragen, Unterkunft oder einfach nur ein netter Plausch – diese wunderbaren Menschen helfen euch gerne weiter.",
       "items": [
         {
-          "name": "Mie Maleen",
-          "role": "Trauzeugin",
+          "name": "Merles Schwester Mie",
+          "role": "Die Trauzeugin",
           "image": "/images/contacts/mie.png",
-          "funFact": "Mie ist Merles Schwester und für jeden Spaß zu haben☀️"
+          "funFact": "Strahlend, positiv und immer mit guter Laune dabei – bei organisatorischen Fragen ist sie eure erste Anlaufstelle. ☀️",
+          "phone": "+4915562877006",
+          "phoneLabel": "+49 15562 877006"
         },
         {
           "name": "Gitte & Marco",
-          "role": "Brauteltern",
-          "image": "/images/contacts/gittemarco.png",
-          "funFact": "Gitte und Marco sind die besten Gastgeber – sie kennen die Location wie ihre Westentasche."
+          "role": "Merles Mama & Papa",
+          "image": "/images/contacts/brauteltern.jpeg",
+          "funFact": "Herzlich, offen und immer für euch da – besonders Gitte hilft euch bei Fragen gerne weiter.",
+          "phone": "+491712938751",
+          "phoneLabel": "+49 171 2938751"
         },
         {
-          "name": "Matti",
+          "name": "Matti – Lasses Zwillingsbruder",
           "role": "Trauzeuge",
-          "image": "/images/contacts/max.png",
-          "funFact": "Matti ist Lasses Bruder und der perfekte Ansprechpartner für alle Fragen rund um die Feier."
+          "image": "/images/contacts/matti.jpeg",
+          "funFact": "Extra aus Norwegen angereist und genau der Richtige für alle Fragen, die ihr lieber nicht direkt dem Brautpaar stellen möchtet. ;)",
+          "phone": "+4748917697",
+          "phoneLabel": "+47 489 17697"
         },
         {
-          "name": "Beate & Peter ",
-          "role": "Eltern des Bräutigams",
+          "name": "Søren Callesen",
+          "role": "Der Toastmaster – Merles dänischer Onkel",
           "image": "/images/contacts/gittemarco.png",
-          "funFact": ""
+          "funFact": "Er führt euch durch unser Abendprogramm. Wenn ihr eine Rede, einen Beitrag oder eine Überraschung geplant habt, meldet euch bitte bei ihm – er koordiniert alles und sagt euch, wann ihr an der Reihe seid."
         },
         {
-          "name": "Bobby",
+          "name": "Bobby 🐾",
           "role": "Feel Good Manager",
           "image": "/images/contacts/bobby.png",
-          "funFact": "Bobby ist unser treuer Hund und sorgt für gute Stimmung – er freut sich über Streicheleinheiten von euch!"
+          "funFact": "Unser Spezialist für gute Laune und emotionalen Support 💚"
         },
         {
           "name": "Leona",
-          "role": "Brautjungfer",
+          "role": "Brautjungfer – Merles beste Freundin",
           "image": "/images/contacts/leona.png",
-          "funFact": "Bestie und Seelenverwandte von Merle – sie kennt alle Geheimnisse und freut sich auf die Feier mit euch!"
+          "funFact": "Seit vielen Jahren an Merles Seite, organisatorisch immer zur Stelle und ganz nebenbei auch der kreative Kopf hinter dieser Website."
         }
       ],
       "urgentPhone": "+49123456789",

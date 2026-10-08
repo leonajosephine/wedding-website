@@ -26,7 +26,7 @@ export function Story() {
               <p>{t('paragraphTwo')}</p>
             </div>
 
-            <p className="hand mt-8 lowercase text-2xl leading-relaxed tracking-[0.055em] text-[var(--text)] md:text-[1.7rem]">
+            <p className="hand mt-8 lowercase text-2xl leading-relaxed tracking-[0.055em] text-[var(--text)] md:text-[1.5rem]">
               “{t('quote')}”
             </p>
           </div>

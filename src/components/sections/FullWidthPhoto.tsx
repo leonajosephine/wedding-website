@@ -10,7 +10,7 @@ export function FullWidthPhoto() {
         src="/images/fullWidthML.jpg"
         alt={t('imageAlt')}
         fill
-        className="object-cover grayscale contrast-[0.92] brightness-[1.02]"
+        className="object-cover contrast-[0.92] brightness-[1.02]"
         sizes="100vw"
         priority={false}
       />

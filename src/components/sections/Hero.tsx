@@ -30,7 +30,7 @@ export function Hero() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_28%_45%,transparent_0%,transparent_40%,rgba(72,67,63,0.10)_100%)]" />
 
       {/* Mobile names */}
-      <div className="absolute right-6 top-24 z-10 md:right-10 md:top-28 lg:hidden">
+      <div className="absolute right-0 top-24 z-10 flex w-[58%] justify-center pr-3 md:top-28 md:w-[55%] md:pr-6 lg:hidden">
         <HeroNames
           nameOne={t('nameOne')}
           nameTwo={t('nameTwo')}

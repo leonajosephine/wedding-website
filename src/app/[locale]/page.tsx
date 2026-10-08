@@ -39,14 +39,14 @@ export default async function HomePage({params}: Props) {
         <Schedule />
         <Location />
         <Gallery />
-        <QuoteDivider />
         {/*<EucalyptusDivider /> */}
         <Dresscode />
-        <RSVP />
         {/*<Message />*/}
         <FullWidthPhoto />
         <FAQ />
         <Contacts />
+        <RSVP />
+        <QuoteDivider />
       </main>
 
       <Footer />

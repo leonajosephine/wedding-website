@@ -7,13 +7,17 @@ type DressColor = {
   hex: string;
 };
 
-const largeImage = '/images/dresscode/dresscodePaintedNew.png';
+const largeImage =
+  '/images/dresscode/dresscode1.png';
 
 export function Dresscode() {
   const t = useTranslations('dressCode');
 
-  const mainColors = t.raw('mainColors') as DressColor[];
-  const alternativeColors = t.raw('alternativeColors') as DressColor[];
+  const mainColors =
+    t.raw('mainColors') as DressColor[];
+
+  const alternativeColors =
+    t.raw('alternativeColors') as DressColor[];
 
   return (
     <section
@@ -26,10 +30,6 @@ export function Dresscode() {
           title={t('title')}
         />
 
-        <p className="mx-auto mb-14 max-w-2xl text-center text-base leading-8 text-[var(--text-soft)]">
-          {t('intro')}
-        </p>
-
         {/* Color palette */}
         <div className="mx-auto max-w-4xl">
           {/* Main colors */}
@@ -39,14 +39,16 @@ export function Dresscode() {
             </p>
 
             <div className="flex flex-wrap items-start justify-center gap-5 sm:gap-7 md:gap-8">
-              {mainColors.map((color, index) => (
-                <ColorSwatch
-                  key={`${color.name}-${color.hex}`}
-                  color={color}
-                  variant="main"
-                  index={index}
-                />
-              ))}
+              {mainColors.map(
+                (color, index) => (
+                  <ColorSwatch
+                    key={`${color.name}-${color.hex}`}
+                    color={color}
+                    variant="main"
+                    index={index}
+                  />
+                )
+              )}
             </div>
           </div>
 
@@ -68,14 +70,16 @@ export function Dresscode() {
             </p>
 
             <div className="grid grid-cols-4 gap-x-3 gap-y-7 sm:flex sm:flex-wrap sm:justify-center sm:gap-x-5 md:gap-x-6">
-              {alternativeColors.map((color, index) => (
-                <ColorSwatch
-                  key={`${color.name}-${color.hex}`}
-                  color={color}
-                  variant="alternative"
-                  index={index}
-                />
-              ))}
+              {alternativeColors.map(
+                (color, index) => (
+                  <ColorSwatch
+                    key={`${color.name}-${color.hex}`}
+                    color={color}
+                    variant="alternative"
+                    index={index}
+                  />
+                )
+              )}
             </div>
           </div>
         </div>
@@ -86,9 +90,10 @@ export function Dresscode() {
             src={largeImage}
             alt={t('imageAlt')}
             fill
-            className="object-contain"
+            className="object-contain saturate-90 contrast-90 highlight-[0.98]"
             sizes="(max-width: 768px) 100vw, 1024px"
           />
+          <div className="absolute inset-0 bg-[rgba(252,245,234,0.16)]" />
         </div>
 
         {/* Note */}
@@ -122,26 +127,27 @@ function ColorSwatch({
     '-rotate-[1deg]'
   ];
 
-  const rotation = rotations[index % rotations.length];
+  const rotation =
+    rotations[index % rotations.length];
 
   return (
     <div
       className={`group flex flex-col items-center ${
-        variant === 'main' ? rotation : ''
+        variant === 'main'
+          ? rotation
+          : ''
       }`}
     >
       <div
         className={
           variant === 'main'
-            ? 'flex h-[76px] w-[76px] items-center justify-center rounded-full border border-[rgba(72,67,63,0.10)] bg-[var(--surface)] p-[4px] shadow-[0_10px_28px_rgba(72,67,63,0.10)] transition duration-300 group-hover:-translate-y-1 group-hover:scale-105 sm:h-[88px] sm:w-[88px] md:h-[96px] md:w-[96px]'
-            : 'flex h-[58px] w-[58px] items-center justify-center rounded-full border border-[rgba(72,67,63,0.09)] bg-[var(--surface)] p-[4px] shadow-[0_8px_22px_rgba(72,67,63,0.07)] transition duration-300 group-hover:-translate-y-0.5 group-hover:scale-105 sm:h-[66px] sm:w-[66px] md:h-[70px] md:w-[70px]'
+            ? 'h-[76px] w-[76px] rounded-full shadow-[0_8px_22px_rgba(72,67,63,0.12)] transition duration-300 group-hover:-translate-y-1 group-hover:scale-105 sm:h-[88px] sm:w-[88px] md:h-[96px] md:w-[96px]'
+            : 'h-[58px] w-[58px] rounded-full shadow-[0_6px_18px_rgba(72,67,63,0.09)] transition duration-300 group-hover:-translate-y-0.5 group-hover:scale-105 sm:h-[66px] sm:w-[66px] md:h-[70px] md:w-[70px]'
         }
-      >
-        <div
-          className="h-full w-full rounded-full"
-          style={{backgroundColor: color.hex}}
-        />
-      </div>
+        style={{
+          backgroundColor: color.hex
+        }}
+      />
 
       <span
         className={`mt-3 max-w-[100px] text-center leading-5 text-[var(--text-soft)] ${

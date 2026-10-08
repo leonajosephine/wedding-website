@@ -1,18 +1,27 @@
 'use client';
 
 import {useState} from 'react';
-import {Heart, Plus} from 'lucide-react';
+import {
+  ArrowDownRight,
+  ExternalLink,
+  Heart,
+  Plus
+} from 'lucide-react';
 import {useTranslations} from 'next-intl';
 
 type FAQItem = {
   question: string;
   answer: string;
+  link?: string;
+  linkLabel?: string;
 };
 
 export function FAQ() {
   const t = useTranslations('faq');
   const faqs = t.raw('items') as FAQItem[];
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+
+  const [openIndex, setOpenIndex] =
+    useState<number | null>(0);
 
   return (
     <section
@@ -31,6 +40,8 @@ export function FAQ() {
         <div className="mx-auto max-w-3xl">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
+            const isExternalLink =
+              faq.link?.startsWith('http');
 
             return (
               <div
@@ -39,11 +50,14 @@ export function FAQ() {
               >
                 <button
                   type="button"
-                  onClick={() => setOpenIndex(isOpen ? null : index)}
+                  onClick={() =>
+                    setOpenIndex(
+                      isOpen ? null : index
+                    )
+                  }
                   className="group flex w-full items-center gap-4 py-6 text-left md:gap-5 md:py-7"
                   aria-expanded={isOpen}
                 >
-                  {/* Heart bullet */}
                   <div
                     className={`flex h-8 w-8 shrink-0 items-center justify-center transition-colors duration-300 ${
                       isOpen
@@ -57,12 +71,10 @@ export function FAQ() {
                     />
                   </div>
 
-                  {/* Question */}
                   <span className="script flex-1 text-xl leading-snug text-[var(--text)] transition-colors group-hover:text-[var(--text-strong)] md:text-2xl">
                     {faq.question}
                   </span>
 
-                  {/* Open / close */}
                   <div
                     className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full border transition-all duration-300 ${
                       isOpen
@@ -75,16 +87,40 @@ export function FAQ() {
                 </button>
 
                 <div
-                  className={`overflow-hidden transition-all duration-500 ease-out ${
+                  className={`grid transition-[grid-template-rows,opacity] duration-500 ease-out ${
                     isOpen
-                      ? 'max-h-96 pb-7 opacity-100'
-                      : 'max-h-0 opacity-0'
+                      ? 'grid-rows-[1fr] opacity-100'
+                      : 'grid-rows-[0fr] opacity-0'
                   }`}
                 >
-                  <div className="pl-12 md:pl-[52px]">
-                    <p className="max-w-2xl text-sm leading-7 text-[var(--text-soft)] md:text-base md:leading-8">
-                      {faq.answer}
-                    </p>
+                  <div className="overflow-hidden">
+                    <div className="pb-7 pl-12 md:pl-[52px]">
+                      <p className="max-w-2xl text-sm leading-7 text-[var(--text-soft)] md:text-base md:leading-8">
+                        {faq.answer}
+                      </p>
+
+                      {faq.link &&
+                        faq.linkLabel && (
+                          <a
+                            href={faq.link}
+                            {...(isExternalLink
+                              ? {
+                                  target: '_blank',
+                                  rel: 'noopener noreferrer'
+                                }
+                              : {})}
+                            className="group/link mt-4 inline-flex items-center gap-2 border-b border-[rgba(83,99,75,0.32)] pb-1 text-xs font-medium uppercase tracking-[0.13em] text-[var(--brand-600)] transition-colors hover:border-[var(--brand-600)] md:text-[0.78rem]"
+                          >
+                            {faq.linkLabel}
+
+                            {isExternalLink ? (
+                              <ExternalLink className="h-3.5 w-3.5 transition-transform group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" />
+                            ) : (
+                              <ArrowDownRight className="h-3.5 w-3.5 transition-transform group-hover/link:translate-x-0.5 group-hover/link:translate-y-0.5" />
+                            )}
+                          </a>
+                        )}
+                    </div>
                   </div>
                 </div>
               </div>

@@ -1,7 +1,12 @@
 'use client';
 
 import Image from 'next/image';
-import {useCallback, useEffect, useRef, useState} from 'react';
+import {
+  useCallback,
+  useEffect,
+  useRef,
+  useState
+} from 'react';
 import {useTranslations} from 'next-intl';
 import {ArrowLeft, ArrowRight} from 'lucide-react';
 
@@ -20,298 +25,362 @@ const images = [
   '/images/gallery/2023.jpg',
   '/images/gallery/2024.jpg',
   '/images/gallery/2025.jpg',
-  '/images/gallery/2026.jpg'
+  '/images/gallery/2026.png'
 ];
 
 const loopImages = [...images, ...images, ...images];
+
+const FIRST_AUTOPLAY_DELAY = 1400;
+const AUTOPLAY_DELAY = 3200;
+const INTERACTION_PAUSE = 2500;
 
 export function Gallery() {
   const t = useTranslations('gallery');
   const items = t.raw('items') as GalleryItem[];
 
   const scrollRef = useRef<HTMLDivElement>(null);
-  const interactionTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(
-    null
-  );
+
+  const interactionTimeoutRef =
+    useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const autoplayTimeoutRef =
+    useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const [activeIndex, setActiveIndex] = useState(0);
   const [isInteracting, setIsInteracting] = useState(false);
+  const [hasStartedAutoplay, setHasStartedAutoplay] =
+    useState(false);
 
-  /*
-   * Width of exactly one complete set of 10 images.
-   * Since the gallery is rendered three times, this is 1/3
-   * of the complete scroll width.
-   */
-  const getSetWidth = useCallback(() => {
+  const getCards = useCallback(() => {
     const container = scrollRef.current;
 
-    if (!container) return 0;
+    if (!container) return [];
 
-    return container.scrollWidth / 3;
+    return Array.from(
+      container.querySelectorAll<HTMLElement>(
+        '[data-gallery-card]'
+      )
+    );
   }, []);
 
-  /*
-   * Start in the middle copy so that the user can immediately
-   * scroll both left and right.
-   */
-  useEffect(() => {
+  const centerCard = useCallback(
+    (
+      card: HTMLElement,
+      behavior: ScrollBehavior = 'smooth'
+    ) => {
+      const container = scrollRef.current;
+
+      if (!container) return;
+
+      const targetLeft =
+        card.offsetLeft -
+        container.clientWidth / 2 +
+        card.offsetWidth / 2;
+
+      container.scrollTo({
+        left: targetLeft,
+        behavior
+      });
+    },
+    []
+  );
+
+  const getCenteredCardIndex = useCallback(() => {
     const container = scrollRef.current;
+    const cards = getCards();
 
-    if (!container) return;
+    if (!container || !cards.length) return -1;
 
-    const frame = requestAnimationFrame(() => {
-      const setWidth = getSetWidth();
+    const containerRect =
+      container.getBoundingClientRect();
 
-      container.scrollLeft = setWidth;
-    });
+    const containerCenter =
+      containerRect.left +
+      containerRect.width / 2;
 
-    return () => cancelAnimationFrame(frame);
-  }, [getSetWidth]);
-
-  /*
-   * Find the card closest to the horizontal center.
-   * This controls the progress indicator.
-   */
-  const updateActiveIndex = useCallback(() => {
-    const container = scrollRef.current;
-
-    if (!container) return;
-
-    const cards = Array.from(
-      container.querySelectorAll<HTMLElement>('[data-gallery-card]')
-    );
-
-    if (!cards.length) return;
-
-    const containerRect = container.getBoundingClientRect();
-    const containerCenter = containerRect.left + containerRect.width / 2;
-
-    let closestDistance = Infinity;
     let closestIndex = 0;
+    let closestDistance = Infinity;
 
-    cards.forEach((card) => {
+    cards.forEach((card, index) => {
       const rect = card.getBoundingClientRect();
-      const cardCenter = rect.left + rect.width / 2;
-      const distance = Math.abs(containerCenter - cardCenter);
+
+      const cardCenter =
+        rect.left + rect.width / 2;
+
+      const distance = Math.abs(
+        containerCenter - cardCenter
+      );
 
       if (distance < closestDistance) {
         closestDistance = distance;
-        closestIndex = Number(card.dataset.realIndex ?? 0);
+        closestIndex = index;
       }
     });
 
-    setActiveIndex(closestIndex);
-  }, []);
+    return closestIndex;
+  }, [getCards]);
 
-  /*
-   * Invisible infinite-loop correction.
-   *
-   * We keep the user around the middle copy.
-   * The visual position stays exactly the same because
-   * all three copies are identical.
-   */
+  const updateActiveIndex = useCallback(() => {
+    const cards = getCards();
+    const centeredIndex =
+      getCenteredCardIndex();
+
+    if (centeredIndex < 0) return;
+
+    const realIndex = Number(
+      cards[centeredIndex]?.dataset.realIndex ?? 0
+    );
+
+    setActiveIndex(realIndex);
+  }, [getCards, getCenteredCardIndex]);
+
   const normalizePosition = useCallback(() => {
-    const container = scrollRef.current;
+    const cards = getCards();
+    const centeredIndex =
+      getCenteredCardIndex();
 
-    if (!container) return;
+    if (centeredIndex < 0) return;
 
-    const setWidth = getSetWidth();
+    if (centeredIndex < images.length) {
+      const equivalentCard =
+        cards[centeredIndex + images.length];
 
-    if (!setWidth) return;
+      if (equivalentCard) {
+        centerCard(equivalentCard, 'auto');
+      }
+    } else if (
+      centeredIndex >= images.length * 2
+    ) {
+      const equivalentCard =
+        cards[centeredIndex - images.length];
 
-    if (container.scrollLeft < setWidth * 0.5) {
-      container.scrollLeft += setWidth;
-    } else if (container.scrollLeft > setWidth * 1.5) {
-      container.scrollLeft -= setWidth;
+      if (equivalentCard) {
+        centerCard(equivalentCard, 'auto');
+      }
     }
-  }, [getSetWidth]);
+  }, [
+    centerCard,
+    getCards,
+    getCenteredCardIndex
+  ]);
 
-  /*
-   * Native scroll handler.
-   * Works for:
-   * - touch
-   * - trackpad
-   * - mouse wheel
-   * - dragging
-   * - buttons
-   */
   const handleScroll = useCallback(() => {
+    updateActiveIndex();
+  }, [updateActiveIndex]);
+
+  const handleScrollEnd = useCallback(() => {
     normalizePosition();
     updateActiveIndex();
-  }, [normalizePosition, updateActiveIndex]);
+  }, [
+    normalizePosition,
+    updateActiveIndex
+  ]);
 
-  /*
-   * Temporarily stop autoplay after user interaction.
-   */
   const pauseAutoplay = useCallback(() => {
     setIsInteracting(true);
 
     if (interactionTimeoutRef.current) {
-      clearTimeout(interactionTimeoutRef.current);
+      clearTimeout(
+        interactionTimeoutRef.current
+      );
     }
 
-    interactionTimeoutRef.current = setTimeout(() => {
-      setIsInteracting(false);
-    }, 4500);
+    interactionTimeoutRef.current =
+      setTimeout(() => {
+        setIsInteracting(false);
+      }, INTERACTION_PAUSE);
   }, []);
+
+  const moveOneCard = useCallback(
+    (
+      direction: 'previous' | 'next',
+      userInteraction = true
+    ) => {
+      const cards = getCards();
+      const currentIndex =
+        getCenteredCardIndex();
+
+      if (
+        !cards.length ||
+        currentIndex < 0
+      ) {
+        return;
+      }
+
+      if (userInteraction) {
+        pauseAutoplay();
+      }
+
+      let targetIndex =
+        direction === 'next'
+          ? currentIndex + 1
+          : currentIndex - 1;
+
+      if (!cards[targetIndex]) {
+        const realIndex = Number(
+          cards[currentIndex]?.dataset
+            .realIndex ?? 0
+        );
+
+        targetIndex =
+          images.length +
+          realIndex +
+          (direction === 'next'
+            ? 1
+            : -1);
+      }
+
+      const targetCard =
+        cards[targetIndex];
+
+      if (!targetCard) return;
+
+      centerCard(targetCard);
+    },
+    [
+      centerCard,
+      getCards,
+      getCenteredCardIndex,
+      pauseAutoplay
+    ]
+  );
+
+  const scrollToImage = useCallback(
+    (realIndex: number) => {
+      const cards = getCards();
+
+      pauseAutoplay();
+
+      const targetCard =
+        cards[images.length + realIndex];
+
+      if (!targetCard) return;
+
+      centerCard(targetCard);
+    },
+    [
+      centerCard,
+      getCards,
+      pauseAutoplay
+    ]
+  );
+
+  /* Initial position */
+  useEffect(() => {
+    const frame = requestAnimationFrame(
+      () => {
+        const cards = getCards();
+
+        const firstMiddleCard =
+          cards[images.length];
+
+        if (!firstMiddleCard) return;
+
+        centerCard(
+          firstMiddleCard,
+          'auto'
+        );
+
+        setActiveIndex(0);
+      }
+    );
+
+    return () =>
+      cancelAnimationFrame(frame);
+  }, [centerCard, getCards]);
+
+  /* First autoplay movement */
+  useEffect(() => {
+    if (
+      isInteracting ||
+      hasStartedAutoplay
+    ) {
+      return;
+    }
+
+    autoplayTimeoutRef.current =
+      setTimeout(() => {
+        moveOneCard('next', false);
+        setHasStartedAutoplay(true);
+      }, FIRST_AUTOPLAY_DELAY);
+
+    return () => {
+      if (
+        autoplayTimeoutRef.current
+      ) {
+        clearTimeout(
+          autoplayTimeoutRef.current
+        );
+      }
+    };
+  }, [
+    hasStartedAutoplay,
+    isInteracting,
+    moveOneCard
+  ]);
+
+  /* Regular autoplay */
+  useEffect(() => {
+    if (
+      isInteracting ||
+      !hasStartedAutoplay
+    ) {
+      return;
+    }
+
+    const interval =
+      window.setInterval(() => {
+        moveOneCard('next', false);
+      }, AUTOPLAY_DELAY);
+
+    return () => {
+      window.clearInterval(interval);
+    };
+  }, [
+    hasStartedAutoplay,
+    isInteracting,
+    moveOneCard
+  ]);
+
+  /* Infinite-loop correction */
+  useEffect(() => {
+    const container =
+      scrollRef.current;
+
+    if (!container) return;
+
+    container.addEventListener(
+      'scrollend',
+      handleScrollEnd
+    );
+
+    return () => {
+      container.removeEventListener(
+        'scrollend',
+        handleScrollEnd
+      );
+    };
+  }, [handleScrollEnd]);
 
   useEffect(() => {
     return () => {
-      if (interactionTimeoutRef.current) {
-        clearTimeout(interactionTimeoutRef.current);
+      if (
+        interactionTimeoutRef.current
+      ) {
+        clearTimeout(
+          interactionTimeoutRef.current
+        );
+      }
+
+      if (
+        autoplayTimeoutRef.current
+      ) {
+        clearTimeout(
+          autoplayTimeoutRef.current
+        );
       }
     };
   }, []);
-
-  /*
-   * Scroll exactly one card left/right.
-   */
-  const scrollOneCard = useCallback(
-    (direction: 'previous' | 'next') => {
-      const container = scrollRef.current;
-
-      if (!container) return;
-
-      pauseAutoplay();
-
-      const cards = Array.from(
-        container.querySelectorAll<HTMLElement>('[data-gallery-card]')
-      );
-
-      if (!cards.length) return;
-
-      const containerRect = container.getBoundingClientRect();
-      const containerCenter = containerRect.left + containerRect.width / 2;
-
-      /*
-       * Find currently centered card.
-       */
-      let currentCardIndex = 0;
-      let closestDistance = Infinity;
-
-      cards.forEach((card, index) => {
-        const rect = card.getBoundingClientRect();
-        const cardCenter = rect.left + rect.width / 2;
-        const distance = Math.abs(containerCenter - cardCenter);
-
-        if (distance < closestDistance) {
-          closestDistance = distance;
-          currentCardIndex = index;
-        }
-      });
-
-      const targetIndex =
-        direction === 'next'
-          ? currentCardIndex + 1
-          : currentCardIndex - 1;
-
-      const targetCard = cards[targetIndex];
-
-      if (!targetCard) return;
-
-      const targetLeft =
-        targetCard.offsetLeft -
-        container.clientWidth / 2 +
-        targetCard.offsetWidth / 2;
-
-      container.scrollTo({
-        left: targetLeft,
-        behavior: 'smooth'
-      });
-    },
-    [pauseAutoplay]
-  );
-
-  /*
-   * Slow automatic progression.
-   *
-   * Instead of continuously modifying scrollLeft,
-   * autoplay advances one actual card at a time.
-   * This is much more reliable on touch devices.
-   */
-  useEffect(() => {
-    if (isInteracting) return;
-
-    const interval = setInterval(() => {
-      const container = scrollRef.current;
-
-      if (!container) return;
-
-      const cards = Array.from(
-        container.querySelectorAll<HTMLElement>('[data-gallery-card]')
-      );
-
-      if (!cards.length) return;
-
-      const containerRect = container.getBoundingClientRect();
-      const containerCenter = containerRect.left + containerRect.width / 2;
-
-      let currentCardIndex = 0;
-      let closestDistance = Infinity;
-
-      cards.forEach((card, index) => {
-        const rect = card.getBoundingClientRect();
-        const cardCenter = rect.left + rect.width / 2;
-        const distance = Math.abs(containerCenter - cardCenter);
-
-        if (distance < closestDistance) {
-          closestDistance = distance;
-          currentCardIndex = index;
-        }
-      });
-
-      const targetCard = cards[currentCardIndex + 1];
-
-      if (!targetCard) return;
-
-      const targetLeft =
-        targetCard.offsetLeft -
-        container.clientWidth / 2 +
-        targetCard.offsetWidth / 2;
-
-      container.scrollTo({
-        left: targetLeft,
-        behavior: 'smooth'
-      });
-    }, 4500);
-
-    return () => clearInterval(interval);
-  }, [isInteracting]);
-
-  /*
-   * Progress indicator navigation.
-   */
-  const scrollToImage = useCallback(
-    (realIndex: number) => {
-      const container = scrollRef.current;
-
-      if (!container) return;
-
-      pauseAutoplay();
-
-      const cards = Array.from(
-        container.querySelectorAll<HTMLElement>('[data-gallery-card]')
-      );
-
-      /*
-       * Always target the matching image in the middle copy.
-       */
-      const targetCard = cards[images.length + realIndex];
-
-      if (!targetCard) return;
-
-      const targetLeft =
-        targetCard.offsetLeft -
-        container.clientWidth / 2 +
-        targetCard.offsetWidth / 2;
-
-      container.scrollTo({
-        left: targetLeft,
-        behavior: 'smooth'
-      });
-    },
-    [pauseAutoplay]
-  );
 
   return (
     <section
@@ -353,68 +422,85 @@ export function Gallery() {
           onPointerDown={pauseAutoplay}
           onTouchStart={pauseAutoplay}
           onWheel={pauseAutoplay}
-          className="hide-scrollbar w-full touch-pan-x overflow-x-auto overscroll-x-none px-6 pb-5 md:px-12"
+          className="hide-scrollbar w-full touch-pan-x snap-x snap-mandatory overflow-x-auto overscroll-x-none px-[14vw] pb-5 sm:px-[22vw] md:px-[28vw] lg:px-[34vw]"
         >
-          <div className="flex w-max gap-5">
-            {loopImages.map((src, index) => {
-              const realIndex = index % images.length;
-              const item = items[realIndex];
+          <div className="flex w-max gap-4 md:gap-5">
+            {loopImages.map(
+              (src, index) => {
+                const realIndex =
+                  index % images.length;
 
-              if (!item) return null;
+                const item =
+                  items[realIndex];
 
-              return (
-                <GalleryCard
-                  key={`${src}-${index}`}
-                  src={src}
-                  item={item}
-                  realIndex={realIndex}
-                />
-              );
-            })}
+                if (!item) return null;
+
+                return (
+                  <GalleryCard
+                    key={`${src}-${index}`}
+                    src={src}
+                    item={item}
+                    realIndex={realIndex}
+                    isActive={
+                      activeIndex ===
+                      realIndex
+                    }
+                  />
+                );
+              }
+            )}
           </div>
         </div>
 
-        {/* Floating desktop arrows */}
+        {/* Desktop / tablet arrows */}
         <button
           type="button"
-          onClick={() => scrollOneCard('previous')}
+          onClick={() =>
+            moveOneCard('previous')
+          }
           aria-label="Previous image"
-          className="absolute left-5 top-1/2 z-20 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-[rgba(255,250,242,0.5)] bg-[rgba(255,250,242,0.72)] text-[var(--text)] shadow-[0_10px_30px_rgba(72,67,63,0.12)] backdrop-blur-xl transition duration-300 hover:scale-105 hover:bg-[rgba(255,250,242,0.92)] md:flex lg:left-8"
+          className="absolute left-5 top-1/2 z-20 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-[rgba(255,250,242,0.5)] bg-[rgba(255,250,242,0.78)] text-[var(--text)] shadow-[0_10px_30px_rgba(72,67,63,0.12)] backdrop-blur-xl transition duration-300 hover:scale-105 hover:bg-[rgba(255,250,242,0.96)] md:flex lg:left-8"
         >
           <ArrowLeft className="h-4 w-4" />
         </button>
 
         <button
           type="button"
-          onClick={() => scrollOneCard('next')}
+          onClick={() =>
+            moveOneCard('next')
+          }
           aria-label="Next image"
-          className="absolute right-5 top-1/2 z-20 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-[rgba(255,250,242,0.5)] bg-[rgba(255,250,242,0.72)] text-[var(--text)] shadow-[0_10px_30px_rgba(72,67,63,0.12)] backdrop-blur-xl transition duration-300 hover:scale-105 hover:bg-[rgba(255,250,242,0.92)] md:flex lg:right-8"
+          className="absolute right-5 top-1/2 z-20 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-[rgba(255,250,242,0.5)] bg-[rgba(255,250,242,0.78)] text-[var(--text)] shadow-[0_10px_30px_rgba(72,67,63,0.12)] backdrop-blur-xl transition duration-300 hover:scale-105 hover:bg-[rgba(255,250,242,0.96)] md:flex lg:right-8"
         >
           <ArrowRight className="h-4 w-4" />
         </button>
       </div>
 
-      {/* Navigation + progress */}
+      {/* Navigation */}
       <div className="container mt-5">
         <div className="mx-auto flex max-w-4xl items-center justify-between gap-5">
-          {/* Mobile previous */}
           <button
             type="button"
-            onClick={() => scrollOneCard('previous')}
+            onClick={() =>
+              moveOneCard('previous')
+            }
             aria-label="Previous image"
             className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[var(--border)] bg-[rgba(255,250,242,0.72)] text-[var(--text)] shadow-[0_6px_20px_rgba(72,67,63,0.06)] backdrop-blur-md transition active:scale-95 md:hidden"
           >
             <ArrowLeft className="h-4 w-4" />
           </button>
 
-          {/* Progress */}
           <div className="flex flex-1 items-center justify-center gap-2">
             {images.map((_, index) => (
               <button
                 key={index}
                 type="button"
-                onClick={() => scrollToImage(index)}
-                aria-label={`Image ${index + 1}`}
+                onClick={() =>
+                  scrollToImage(index)
+                }
+                aria-label={`Image ${
+                  index + 1
+                }`}
                 className={`h-[3px] rounded-full transition-all duration-500 ${
                   activeIndex === index
                     ? 'w-8 bg-[var(--brand-600)]'
@@ -424,10 +510,11 @@ export function Gallery() {
             ))}
           </div>
 
-          {/* Mobile next */}
           <button
             type="button"
-            onClick={() => scrollOneCard('next')}
+            onClick={() =>
+              moveOneCard('next')
+            }
             aria-label="Next image"
             className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[var(--border)] bg-[rgba(255,250,242,0.72)] text-[var(--text)] shadow-[0_6px_20px_rgba(72,67,63,0.06)] backdrop-blur-md transition active:scale-95 md:hidden"
           >
@@ -446,40 +533,100 @@ export function Gallery() {
 function GalleryCard({
   src,
   item,
-  realIndex
+  realIndex,
+  isActive
 }: {
   src: string;
   item: GalleryItem;
   realIndex: number;
+  isActive: boolean;
 }) {
   return (
     <article
       data-gallery-card
       data-real-index={realIndex}
-      className="group relative aspect-[3/4] w-[72vw] shrink-0 overflow-hidden rounded-sm md:w-[36vw] lg:w-[28vw]"
+      className="group relative aspect-[4/5] w-[72vw] shrink-0 snap-center overflow-hidden rounded-sm sm:w-[56vw] md:w-[42vw] lg:w-[30vw]"
     >
       <Image
         src={src}
         alt={item.caption ?? item.date}
         fill
-        className="object-cover grayscale contrast-[0.92] brightness-[1.02] transition-all duration-700 group-hover:scale-[1.03] group-hover:grayscale-0 group-hover:contrast-100 group-hover:brightness-100"
-        sizes="(max-width: 768px) 72vw, (max-width: 1024px) 36vw, 28vw"
+        className={`
+          object-cover
+          transition-all
+          duration-700
+
+          ${
+            isActive
+              ? 'grayscale-0 sepia-0 saturate-100 contrast-100 brightness-100'
+              : 'grayscale-[0.88] sepia-[0.34] saturate-[0.72] contrast-[1.1] brightness-[0.96]'
+          }
+
+          lg:grayscale-[0.88]
+          lg:sepia-[0.34]
+          lg:saturate-[0.72]
+          lg:contrast-[1.1]
+          lg:brightness-[0.96]
+
+          lg:group-hover:scale-[1.025]
+          lg:group-hover:grayscale-0
+          lg:group-hover:sepia-0
+          lg:group-hover:saturate-100
+          lg:group-hover:contrast-100
+          lg:group-hover:brightness-100
+        `}
+        sizes="(max-width: 640px) 72vw, (max-width: 768px) 56vw, (max-width: 1024px) 42vw, 30vw"
       />
 
-      {/* Very subtle warm overlay */}
-      <div className="absolute inset-0 bg-[rgba(183,138,111,0.035)] transition-opacity duration-700 group-hover:opacity-0" />
+      {/* Text readability */}
+      <div
+        className={`
+          absolute inset-0
+          bg-gradient-to-t
+          from-[rgba(17,17,17,0.58)]
+          via-[rgba(17,17,17,0.03)]
+          to-transparent
+          transition-opacity
+          duration-500
 
-      {/* Bottom readability gradient */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[rgba(17,17,17,0.58)] via-[rgba(17,17,17,0.05)] to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+          ${
+            isActive
+              ? 'opacity-100'
+              : 'opacity-0'
+          }
 
-      {/* Year + optional caption */}
-      <div className="absolute inset-x-0 bottom-0 translate-y-4 p-6 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100 md:p-7">
+          lg:opacity-0
+          lg:group-hover:opacity-100
+        `}
+      />
+
+      {/* Year */}
+      <div
+        className={`
+          absolute inset-x-0 bottom-0
+          p-5
+          transition-all
+          duration-500
+          md:p-7
+
+          ${
+            isActive
+              ? 'translate-y-0 opacity-100'
+              : 'translate-y-3 opacity-0'
+          }
+
+          lg:translate-y-3
+          lg:opacity-0
+          lg:group-hover:translate-y-0
+          lg:group-hover:opacity-100
+        `}
+      >
         <p className="serif text-5xl leading-none text-[var(--background)] md:text-6xl lg:text-7xl">
           {item.date}
         </p>
 
         {item.caption && (
-          <p className="mt-3 max-w-xs text-sm leading-6 text-[rgba(252,245,234,0.82)]">
+          <p className="mt-3 max-w-xs text-sm leading-6 text-[rgba(252,245,234,0.86)]">
             {item.caption}
           </p>
         )}

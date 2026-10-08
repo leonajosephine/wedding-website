@@ -1,316 +1,424 @@
-{ 
+{
   "invitationOverlay": {
-    "openCta": "Åbn invitationen",
+    "openCta": "Åbn Invitation",
+    "inviteImageSrc": "/images/intro/inviteda.jpeg",
     "cardEyebrow": "Sammen med vores familier",
-    "cardIntro": "inviterer vi jer hjerteligt til at fejre vores bryllup med os",
-    "enterCta": "Gå til hjemmesiden"
+    "cardIntro": "inviterer vi dig hjerteligt til at fejre vores bryllup med os",
+    "enterCta": "Gå til Hjemmesiden"
   },
   "navigation": {
     "story": "Vores Historie",
     "schedule": "Program",
     "dresscode": "Dresscode",
-    "location": "Sted",
-    "contact": "Kontakt",
+    "location": "Lokation",
+    "contact": "Kontakter",
     "faq": "FAQ",
     "rsvp": "RSVP",
-    "openMenu": "Åbn menu",
-    "closeMenu": "Luk menu",
-    "homeLabel": "Tilbage til forsiden"
+    "openMenu": "Åbn Menu",
+    "closeMenu": "Luk Menu",
+    "homeLabel": "Tilbage til Forsiden"
   },
   "hero": {
     "nameOne": "Merle",
     "nameTwo": "Lasse",
-    "eyebrow": "Vi skal giftes",
+    "eyebrow": "Vi Skal Giftes",
     "date": "15. maj 2027",
-    "location": "Heimathaus Tornesch · Slesvig-Holsten",
-    "cta": "Svar nu"
+    "location": "Heimathaus Tornesch · Schleswig-Holstein",
+    "cta": "RSVP Nu"
   },
   "story": {
     "eyebrow": "Vores Historie",
     "headingScript": "Vores",
     "headingSerif": "Historie",
-    "paragraphOne": "Hvad der startede som et tilfældigt møde, blev til den smukkeste historie i vores liv. Merle og Lasse mødte hinanden, da livet havde andre planer – og alligevel føltes alt præcis, som det skulle være.",
-    "paragraphTwo": "Sammen har vi grinet, skændtes, rejst og drømt. Hvert øjeblik sammen er en gave. Og nu glæder vi os til at fejre den smukkeste dag med alle de mennesker, der betyder mest for os.",
-    "quote": "Jeg vælger dig – i dag, i morgen og alle dage derefter.",
+    "paragraphOne": "Vores historie begyndte faktisk lidt tidligere, end vi vidste på det tidspunkt. Vores veje krydsede første gang længe før, vi blev 'os.' I januar 2017 mødtes vi igen, og et tilfældigt møde blev hurtigt til noget mere. Den 14. februar 2017 blev vi officielt et par.",
+    "paragraphTwo": "Siden da er mange år, rejser, eventyr og utallige minder gået. Vi har levet, grinet, lagt planer og opfyldt vores drøm om at eje et hjem. I begyndelsen af 2026 blev vi forlovet og ser nu frem til det næste kapitel i vores historie – og især til at fejre det med dig. 🤍",
+    "quote": "I dag, i morgen og alle dage fremover – altid dig.",
     "imageAlt": "Merle og Lasse"
   },
   "schedule": {
     "eyebrow": "Program",
     "headingPartOne": "Vores",
     "headingScriptOne": "Dag",
-    "headingPartTwo": "i",
+    "headingPartTwo": "på et",
     "headingScriptTwo": "Overblik",
     "days": [
+    {
+      "label": "Onsdag · 12. maj 2027",
+      "title": "Polterabend",
+      "startTime": "fra kl. 18:00",
+      "location": "Köhnholz 35 · 25336 Elmshorn",
+      "mapLink": "INDTAST GOOGLE MAPS LINK HER",
+      "note": "Medbring noget at smadre 🫖",
+      "events": []
+    },
+    {
+      "label": "Lørdag · 15. maj 2027",
+      "title": "Bryllupsdag",
+      "events": [
       {
-        "label": "Fredag · 14. maj 2027",
-        "title": "Polterabend",
-        "startTime": "fra kl. 18:00",
-        "location": "HER INDSÆTTES STEDET",
-        "mapLink": "HER INDSÆTTES GOOGLE-MAPS-LINKET",
-        "events": []
+        "time": "14:30",
+        "title": "Ankomst & Ceremoni",
+        "description": "Ankomst til Heimathaus Tornesch efterfulgt af ceremonien omkring kl. 15:00",
+        "tag": "Elegant & Farverigt",
+        "icon": "/images/icons/Icons_rings.png",
+        "anchor": "#location",
+        "linkLabel": "Se Lokation"
       },
       {
-        "label": "Lørdag · 15. maj 2027",
-        "title": "Bryllupsdag",
-        "events": [
-          {
-            "time": "14:00",
-            "title": "Borgerlig Vielse",
-            "description": "Rådhuset Altona City.",
-            "tag": "Elegant & Farverigt",
-            "icon": "/images/icons/Icons_rings.png",
-            "anchor": "#location",
-              "linkLabel": "Se sted"
-          },
-          {
-            "time": "15:30",
-            "title": "Champagne & Fotos",
-            "description": "Mødested ved Heimathaus Tornesch.",
-            "tag": "",
-            "icon": "/images/icons/Icons_glasses2.png"
-          },
-          {
-            "time": "18:00",
-            "title": "Middag & Program",
-            "description": "Festbord, taler og uforglemmelige øjeblikke.",
-            "tag": "",
-            "icon": "/images/icons/Icons_cake.png"
-          },
-          {
-            "time": "21:00",
-            "title": "Første Dans & Fest",
-            "description": "Dans indtil skoene brænder.",
-            "tag": "",
-            "icon": "/images/icons/Icons_disco.png"
-          }
-        ]
+        "time": "15:45",
+        "title": "Champagnereception & Fotos",
+        "description": "Tid til at skåle, snakke og nyde – akkompagneret af musik, små snacks og nogle fotos",
+        "tag": "",
+        "icon": "/images/icons/Icons_glasses2.png"
+      },
+      {
+        "time": "18:00",
+        "title": "Middag & Program",
+        "description": "Buffet, taler og mange smukke øjeblikke",
+        "tag": "",
+        "icon": "/images/icons/Icons_cake.png"
+      },
+      {
+        "time": "21:00",
+        "title": "Første Dans & Fest",
+        "description": "Fra nu af er det dans, fest og latter – indtil sent på natten",
+        "tag": "",
+        "icon": "/images/icons/Icons_disco.png"
       }
+      ]
+    }
     ]
   },
   "gallery": {
     "eyebrow": "Øjeblikke",
-    "headingPartOne": "Vores yndlings",
+    "headingPartOne": "Vores Yndlings",
     "headingScriptOne": "Øjeblikke",
-    "headingPartTwo": "gennem",
+    "headingPartTwo": "Gennem",
     "headingScriptTwo": "årene",
     "headingPartThree": ".",
-    "intro": "Vi har samlet nogle af vores yndlingsøjeblikke gennem årene.",
+    "intro": "Ti billeder og ti år.",
     "items": [
-        {"date": "2017"},
-        {"date": "2018"},
-        {"date": "2019"},
-        {"date": "2020"},
-        {"date": "2021"},
-        {"date": "2022"},
-        {"date": "2023"},
-        {"date": "2024"},
-        {"date": "2025"},
-        {"date": "2026"}
-      ]
-  },
-  "location": {
-    "eyebrow": "Hvor det sker",
-    "title": "Sted & Rejse",
-    "venue": {
-      "name": "Heimathaus Tornesch",
-      "address": "Riedweg 3\n25436 Tornesch\nSlesvig-Holsten",
-      "description": "Ceremonien finder sted udendørs, festen under et telt. Planlæg venligst din rejse i god tid.",
-      "mapCta": "Åbn i Google Maps",
-      "mapLink": "https://maps.google.com/?q=Riedweg+3,+25436+Tornesch"
-    },
-    "stay": {
-      "title": "Overnatning i nærheden",
-      "description": "Vi har samlet nogle overnatningsmuligheder i nærheden. Book venligst tidligt, da tilgængeligheden kan være begrænset.",
-      "moreCta": "Se flere overnatningsmuligheder",
-      "moreLink": "https://www.booking.com/searchresults.html?ss=Tornesch"
-    },
-    "accommodations": [
-      {
-        "name": "Hotel Esinger Hof",
-        "distance": "ca. 10 minutter væk",
-        "description": "Hyggelig indkvartering i Tornesch-området.",
-        "link": "https://www.google.com/search?q=Hotel+Esinger+Hof+Tornesch"
-      },
-      {
-        "name": "Hotel Dias",
-        "distance": "ca. 15 minutter væk",
-        "description": "Centralt valg i Pinneberg med god forbindelse.",
-        "link": "https://www.google.com/search?q=Hotel+Dias+Pinneberg"
-      },
-      {
-        "name": "Booking.com",
-        "distance": "flere overnatningsmuligheder",
-        "description": "Flere hoteller og ferielejligheder i Tornesch, Pinneberg og omegn.",
-        "link": "https://www.booking.com/searchresults.html?ss=Tornesch"
-      }
-    ],
-    "info": {
-      "parking": "Gratis parkering er tilgængelig direkte ved eller i nærheden af stedet.",
-      "accessibility": "Stedet er generelt godt tilgængeligt. Kontakt os gerne på forhånd ved særlige behov."
-    }
-  },
-  "dressCode": {
-    "eyebrow": "Hvad skal man have på?",
-    "title": "Dresscode",
-    "intro": "Vi glæder os over festligt, elegant tøj. Her er vores farvepalet til inspiration.",
-    "colors": [
-      {"name": "Mint", "hex": "#b8d4c6"},
-      {"name": "Lys Salvie", "hex": "#a8c4b5"},
-      {"name": "Salvie Grøn", "hex": "#7a9e8a"},
-      {"name": "Mos Grøn", "hex": "#5f7a6b"},
-      {"name": "Skov", "hex": "#4a6b58"}
-    ],
-    "imageAlt": "Dresscode Inspiration",
-    "noteLabel": "Vigtigt:",
-    "note": "Dette er kun til inspiration, og vi har fuld forståelse, hvis du ikke har disse farver derhjemme. Undgå venligst ren hvid, sort eller rød – alle andre farver er hjerteligt velkomne."
-  },
-  "rsvp": {
-    "eyebrow": "Svar venligst inden 15. april",
-    "title": "RSVP",
-    "step": "Trin",
-    "contactTitle": "Dine kontaktoplysninger 💌",
-    "contactText": "Så vi ved, hvem der kommer, og hvordan vi kan kontakte dig.",
-    "firstName": "Fornavn",
-    "lastName": "Efternavn",
-    "email": "E-mailadresse",
-    "attendanceTitle": "Kommer du?",
-    "attendanceText": "Vi vil glæde os til at byde dig velkommen til vores bryllup.",
-    "yesTitle": "Ja, jeg kommer! 🍾",
-    "yesText": "Jeg glæder mig til at fejre med jer.",
-    "noTitle": "Desværre ikke 😢",
-    "noText": "Jeg kan desværre ikke deltage.",
-    "detailsTitle": "Nogle flere detaljer",
-    "detailsText": "Så vi kan forberede alt perfekt.",
-    "polterabend": "Jeg kommer også til polterabend fredag. 🎉",
-    "menu": "Menuvalg 🌱",
-    "allergies": "Allergier / Intolerancer",
-    "songWish": "Sangønske til festen",
-    "back": "Tilbage",
-    "next": "Næste",
-    "submit": "Indsend",
-    "successTitle": "Mange tak!",
-    "successText": "Vi har modtaget dit svar og glæder os meget til at se dig.",
-    "calendarCta": "Tilføj til kalender",
-    "addAnotherCta": "Tilføj en anden person",
-    "calendarSummary": "Bryllup Merle & Lasse",
-    "calendarDescription": "Vi skal giftes! Fejr denne særlige dag med os.",
-    "calendarLocation": "Heimathaus Tornesch, Slesvig-Holsten",
-    "calendarFileName": "bryllup-merle-lasse.ics",
-    "menuPlaceholder": "–",
-    "menuMeat": "Kød",
-    "menuVegetarian": "Vegetarisk",
-    "menuVegan": "Vegansk"
-  },
-  "message": {
-    "imageAlt": "Merle og Lasse",
-    "paragraphOne": "Hvert forhold er en rejse, og vi er utroligt taknemmelige for, at I er en del af vores historie.",
-    "paragraphTwo": "Fra de første fælles øjeblikke til denne særlige dag – I har fulgt os, støttet os og grinet med os.",
-    "highlight": "Tak fordi I fejrer med os. Vi glæder os til uforglemmelige øjeblikke med jer alle.",
-    "signature": "Merle & Lasse"
-  },
-  "faq": {
-    "eyebrow": "Spørgsmål & Svar",
-    "title": "FAQ",
-    "items": [
-      {
-        "question": "Hvad skal jeg have på?",
-        "answer": "Vi ønsker os elegant tøj i farverige nuancer. Det vigtigste er, at du føler dig godt tilpas."
-      },
-      {
-        "question": "Må jeg tage billeder?",
-        "answer": "Under ceremonien beder vi jer om ikke at tage billeder. Efterfølgende glæder vi os meget over jeres snapshots."
-      },
-      {
-        "question": "Kan jeg tage børn med?",
-        "answer": "Vi elsker børn, men festen er planlagt som en voksenfest."
-      },
-      {
-        "question": "Er der vegetariske eller veganske muligheder?",
-        "answer": "Ja, selvfølgelig. Angiv venligst dine ønsker og allergier i RSVP."
-      },
-      {
-        "question": "Hvor kan jeg overnatte?",
-        "answer": "I sektionen 'Sted' finder du nogle anbefalinger til overnatning i nærheden."
-      },
-      {
-        "question": "Hvad ønsker I jer til brylluppet?",
-        "answer": "Det vigtigste for os er, at I er der. Hvis I ønsker at give os en gave, vil vi sætte pris på et bidrag til vores bryllupsrejse."
-      }
+    {"date": "2017"},
+    {"date": "2018"},
+    {"date": "2019"},
+    {"date": "2020"},
+    {"date": "2021"},
+    {"date": "2022"},
+    {"date": "2023"},
+    {"date": "2024"},
+    {"date": "2025"},
+    {"date": "2026"}
     ]
   },
-  "contacts": {
-    "eyebrow": "Jeres kontaktpersoner",
-    "headingPartOne": "Vi",
-    "headingPartTwo": "er her",
-    "headingPartThree": "for",
-    "headingPartFour": "jer",
-    "bottomText": "Uanset om det er organisatoriske spørgsmål, overnatning eller bare en hyggelig snak – disse vidunderlige mennesker hjælper jer gerne.",
-    "items": [
-      {
-        "name": "Mie Maleen",
-        "role": "Forlover",
-        "image": "/images/contacts/mie.png",
-        "funFact": "Mie er Merles søster og altid klar på sjov ☀️"
+    "location": {
+      "eyebrow": "Hvor det sker",
+      "title": "Lokation & Ankomst",
+
+      "venue": {
+        "name": "Heimathaus Tornesch",
+        "address": "Riedweg 3\n25436 Tornesch\nSchleswig-Holstein",
+        "description": "Her ønsker vi at ankomme, skåle, fejre og tilbringe en uforglemmelig dag med dig.",
+        "mapCta": "Åbn i Google Maps",
+        "mapLink": "https://maps.google.com/?q=Riedweg+3,+25436+Tornesch"
       },
-      {
-        "name": "Gitte & Marco",
-        "role": "Brudens forældre",
-        "image": "/images/contacts/gittemarco.png",
-        "funFact": "Gitte og Marco er de bedste værter – de kender stedet som deres egen bukselomme."
+
+      "stay": {
+        "eyebrow": "Overnatning",
+        "title": "Indkvartering i Nærheden",
+        "description": "For dem, der ikke ønsker at køre hjem efter festen, har vi reserveret et antal værelser og samlet andre muligheder i området.",
+        "priceLabel": "Pris pr. Nat",
+        "hotelCta": "Besøg Hotellets Hjemmeside",
+        "alternativeLabel": "Anden Mulighed",
+        "moreTitle": "Flere Indkvarteringer",
+        "moreDescription": "Find flere hoteller og ferieboliger i Tornesch, Pinneberg og omegn på Booking.com.",
+        "moreCta": "Se Flere Indkvarteringer",
+        "moreLink": "DIN EKSISTERENDE BOOKING LINK"
       },
-      {
-        "name": "Matti",
-        "role": "Forlover",
-        "image": "/images/contacts/max.png",
-        "funFact": "Matti er Lasses bror og den perfekte kontaktperson for alle spørgsmål om festen."
-      },
-      {
-        "name": "Beate & Peter",
-        "role": "Brudgommens forældre",
-        "image": "/images/contacts/gittemarco.png",
-        "funFact": ""
-      },
-      {
-        "name": "Bobby",
-        "role": "Feel Good Manager",
-        "image": "/images/contacts/bobby.png",
-        "funFact": "Bobby er vores trofaste hund og sørger for god stemning – han glæder sig til at blive klappet af jer!"
-      },
-      {
-        "name": "Leona",
-        "role": "Brudepige",
-        "image": "/images/contacts/leona.png",
-        "funFact": "Merles bedste veninde og sjæleven – hun kender alle hemmeligheder og glæder sig til at fejre med jer!"
+
+      "accommodations": [
+        {
+          "name": "Hotel Esinger Hof",
+          "distance": "Ca. 5 minutters gang",
+          "description": "Du kan booke dobbeltværelser fra vores reserverede blok indtil den 15. februar 2027. Kontakt hotellet direkte og nævn nøgleordet 'Bryllup Merle & Lasse.' Kontakt: Info@esingerhotel.de",
+          "reservationNote": "Værelsesblok for vores gæster",
+          "price": "103 € for 2 personer inkl. morgenmad",
+          "link": "DIN EKSISTERENDE HOTEL LINK"
+        },
+        {
+          "name": "Hotel Dias",
+          "distance": "Ca. 15 minutter væk",
+          "description": "Et centralt alternativ i Pinneberg med gode forbindelser.",
+          "link": "https://www.google.com/search?q=Hotel+Dias+Pinneberg"
+        }
+      ],
+
+      "info": {
+        "parkingLabel": "Ankomst i Bil",
+        "parking": "Gratis parkering er tilgængelig lige ved siden af lokationen. Indtast blot adressen i din GPS og følg parkeringsskiltene på stedet.",
+        "trainLabel": "Ankomst med Tog",
+        "accessibility": "Fra Hamborg Hovedbanegård kan du nå Tornesch på ca. 25 minutter med tog. Derfra er det ca. 5 minutter med bus 6668 eller alternativt med taxa."
       }
-    ],
-    "urgentPhone": "+49123456789",
-    "urgentCta": "Har du et akut spørgsmål? Ring til Gitte"
-  },
-  "footer": {
-    "date": "15. maj 2027 · Tornesch",
-    "subtitle": "Designet med kærlighed til vores gæster 💛",
-    "cta": "Spørgsmål? Skriv til os",
-    "email": "kontakt@example.com"
-  },
-  "countdown": {
-    "title": "nedtælling til den store dag",
-    "date": "den 15. maj 2027",
-    "days": "Dage",
-    "hours": "Timer",
-    "minutes": "Minutter",
-    "seconds": "Sekunder"
-  },
-  "eucalyptusDivider": {
-    "eyebrow": "gem datoen",
-    "date": "15 · 05 · 2027",
-    "title": "en weekend at huske"
-  },
-  "fullWidthPhoto": {
-    "imageAlt": "Merle og Lasse"
-  },
-  "quoteDivider": {
-    "eyebrow": "en lille note",
-    "lineOne": "til stjernerne, der lytter,",
-    "lineTwo": "og drømmene, der bliver opfyldt."
+    },
+    "dressCode": {
+      "eyebrow": "Farvepalet",
+      "title": "Dresscode",
+
+      "mainColorsLabel": "Vores Hovedfarver",
+
+      "mainColors": [
+        {
+          "name": "Sage Grøn",
+          "hex": "#B8BBAA"
+        },
+        {
+          "name": "Eucalyptus",
+          "hex": "#909B8B"
+        },
+        {
+          "name": "Sage",
+          "hex": "#A4AC9D"
+        },
+        {
+          "name": "Oliven Grøn",
+          "hex": "#7C7B5F"
+        },
+        {
+          "name": "Mørkegrøn",
+          "hex": "#3F4D3E"
+        }
+      ],
+
+      "alternativeColorsLabel": "Andre Matchende Toner",
+
+      "alternativeColors": [
+        {
+          "name": "Sand",
+          "hex": "#C2B09A"
+        },
+        {
+          "name": "Greige",
+          "hex": "#B1A494"
+        },
+        {
+          "name": "Brun",
+          "hex": "#806D5C"
+        },
+        {
+          "name": "Lyseblå",
+          "hex": "#C1CDD1"
+        },
+        {
+          "name": "Støvet Blå",
+          "hex": "#A8B6B9"
+        },
+        {
+          "name": "Grå",
+          "hex": "#AEAEAE"
+        },
+        {
+          "name": "Støvet Rosa",
+          "hex": "#CAA8A6"
+        },
+        {
+          "name": "Mauve",
+          "hex": "#B59797"
+        }
+      ],
+
+      "imageAlt": "Inspiration til vores Dresscode",
+
+      "noteLabel": "Vigtigt:",
+      "note": "Farvepaletten er en inspiration og ikke et strengt krav. Vi er selvfølgelig glade for alle, der kommer i de foreslåede farver, men føl dig fri til at bære andre farver, du kan lide. Vi ønsker, at du føler dig godt tilpas."
+    },
+    "rsvp": {
+      "eyebrow": "Venligst RSVP inden den 15. april",
+      "title": "RSVP",
+
+      "step": "Trin",
+
+      "contactTitle": "Dine Kontaktoplysninger 💌",
+      "contactText": "Så vi ved, hvem der kommer, og hvordan vi kan nå dig.",
+
+      "firstName": "Fornavn",
+      "lastName": "Efternavn",
+      "email": "E-mail Adresse",
+
+      "attendanceTitle": "Kommer du?",
+      "attendanceText": "Vi vil elske at byde dig velkommen til vores bryllup.",
+
+      "yesTitle": "Ja, jeg kommer! 🍾",
+      "yesText": "Jeg glæder mig til at fejre med jer.",
+
+      "noTitle": "Desværre ikke 😢",
+      "noText": "Jeg kan ikke deltage.",
+
+      "detailsTitle": "Et Par Flere Detaljer",
+      "detailsText": "Så vi kan forberede alt perfekt.",
+
+      "polterabend": "Jeg deltager også i Polterabend fredag. 🎉",
+
+      "vegan": "Jeg spiser vegansk",
+      "veganHint": "Venligst ikke marker, hvis du spiser vegetarisk.",
+      "allergies": "Allergier / Intolerancer",
+      "songWish": "Denne sang får mig på dansegulvet 💃",
+
+      "back": "Tilbage",
+      "next": "Næste",
+      "submit": "Indsend",
+
+      "successTitle": "Tak!",
+      "successText": "Vi har modtaget dit svar og glæder os meget til at se dig.",
+
+      "calendarCta": "Tilføj til Kalender",
+      "addAnotherCta": "Tilføj En Anden Person",
+      "calendarSummary": "Bryllup Merle & Lasse",
+      "calendarDescription": "Vi skal giftes! Fejr denne specielle dag med os.",
+      "calendarLocation": "Heimathaus Tornesch, Schleswig-Holstein",
+      "calendarFileName": "bryllup-merle-lasse.ics"
+    },
+    "message": {
+      "imageAlt": "Merle og Lasse",
+      "paragraphOne": "Hver relation er en rejse, og vi er utroligt taknemmelige for, at du er en del af vores historie.",
+      "paragraphTwo": "Fra de første delte øjeblikke til denne specielle dag – du har fulgt os, støttet os og grinet med os.",
+      "highlight": "Tak fordi du fejrer med os. Vi ser frem til uforglemmelige øjeblikke med jer alle.",
+      "signature": "Merle & Lasse"
+    },
+    "faq": {
+      "eyebrow": "Spørgsmål & Svar",
+      "title": "FAQ",
+      "items": [
+        {
+          "question": "Hvad skal jeg have på?",
+          "answer": "Vi vil elske, hvis du orienterer dig efter vores naturlige, varme farvepalet. 👗 En lille note om valg af sko: Vores ceremoni vil finde sted udenfor på græsplænen, før aftenprogrammet fortsætter indendørs.",
+          "link": "#dresscode",
+          "linkLabel": "Til Dresscode"
+        },
+        {
+          "question": "Hvornår starter det?",
+          "answer": "Kom gerne omkring kl. 14:30 – der vil allerede være en lille drink, og Lasse vil også være der. Vores frie ceremoni begynder kl. 15:00. 🥂",
+          "link": "#schedule",
+          "linkLabel": "Til Programmet"
+        },
+        {
+          "question": "Kan jeg tage børn med?",
+          "answer": "Vi vil gerne fejre vores specielle dag i kredsen af voksne. 🤍"
+        },
+        {
+          "question": "Hvor kan jeg parkere ved lokationen?",
+          "answer": "Gratis parkering er tilgængelig lige ved siden af lokationen. Indtast blot adressen i din GPS og følg parkeringsskiltene på stedet. 🚗",
+          "link": "#location",
+          "linkLabel": "Til Lokation & Ankomst"
+        },
+        {
+          "question": "Hvor kan jeg overnatte efter festen?",
+          "answer": "Vi har reserveret et antal værelser til vores gæster på Hotel Esinger Hof. Du kan bo der til vores aftalte specialpris. 🏨 Alternativt kan du også sove i din bil på parkeringspladsen.",
+          "link": "#location",
+          "linkLabel": "Til Indkvartering"
+        },
+        {
+          "question": "Er der vegetariske og veganske muligheder?",
+          "answer": "Ja! Vores buffet vil inkludere både vegetariske og veganske muligheder. Hvis du har allergier eller andre intolerancer, så lad os det vide via RSVP-værktøjet, når du svarer. 🌿",
+          "link": "#rsvp",
+          "linkLabel": "Til RSVP"
+        },
+        {
+          "question": "Kan jeg tage billeder?",
+          "answer": "Absolut! 📸 Under ceremonien beder vi dig venligst om at holde telefonerne i lommen og nyde øjeblikket med os – vores fotograf tager sig af billederne. Efterfølgende ser vi frem til dine snapshots, som du kan dele med os via en foto QR-kode!"
+        },
+        {
+          "question": "Hvad kan vi give jer i gave?",
+          "answer": "Vores største ønske er at rejse til Canada i en måned efter brylluppet – denne gang til Vancouver, Vancouver Island og Rocky Mountains. 🇨🇦 Hvis du ønsker at støtte os med et lille bidrag til vores bryllupsrejse, vil vi være meget taknemmelige. Og hvis du foretrækker at give noget til vores hjem, har vi også lavet en lille ønskeliste til dig. 🏡",
+          "link": "INDTAST ØNSKELISTE LINK HER",
+          "linkLabel": "Se Vores Ønskeliste"
+        },
+        {
+          "question": "Jeg vil gerne holde en tale eller bidrage med noget – hvem skal jeg kontakte?",
+          "answer": "Kontakt venligst vores toastmaster Søren for dette. Han koordinerer aftenprogrammet, planlægger bidragene og vil lade dig vide på forhånd, hvornår det er din tur. På denne måde kan vi sikre, at alt finder sin rette plads. 🎤",
+          "link": "#contacts",
+          "linkLabel": "Til Kontakter"
+        }
+      ]
+    },
+    "contacts": {
+      "eyebrow": "Dine Kontakter",
+      "headingPartOne": "Vi",
+      "headingPartTwo": "er her",
+      "headingPartThree": "for",
+      "headingPartFour": "dig",
+      "bottomText": "Uanset om det er organisatoriske spørgsmål, indkvartering eller bare en venlig snak – disse vidunderlige mennesker er glade for at hjælpe dig.",
+      "items": [
+        {
+          "name": "Merles Søster Mie",
+          "role": "Forlover",
+          "image": "/images/contacts/mie.png",
+          "funFact": "Strålende, positiv og altid i godt humør – hun er din første kontaktperson for organisatoriske spørgsmål. ☀️",
+          "phone": "+4915562877006",
+          "phoneLabel": "+49 15562 877006"
+        },
+        {
+          "name": "Gitte & Marco",
+          "role": "Merles Mor & Far",
+          "image": "/images/contacts/brauteltern.jpeg",
+          "funFact": "Varme, åbne og altid der for dig – især Gitte er glad for at hjælpe med spørgsmål.",
+          "phone": "+491712938751",
+          "phoneLabel": "+49 171 2938751"
+        },
+        {
+          "name": "Matti – Lasses Tvillingebror",
+          "role": "Best Man",
+          "image": "/images/contacts/matti.jpeg",
+          "funFact": "Rejste hele vejen fra Norge og den perfekte person til spørgsmål, du hellere ikke vil stille bruden og gommen direkte. ;)",
+          "phone": "+4748917697",
+          "phoneLabel": "+47 489 17697"
+        },
+        {
+          "name": "Søren Callesen",
+          "role": "Toastmaster – Merles Danske Onkel",
+          "image": "/images/contacts/gittemarco.png",
+          "funFact": "Han vil guide dig gennem vores aftenprogram. Hvis du har en tale, et bidrag eller en overraskelse planlagt, så kontakt ham – han koordinerer alt og vil lade dig vide, hvornår det er din tur."
+        },
+        {
+          "name": "Bobby 🐾",
+          "role": "Feel Good Manager",
+          "image": "/images/contacts/bobby.png",
+          "funFact": "Vores specialist i god stemning og følelsesmæssig støtte 💚"
+        },
+        {
+          "name": "Leona",
+          "role": "Brudepige – Merles Bedste Veninde",
+          "image": "/images/contacts/leona.png",
+          "funFact": "Ved Merles side i mange år, altid der for organisatoriske spørgsmål og også den kreative hjerne bag denne hjemmeside."
+        }
+      ],
+      "urgentPhone": "+49123456789",
+      "urgentCta": "Haster det? Ring til Gitte"
+    },
+    "footer": {
+      "date": "15. maj 2027 · Tornesch",
+      "subtitle": "Kærligt designet til vores gæster 💛",
+      "cta": "Spørgsmål? Skriv gerne til os",
+      "email": "kontakt@eksempel.dk"
+    },
+    "countdown": {
+      "title": "Nedtælling til Vores Store Dag",
+      "date": "15. maj 2027",
+      "days": "Dage",
+      "hours": "Timer",
+      "minutes": "Minutter",
+      "seconds": "Sekunder"
+    },
+    "eucalyptusDivider": {
+      "eyebrow": "gem datoen",
+      "date": "15 · 05 · 2027",
+      "title": "en weekend at huske"
+    },
+    "fullWidthPhoto": {
+      "imageAlt": "Merle og Lasse"
+    },
+
+    "quoteDivider": {
+      "eyebrow": "Fra Os til Dig",
+      "paragraphOne": "Fra de første delte øjeblikke til denne specielle dag – du har fulgt os, støttet os og grinet med os.",
+      "highlight": "Tak fordi du fejrer med os. Vi ser frem til uforglemmelige øjeblikke med jer alle."
+    }
   }
-}
