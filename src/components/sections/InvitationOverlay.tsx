@@ -24,16 +24,22 @@ export function InvitationOverlay() {
 
   const switchLanguage = (nextLocale: string) => {
     const segments = pathname.split('/').filter(Boolean);
-    const hasLocale = locales.some((item) => item.value === segments[0]);
+    const hasLocale = locales.some(
+      (item) => item.value === segments[0]
+    );
 
     const pathWithoutLocale = hasLocale
       ? segments.slice(1).join('/')
       : segments.join('/');
 
-    router.push(`/${nextLocale}${pathWithoutLocale ? `/${pathWithoutLocale}` : ''}`);
+    router.push(
+      `/${nextLocale}${pathWithoutLocale ? `/${pathWithoutLocale}` : ''}`
+    );
   };
 
   const openInvitation = () => {
+    if (step === 'opened') return;
+
     setStep('opened');
 
     window.setTimeout(() => {
@@ -43,12 +49,17 @@ export function InvitationOverlay() {
 
   const enterWebsite = () => {
     setIsVisible(false);
+
+    window.dispatchEvent(
+      new Event('invitation-entered')
+    );
   };
 
   if (!isVisible) return null;
 
   return (
     <div className="fixed inset-0 z-[9999] overflow-hidden bg-[var(--background)]">
+      {/* Original desktop background */}
       <Image
         src="/images/intro/bg.png"
         alt=""
@@ -58,6 +69,7 @@ export function InvitationOverlay() {
         sizes="100vw"
       />
 
+      {/* Original mobile background */}
       <Image
         src="/images/intro/bg-mobile.png"
         alt=""
@@ -67,12 +79,17 @@ export function InvitationOverlay() {
         sizes="100vw"
       />
 
+      {/* Original background overlay */}
       <div className="absolute inset-0 bg-[rgba(252,245,234,0.08)]" />
 
-      <div className="relative z-10 flex min-h-screen items-center justify-center px-6 py-10">
-        {step === 'closed' && (
+      {/* Closed envelope */}
+      {step === 'closed' && (
+        <div className="relative z-10 flex min-h-screen items-center justify-center px-6 py-10">
           <div className="flex w-full max-w-4xl flex-col items-center text-center">
-            <LanguageSelector locale={locale} onChange={switchLanguage} />
+            <LanguageSelector
+              locale={locale}
+              onChange={switchLanguage}
+            />
 
             <button
               type="button"
@@ -96,16 +113,20 @@ export function InvitationOverlay() {
               className="group mt-12 inline-flex items-center gap-3 text-xs uppercase tracking-[0.32em] text-[var(--text)] transition hover:text-[var(--brand-600)]"
             >
               {t('openCta')}
+
               <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
             </button>
 
             <div className="mt-5 h-px w-16 bg-[rgba(183,138,111,0.55)]" />
           </div>
-        )}
+        </div>
+      )}
 
-        {step === 'opened' && (
-          <div className="flex w-full flex-col items-center">
-            <div className="relative w-full max-w-md animate-[invitationFadeIn_0.5s_ease_forwards] md:max-w-[560px] desk:max-w-[720px]">
+      {/* Opened envelope */}
+      {step === 'opened' && (
+        <>
+          <div className="relative z-10 flex min-h-[100dvh] items-center justify-center px-6 pb-24 pt-6">
+            <div className="relative w-full max-w-md animate-[invitationFadeIn_0.5s_ease_forwards] md:max-w-[540px] desk:max-w-[min(620px,65dvh)] 2xl:max-w-[min(720px,70dvh)]">              {/* Original envelope dimensions */}
               <Image
                 src="/images/intro/greenEnvOpenGold.png"
                 alt=""
@@ -115,8 +136,9 @@ export function InvitationOverlay() {
                 className="relative z-10 mx-auto h-auto w-full drop-shadow-[0_20px_50px_rgba(42,37,34,0.14)]"
               />
 
+              {/* Smaller invitation card */}
               <div
-                className={`absolute left-1/2 top-1/2 z-30 w-[90%] max-w-[520px] md:w-[86%] desk:w-[82%] ${
+                className={`absolute left-1/2 top-1/2 z-30 w-[82%] max-w-[430px] sm:w-[80%] md:w-[78%] ${
                   letterVisible
                     ? 'animate-[letterPullOutCentered_1.55s_ease-in-out_forwards]'
                     : 'opacity-0 -translate-x-1/2 translate-y-[18%] scale-[0.86]'
@@ -132,14 +154,19 @@ export function InvitationOverlay() {
                 />
               </div>
             </div>
-
-            <div className="mt-8 flex flex-col items-center ">
-              <EnterButton label={t('enterCta')} onClick={enterWebsite} />
-              <div className="mt-4 h-px w-14 bg-[rgba(183,138,111,0.55)]" />
-            </div>
           </div>
-        )}
-      </div>
+
+          {/* Fixed bottom CTA */}
+          <div className="absolute inset-x-0 bottom-0 z-50 flex flex-col items-center bg-gradient-to-t from-[rgba(252,245,234,0.96)] via-[rgba(252,245,234,0.75)] to-transparent px-4 pb-[max(24px,env(safe-area-inset-bottom))] pt-12 sm:pb-9">
+            <EnterButton
+              label={t('enterCta')}
+              onClick={enterWebsite}
+            />
+
+            <div className="mt-4 h-px w-14 bg-[rgba(183,138,111,0.55)]" />
+          </div>
+        </>
+      )}
     </div>
   );
 }
@@ -173,7 +200,10 @@ function LanguageSelector({
   return (
     <div className="flex items-center justify-center gap-5">
       {locales.map((item, index) => (
-        <div key={item.value} className="flex items-center gap-5">
+        <div
+          key={item.value}
+          className="flex items-center gap-5"
+        >
           <button
             type="button"
             onClick={() => onChange(item.value)}
@@ -187,7 +217,9 @@ function LanguageSelector({
           </button>
 
           {index < locales.length - 1 && (
-            <span className="text-[var(--text-soft)]">·</span>
+            <span className="text-[var(--text-soft)]">
+              ·
+            </span>
           )}
         </div>
       ))}
