@@ -7,13 +7,12 @@
       "enterCta": "Website betreten"
     },
     "navigation": {
-      "story": "Unsere Geschichte",
       "schedule": "Ablauf",
       "dresscode": "Dresscode",
       "location": "Location",
       "contact": "Ansprechpartner",
       "faq": "FAQ",
-      "rsvp": "RSVP",
+      "rsvp": "Antworten",
       "openMenu": "Menü öffnen",
       "closeMenu": "Menü schließen",
       "homeLabel": "Zur Startseite"

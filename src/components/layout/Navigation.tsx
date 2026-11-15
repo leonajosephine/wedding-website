@@ -8,7 +8,6 @@ import {usePathname, useRouter} from 'next/navigation';
 import {Button} from '@/components/ui/Button';
 
 const navItems = [
-  {key: 'story', href: '#story'},
   {key: 'schedule', href: '#schedule'},
   {key: 'dresscode', href: '#dresscode'},
   {key: 'location', href: '#location'},
