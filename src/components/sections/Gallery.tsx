@@ -18,11 +18,11 @@ type GalleryItem = {
 const images = [
   '/images/gallery/2017.jpg',
   '/images/gallery/2018.jpg',
-  '/images/gallery/2019.jpg',
+  '/images/gallery/2023.jpg',
   '/images/gallery/2020.jpg',
   '/images/gallery/2021.jpg',
   '/images/gallery/2022.jpg',
-  '/images/gallery/2023.jpg',
+  '/images/gallery/2019.jpg',
   '/images/gallery/2024.jpg',
   '/images/gallery/2025.jpg',
   '/images/gallery/2026.png'
@@ -420,9 +420,8 @@ export function Gallery() {
           ref={scrollRef}
           onScroll={handleScroll}
           onPointerDown={pauseAutoplay}
-          onTouchStart={pauseAutoplay}
           onWheel={pauseAutoplay}
-          className="hide-scrollbar w-full touch-pan-x snap-x snap-mandatory overflow-x-auto overscroll-x-none px-[14vw] pb-5 sm:px-[22vw] md:px-[28vw] lg:px-[34vw]"
+          className="hide-scrollbar w-full snap-x snap-mandatory overflow-x-auto overscroll-x-none px-[14vw] pb-5 sm:px-[22vw] md:px-[28vw] xl:px-[34vw]"
         >
           <div className="flex w-max gap-4 md:gap-5">
             {loopImages.map(
@@ -545,7 +544,7 @@ function GalleryCard({
     <article
       data-gallery-card
       data-real-index={realIndex}
-      className="group relative aspect-[4/5] w-[72vw] shrink-0 snap-center overflow-hidden rounded-sm sm:w-[56vw] md:w-[42vw] lg:w-[30vw]"
+      className="group relative aspect-[4/5] w-[72vw] shrink-0 snap-center overflow-hidden rounded-sm sm:w-[56vw] md:w-[42vw] xl:w-[30vw]"
     >
       <Image
         src={src}
@@ -562,20 +561,15 @@ function GalleryCard({
               : 'grayscale-[0.88] sepia-[0.34] saturate-[0.72] contrast-[1.1] brightness-[0.96]'
           }
 
-          lg:grayscale-[0.88]
-          lg:sepia-[0.34]
-          lg:saturate-[0.72]
-          lg:contrast-[1.1]
-          lg:brightness-[0.96]
 
-          lg:group-hover:scale-[1.025]
-          lg:group-hover:grayscale-0
-          lg:group-hover:sepia-0
-          lg:group-hover:saturate-100
-          lg:group-hover:contrast-100
-          lg:group-hover:brightness-100
+          xl:pointer-fine:group-hover:scale-[1.025]
+          xl:pointer-fine:group-hover:grayscale-0
+          xl:pointer-fine:group-hover:sepia-0
+          xl:pointer-fine:group-hover:saturate-100
+          xl:pointer-fine:group-hover:contrast-100
+          xl:pointer-fine:group-hover:brightness-100
         `}
-        sizes="(max-width: 640px) 72vw, (max-width: 768px) 56vw, (max-width: 1024px) 42vw, 30vw"
+        sizes="(max-width: 640px) 72vw, (max-width: 768px) 56vw, (max-width: 1279px) 42vw, 30vw"
       />
 
       {/* Text readability */}
@@ -595,8 +589,7 @@ function GalleryCard({
               : 'opacity-0'
           }
 
-          lg:opacity-0
-          lg:group-hover:opacity-100
+          xl:pointer-fine:group-hover:opacity-100
         `}
       />
 
@@ -615,10 +608,8 @@ function GalleryCard({
               : 'translate-y-3 opacity-0'
           }
 
-          lg:translate-y-3
-          lg:opacity-0
-          lg:group-hover:translate-y-0
-          lg:group-hover:opacity-100
+          xl:pointer-fine:group-hover:translate-y-0
+          xl:pointer-fine:group-hover:opacity-100
         `}
       >
         <p className="serif text-5xl leading-none text-[var(--background)] md:text-6xl lg:text-7xl">

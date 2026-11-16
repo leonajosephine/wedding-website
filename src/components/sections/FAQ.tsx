@@ -99,6 +99,12 @@ export function FAQ() {
                         {faq.answer}
                       </p>
 
+                      {!faq.link && faq.linkLabel && (
+                        <span className="mt-4 inline-block text-xs font-medium uppercase tracking-[0.13em] text-[var(--text-soft)] md:text-[0.78rem]">
+                          {faq.linkLabel}
+                        </span>
+                      )}
+
                       {faq.link &&
                         faq.linkLabel && (
                           <a

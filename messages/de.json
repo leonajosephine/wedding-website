@@ -12,7 +12,7 @@
       "location": "Location",
       "contact": "Ansprechpartner",
       "faq": "FAQ",
-      "rsvp": "Antworten",
+      "rsvp": "Jetzt Antworten",
       "openMenu": "Menü öffnen",
       "closeMenu": "Menü schließen",
       "homeLabel": "Zur Startseite"
@@ -23,7 +23,7 @@
       "eyebrow": "Wir heiraten",
       "date": "15. Mai 2027",
       "location": "Heimathaus Tornesch · Schleswig-Holstein",
-      "cta": "Jetzt zusagen"
+      "cta": "Jetzt antworten"
     },
     "story": {
       "eyebrow": "Unsere Geschichte",
@@ -46,7 +46,6 @@
             "title": "Polterabend",
             "startTime": "ab 18:00 Uhr",
             "location": "Köhnholz 35 · 25336 Elmshorn",
-            "mapLink": "HIER DEN GOOGLE-MAPS-LINK EINTRAGEN",
             "note": "Bringt etwas zum Poltern mit 🫖",
             "events": []
         },
@@ -57,7 +56,7 @@
             {
               "time": "14:30 Uhr",
               "title": "Ankommen & Freie Trauung",
-              "description": "Ankfunt am Heimathaus Tornesch mit anschließender freuen Trauung gegen 15:00 Uhr",
+              "description": "Ankommen am Heimathaus Tornesch mit anschließender freier Trauung.",
               "tag": "Elegant & Bunt",
               "icon": "/images/icons/Icons_rings.png",
               "anchor": "#location",
@@ -133,7 +132,7 @@
         "moreTitle": "Weitere Unterkünfte",
         "moreDescription": "Weitere Hotels und Ferienwohnungen in Tornesch, Pinneberg und Umgebung findet ihr bei Booking.com.",
         "moreCta": "Mehr Unterkünfte ansehen",
-        "moreLink": "DEIN BESTEHENDER BOOKING-LINK"
+        "moreLink": "https://www.booking.com/searchresults.de.html?ss=Tornesch%2C+Schleswig-Holstein%2C+Deutschland&checkin=2027-05-15&checkout=2027-05-16&group_adults=2&no_rooms=1&group_children=0"
       },
 
       "accommodations": [
@@ -143,13 +142,7 @@
           "description": "Bis zum 15. Februar 2027 könnt ihr dort Twin-Doppelzimmer aus unserem reservierten Kontingent buchen. Meldet euch dafür direkt beim Hotel und gebt das Stichwort „Hochzeit Merle & Lasse“ an. Kontakt: Info@esingerhotel.de",
           "reservationNote": "Zimmerkontingent für unsere Gäste",
           "price": "103 € für 2 Personen inklusive Frühstück",
-          "link": "DEIN BESTEHENDER HOTEL-LINK"
-        },
-        {
-          "name": "Hotel Dias",
-          "distance": "ca. 15 Minuten entfernt",
-          "description": "Zentrale Alternative in Pinneberg mit guter Anbindung.",
-          "link": "https://www.google.com/search?q=Hotel+Dias+Pinneberg"
+          "link": "https://esingerhotel.de/"
         }
       ],
 
@@ -232,8 +225,8 @@
       "note": "Die Farbpalette ist eine Inspiration und keine feste Vorgabe. Wir freuen uns natürlich über jeden der in den vorgeschlagenen Farben kommt, aber fühlt euch frei, auch andere Farben zu tragen, die ihr mögt. Wir möchten, dass ihr euch wohlfühlt."
     },
     "rsvp": {
-      "eyebrow": "Bitte bis 15. April zusagen",
-      "title": "RSVP",
+      "eyebrow": "Bitte bis zum 15. März antworten",
+      "title": "Eure Rückmeldung",
 
       "step": "Schritt",
 
@@ -256,7 +249,7 @@
       "detailsTitle": "Noch ein paar Details",
       "detailsText": "Damit wir alles perfekt vorbereiten können.",
 
-      "polterabend": "Ich komme auch zum Polterabend am Freitag. 🎉",
+      "polterabend": "Ich komme auch zum Polterabend am Mittwoch, den 12. Mai. 🎉",
 
       "vegan": "Ich esse vegan",
       "veganHint": "Bitte nicht ankreuzen, wenn du vegetarisch isst.",
@@ -318,25 +311,19 @@
         },
         {
           "question": "Gibt es vegetarische und vegane Optionen?",
-          "answer": "Ja! Bei unserem Buffet wird es sowohl vegetarische als auch vegane Optionen geben. Habt ihr Allergien oder andere Unverträglichkeiten, gebt uns diese bitte über das RSVP-Tool bei eurer Rückmeldung mit. 🌿",
+          "answer": "Ja! Bei unserem Buffet wird es sowohl vegetarische als auch vegane Optionen geben. Habt ihr Allergien oder andere Unverträglichkeiten, gebt uns diese bitte bei eurer Rückmeldung mit. 🌿",
           "link": "#rsvp",
-          "linkLabel": "Zum RSVP"
+          "linkLabel": "Zur Rückmeldung"
         },
         {
           "question": "Darf ich Fotos machen?",
-          "answer": "Sehr gerne! 📸 Während der Trauung würden wir euch nur bitten, die Handys in der Tasche zu lassen und den Moment mit uns zu genießen – unser Fotograf kümmert sich um die Bilder. Danach freuen wir uns umso mehr über eure Schnappschüsse, die ihr über einen Foto-QR-Code mit uns teilen könnt!"
+          "answer": "Sehr gerne! 📸 Während der Trauung würden wir euch nur bitten, die Handys in der Tasche zu lassen und den Moment mit uns zu genießen – unser Fotograf kümmert sich um die Bilder. Danach freuen wir uns umso mehr über eure Schnappschüsse!"
         },
         {
           "question": "Was können wir euch schenken?",
-          "answer": "Unser größter Wunsch ist, im Anschluss an die Hochzeit wieder für einen Monat nach Kanada zu reisen – dieses Mal nach Vancouver, Vancouver Island und in die Rocky Mountains. 🇨🇦 Wenn ihr uns dabei mit einem kleinen Beitrag für unsere Flitterwochen unterstützen möchtet, würden wir uns sehr freuen. Und falls ihr lieber etwas für unser Zuhause schenken möchtet, haben wir auch eine kleine Wunschliste für euch zusammengestellt. 🏡",
-          "link": "HIER_WUNSCHLISTEN_LINK_EINTRAGEN",
+          "answer": "Unser größter Wunsch ist, im Anschluss an die Hochzeit wieder für einen Monat nach Kanada zu reisen – dieses Mal nach Vancouver, Vancouver Island und in die Rocky Mountains. 🇨🇦 Auf Vancouver Island möchten wir besonders gerne Wale beobachten. Wenn ihr uns dabei mit einem kleinen Beitrag für unsere Flitterwochen unterstützen möchtet, würden wir uns sehr freuen. Und falls ihr lieber etwas für unser Zuhause schenken möchtet, haben wir auch eine kleine Wunschliste für euch zusammengestellt. 🏡",
+          "link": "",
           "linkLabel": "Unsere Wunschliste ansehen"
-        },
-        {
-          "question": "Ich möchte eine Rede halten oder etwas beitragen – an wen wende ich mich?",
-          "answer": "Meldet euch dafür gerne bei unserem Toastmaster Søren. Er koordiniert das Abendprogramm, plant die Beiträge und sagt euch rechtzeitig, wann ihr an der Reihe seid. So können wir gemeinsam dafür sorgen, dass alles seinen richtigen Platz findet. 🎤",
-          "link": "#contacts",
-          "linkLabel": "Zu den Ansprechpartnern"
         }
       ]
     },
@@ -346,11 +333,11 @@
       "headingPartTwo": "sind für",
       "headingPartThree": "euch",
       "headingPartFour": "da",
-      "bottomText": "Ob organisatorische Fragen, Unterkunft oder einfach nur ein netter Plausch – diese wunderbaren Menschen helfen euch gerne weiter.",
+      "bottomText": "Ob organisatorische Fragen, Unterkunft oder einfach nur ein netter Plausch – diese Menschen sind für euch da.",
       "items": [
         {
-          "name": "Merles Schwester Mie",
-          "role": "Die Trauzeugin",
+          "name": "Mie",
+          "role": "Trauzeugin – Merles Schwester",
           "image": "/images/contacts/mie.png",
           "funFact": "Strahlend, positiv und immer mit guter Laune dabei – bei organisatorischen Fragen ist sie eure erste Anlaufstelle. ☀️",
           "phone": "+4915562877006",
@@ -365,8 +352,8 @@
           "phoneLabel": "+49 171 2938751"
         },
         {
-          "name": "Matti – Lasses Zwillingsbruder",
-          "role": "Trauzeuge",
+          "name": "Matti",
+          "role": "Trauzeuge – Lasses Zwillingsbruder",
           "image": "/images/contacts/matti.jpeg",
           "funFact": "Extra aus Norwegen angereist und genau der Richtige für alle Fragen, die ihr lieber nicht direkt dem Brautpaar stellen möchtet. ;)",
           "phone": "+4748917697",
@@ -375,8 +362,9 @@
         {
           "name": "Søren Callesen",
           "role": "Der Toastmaster – Merles dänischer Onkel",
-          "image": "/images/contacts/gittemarco.png",
-          "funFact": "Er führt euch durch unser Abendprogramm. Wenn ihr eine Rede, einen Beitrag oder eine Überraschung geplant habt, meldet euch bitte bei ihm – er koordiniert alles und sagt euch, wann ihr an der Reihe seid."
+          "image": "/images/contacts/soren.jpg",
+          "imagePosition": "center 56%",
+          "funFact": "Søren führt euch als Toastmaster durch den Abend und hält den Ablauf im Blick. Falls zu einem bereits geplanten Beitrag noch etwas zu klären ist, könnt ihr das mit ihm abstimmen."
         },
         {
           "name": "Bobby 🐾",
@@ -390,15 +378,11 @@
           "image": "/images/contacts/leona.png",
           "funFact": "Seit vielen Jahren an Merles Seite, organisatorisch immer zur Stelle und ganz nebenbei auch der kreative Kopf hinter dieser Website."
         }
-      ],
-      "urgentPhone": "+49123456789",
-      "urgentCta": "Dringende Frage? Gitte anrufen"
+      ]
     },
     "footer": {
       "date": "15. Mai 2027 · Tornesch",
-      "subtitle": "Mit Liebe gestaltet für unsere Gäste 💛",
-      "cta": "Fragen? Schreibt uns gerne",
-      "email": "kontakt@example.com"
+      "subtitle": "Mit Liebe gestaltet für unsere Gäste"
     },
     "countdown": {
       "title": "Countdown bis zu unserem großen Tag",

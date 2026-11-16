@@ -87,7 +87,7 @@ function HeroNames({
 
   return (
     <h1
-      className={`script flex flex-col items-center text-center leading-[0.82] text-[var(--text)] ${
+      className={`script flex flex-col items-center text-center leading-[0.82] text-[#605d5b] ${
         isMobile
           ? 'w-[230px] text-6xl md:w-[310px] md:text-8xl'
           : 'mx-auto w-[430px] text-8xl lg:text-9xl'
@@ -98,7 +98,7 @@ function HeroNames({
       </span>
 
       <span
-        className={`block w-full text-center text-[var(--text)] ${
+        className={`block w-full text-center ${
           isMobile
             ? 'my-1 text-5xl md:text-7xl'
             : 'my-1 text-7xl lg:text-8xl'

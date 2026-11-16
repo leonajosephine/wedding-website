@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import {ExternalLink, MapPin} from 'lucide-react';
+import {MapPin} from 'lucide-react';
 import {useTranslations} from 'next-intl';
 
 type TimelineEvent = {
@@ -16,7 +16,6 @@ type ScheduleDay = {
   title: string;
   startTime?: string;
   location?: string;
-  mapLink?: string;
   note?: string;
   events: TimelineEvent[];
 };
@@ -261,28 +260,9 @@ export function Schedule() {
 
                 {/* Location */}
                 {sideDay.location && (
-                  <div className="mt-5">
-                    {sideDay.mapLink ? (
-                      <a
-                        href={sideDay.mapLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="group inline-flex items-start gap-2 text-sm leading-6 text-[rgba(245,240,231,0.9)] transition hover:text-[var(--dark-text)]"
-                      >
-                        <MapPin className="mt-0.5 h-4 w-4 shrink-0" />
-
-                        <span className="border-b border-[rgba(245,240,231,0.35)] pb-0.5">
-                          {sideDay.location}
-                        </span>
-
-                        <ExternalLink className="mt-1 h-3 w-3 shrink-0 opacity-65 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                      </a>
-                    ) : (
-                      <div className="flex items-start gap-2 text-sm leading-6 text-[rgba(245,240,231,0.9)]">
-                        <MapPin className="mt-0.5 h-4 w-4 shrink-0" />
-                        <span>{sideDay.location}</span>
-                      </div>
-                    )}
+                  <div className="mt-5 flex items-start gap-2 text-sm leading-6 text-[rgba(245,240,231,0.9)]">
+                    <MapPin aria-hidden="true" className="mt-0.5 h-4 w-4 shrink-0" />
+                    <span>{sideDay.location}</span>
                   </div>
                 )}
 

@@ -124,21 +124,20 @@ export function InvitationOverlay() {
 
       {/* Opened envelope */}
       {step === 'opened' && (
-        <>
-          <div className="relative z-10 flex min-h-[100dvh] items-center justify-center px-6 pb-24 pt-6">
-            <div className="relative w-full max-w-md animate-[invitationFadeIn_0.5s_ease_forwards] md:max-w-[540px] desk:max-w-[min(620px,65dvh)] 2xl:max-w-[min(720px,70dvh)]">              {/* Original envelope dimensions */}
+        <div className="relative z-10 h-full overflow-y-auto">
+          <div className="flex min-h-full flex-col items-center justify-center px-6 pb-[max(1rem,env(safe-area-inset-bottom))] pt-4">
+            <div className="relative w-full max-w-[min(26rem,59dvh)] animate-[invitationFadeIn_0.5s_ease_forwards] md:max-w-[min(500px,59dvh)] desk:max-w-[min(580px,59dvh)] 2xl:max-w-[min(660px,59dvh)]">
               <Image
                 src="/images/intro/greenEnvOpenGold.png"
                 alt=""
-                width={1800}
-                height={1800}
+                width={1104}
+                height={1424}
                 priority
                 className="relative z-10 mx-auto h-auto w-full drop-shadow-[0_20px_50px_rgba(42,37,34,0.14)]"
               />
 
-              {/* Smaller invitation card */}
               <div
-                className={`absolute left-1/2 top-1/2 z-30 w-[82%] max-w-[430px] sm:w-[80%] md:w-[78%] ${
+                className={`absolute left-1/2 top-1/2 z-30 w-[78%] sm:w-[77%] md:w-[76%] 2xl:w-[83%] ${
                   letterVisible
                     ? 'animate-[letterPullOutCentered_1.55s_ease-in-out_forwards]'
                     : 'opacity-0 -translate-x-1/2 translate-y-[18%] scale-[0.86]'
@@ -154,18 +153,13 @@ export function InvitationOverlay() {
                 />
               </div>
             </div>
-          </div>
 
-          {/* Fixed bottom CTA */}
-          <div className="absolute inset-x-0 bottom-0 z-50 flex flex-col items-center bg-gradient-to-t from-[rgba(252,245,234,0.96)] via-[rgba(252,245,234,0.75)] to-transparent px-4 pb-[max(24px,env(safe-area-inset-bottom))] pt-12 sm:pb-9">
-            <EnterButton
-              label={t('enterCta')}
-              onClick={enterWebsite}
-            />
-
-            <div className="mt-4 h-px w-14 bg-[rgba(183,138,111,0.55)]" />
+            <div className="relative z-40 mt-2 flex flex-col items-center">
+              <EnterButton label={t('enterCta')} onClick={enterWebsite} />
+              <div className="mt-3 h-px w-14 bg-[rgba(183,138,111,0.55)]" />
+            </div>
           </div>
-        </>
+        </div>
       )}
     </div>
   );

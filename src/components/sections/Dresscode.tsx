@@ -8,7 +8,7 @@ type DressColor = {
 };
 
 const largeImage =
-  '/images/dresscode/dresscode1.png';
+  '/images/dresscode/dresscode-freigestellt.png';
 
 export function Dresscode() {
   const t = useTranslations('dressCode');
@@ -84,27 +84,16 @@ export function Dresscode() {
           </div>
         </div>
 
-        {/* Painted dresscode illustration */}
-        <div className="relative mx-auto mt-16 aspect-[16/9] w-full max-w-4xl overflow-visible md:mt-20">
-          <Image
-            src={largeImage}
-            alt={t('imageAlt')}
-            fill
-            className="object-contain saturate-90 contrast-90 highlight-[0.98]"
-            sizes="(max-width: 768px) 100vw, 1024px"
-          />
-          <div className="absolute inset-0 bg-[rgba(252,245,234,0.16)]" />
-        </div>
+      </div>
 
-        {/* Note */}
-        <div className="mx-auto mt-10 max-w-2xl text-center">
-          <p className="text-sm leading-7 text-[var(--text-soft)] md:text-base md:leading-8">
-            <strong className="font-medium text-[var(--text)]">
-              {t('noteLabel')}
-            </strong>{' '}
-            {t('note')} 🌸
-          </p>
-        </div>
+      <div className="relative mx-auto mt-16 aspect-[1506/1045] w-[calc(100%_-_2rem)] max-w-4xl md:mt-20 2xl:max-w-6xl">
+        <Image
+          src={largeImage}
+          alt={t('imageAlt')}
+          fill
+          className="object-contain"
+          sizes="(min-width: 1536px) 1152px, (min-width: 928px) 896px, calc(100vw - 32px)"
+        />
       </div>
     </section>
   );

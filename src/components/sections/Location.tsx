@@ -23,7 +23,6 @@ export function Location() {
   const accommodations = t.raw('accommodations') as Accommodation[];
 
   const featuredAccommodation = accommodations[0];
-  const otherAccommodation = accommodations[1];
 
   return (
     <section
@@ -252,65 +251,13 @@ export function Location() {
 
         {/* Other accommodation options */}
         <div className="mx-auto mt-4 max-w-6xl">
-          {/*
-            Mobile:
-            horizontal swipe instead of stacking both cards.
-
-            Tablet/Desktop:
-            regular two-column layout.
-          */}
-          <div className="-mx-4 flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-3 sm:-mx-7 sm:px-7 md:mx-0 md:grid md:grid-cols-2 md:gap-4 md:overflow-visible md:px-0 md:pb-0">
-            {/* Secondary hotel */}
-            {otherAccommodation && (
-              <article className="w-[82vw] max-w-[340px] shrink-0 snap-center overflow-hidden border border-[rgba(245,240,231,0.26)] bg-[rgba(255,250,242,0.94)] sm:w-[360px] md:w-auto md:max-w-none">
-                <div className="grid grid-cols-[110px_1fr] sm:grid-cols-[130px_1fr] md:grid-cols-[150px_1fr]">
-                  <div className="relative min-h-[155px] bg-[rgba(245,239,229,0.48)]">
-                    <Image
-                      src="/images/accommodations/2.png"
-                      alt={otherAccommodation.name}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 130px, 150px"
-                    />
-                  </div>
-
-                  <div className="flex min-w-0 flex-col justify-center p-4 md:p-5">
-                    <p className="mb-1 text-[0.54rem] font-medium uppercase tracking-[0.14em] text-[var(--text-muted)]">
-                      {t('stay.alternativeLabel')}
-                    </p>
-
-                    <h4 className="serif text-xl leading-tight text-[var(--text)] sm:text-2xl">
-                      {otherAccommodation.name}
-                    </h4>
-
-                    <p className="mt-1 text-[0.65rem] leading-5 text-[var(--text-muted)]">
-                      {otherAccommodation.distance}
-                    </p>
-
-                    <p className="mt-2 line-clamp-3 text-xs leading-5 text-[var(--text-soft)] md:line-clamp-none md:text-sm md:leading-6">
-                      {otherAccommodation.description}
-                    </p>
-
-                    <a
-                      href={otherAccommodation.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-3 inline-flex w-fit items-center gap-1.5 border-b border-[rgba(72,67,63,0.24)] pb-0.5 text-[0.56rem] uppercase tracking-[0.13em] text-[var(--brand-600)]"
-                    >
-                      {t('stay.hotelCta')}
-                      <ExternalLink className="h-3 w-3" />
-                    </a>
-                  </div>
-                </div>
-              </article>
-            )}
-
+          <div className="mt-4">
             {/* More accommodation */}
             <a
               href={t('stay.moreLink')}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex min-h-[155px] w-[72vw] max-w-[300px] shrink-0 snap-center items-center justify-between gap-5 border border-[rgba(255,250,242,0.42)] bg-[rgba(55,50,47,0.18)] p-5 text-[var(--surface)] transition hover:bg-[rgba(55,50,47,0.26)] sm:w-[320px] md:min-h-[190px] md:w-auto md:max-w-none md:p-6 lg:p-7"
+              className="group flex min-h-[155px] w-full items-center justify-between gap-5 border border-[rgba(255,250,242,0.42)] bg-[rgba(55,50,47,0.18)] p-5 text-[var(--surface)] transition hover:bg-[rgba(55,50,47,0.26)] md:min-h-[190px] md:p-6 lg:p-7"
             >
               <div>
                 <BedDouble className="mb-3 h-5 w-5 text-[var(--surface)] md:mb-4" />
@@ -332,11 +279,6 @@ export function Location() {
             </a>
           </div>
 
-          {/* Mobile swipe hint */}
-          <div className="mt-2 flex items-center justify-center gap-2 md:hidden">
-            <span className="h-1 w-6 rounded-full bg-[rgba(255,250,242,0.7)]" />
-            <span className="h-1 w-2 rounded-full bg-[rgba(255,250,242,0.3)]" />
-          </div>
         </div>
       </div>
     </section>
