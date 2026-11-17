@@ -1,6 +1,6 @@
 {
   "invitationOverlay": {
-    "openCta": "Åbn invitationen",
+    "openCta": "Åben invitationen",
     "inviteImageSrc": "/images/intro/inviteda.jpeg",
     "cardEyebrow": "Sammen med vores familier",
     "cardIntro": "inviterer vi dig hjerteligt til at fejre vores bryllup med os",
@@ -55,8 +55,8 @@
       "events": [
       {
         "time": "14:30",
-        "title": "Ankomst & vielse",
-        "description": "Vi mødes ved Heimathaus Tornesch, hvor vielsen derefter finder sted.",
+        "title": "Ankomst & Vielse",
+        "description": "Vi samles ved Heimathaus Tornesch, hvor vi efterfølgende skal fejre kærligheden med en vielse.",
         "tag": "Elegant og farverigt",
         "icon": "/images/icons/Icons_rings.png",
         "anchor": "#location",
@@ -64,21 +64,21 @@
       },
       {
         "time": "15:45",
-        "title": "Reception og billeder",
+        "title": "Reception & Billeder",
         "description": "Vi skåler og snakker, mens der er musik, lidt at spise og tid til at tage billeder.",
         "tag": "",
         "icon": "/images/icons/Icons_glasses2.png"
       },
       {
         "time": "18:00",
-        "title": "Middag og program",
+        "title": "Middag & Program",
         "description": "Buffet, taler og mange smukke øjeblikke",
         "tag": "",
         "icon": "/images/icons/Icons_cake.png"
       },
       {
         "time": "21:00",
-        "title": "Første dans og fest",
+        "title": "Første Dans & Fest",
         "description": "Fra nu af er det dans, fest og latter – indtil sent på natten",
         "tag": "",
         "icon": "/images/icons/Icons_disco.png"
@@ -116,7 +116,7 @@
         "name": "Heimathaus Tornesch",
         "address": "Riedweg 3\n25436 Tornesch\nSchleswig-Holstein",
         "description": "Her skal vi mødes, skåle og fejre en uforglemmelig dag sammen med jer.",
-        "mapCta": "Åbn i Google Maps",
+        "mapCta": "Åben i Google Maps",
         "mapLink": "https://maps.google.com/?q=Riedweg+3,+25436+Tornesch"
       },
 
@@ -229,7 +229,7 @@
       "step": "Trin",
 
       "contactTitle": "Dine Kontaktoplysninger 💌",
-      "contactText": "Så vi ved, hvem der kommer, og hvordan vi kan få fat på dig.",
+      "contactText": "Så vi ved, om du kommer, og hvordan vi kan få fat på dig. Udfyld venligst en formular for hver gæst.",
 
       "firstName": "Fornavn",
       "lastName": "Efternavn",
@@ -247,6 +247,9 @@
       "detailsTitle": "Et Par Flere Detaljer",
       "detailsText": "Så vi kan forberede alt perfekt.",
 
+      "declinedDetailsTitle": "Ærgerligt, at du ikke kan komme til brylluppet",
+      "declinedDetailsText": "Du er stadig meget velkommen til polterabend. Giv os gerne besked, hvis du kommer.",
+
       "polterabend": "Jeg kommer også til polterabend onsdag den 12. maj. 🎉",
 
       "vegan": "Jeg spiser vegansk",
@@ -260,9 +263,10 @@
 
       "successTitle": "Tak!",
       "successText": "Vi har modtaget dit svar og glæder os meget til at se dig.",
+      "declinedSuccessText": "Vi har modtaget dit svar. Det er ærgerligt, at du ikke kan være med til brylluppet.",
 
       "calendarCta": "Tilføj til Kalender",
-      "addAnotherCta": "Tilføj En Anden Person",
+      "addAnotherCta": "Svar for en anden gæst",
       "calendarSummary": "Bryllup Merle & Lasse",
       "calendarDescription": "Vi skal giftes! Fejr denne specielle dag med os.",
       "calendarLocation": "Heimathaus Tornesch, Schleswig-Holstein",
@@ -316,7 +320,7 @@
         {
           "question": "Hvad kan vi give jer i gave?",
           "answer": "Vores største ønske er at rejse til Canada i en måned efter brylluppet – denne gang til Vancouver, Vancouver Island og Rocky Mountains. 🇨🇦 På Vancouver Island vil vi især gerne på hvalsafari. Hvis du ønsker at støtte os med et lille bidrag til vores bryllupsrejse, vil vi være meget taknemmelige. Og hvis du foretrækker at give noget til vores hjem, har vi også lavet en lille ønskeliste til dig. 🏡",
-          "link": "",
+          "link": "https://www.wunschbiber.de/wunschliste/72f2cd33-ecf7-4e53-afad-e6be16a44d0e/",
           "linkLabel": "Se vores ønskeliste"
         }
       ]

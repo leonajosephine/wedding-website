@@ -38,7 +38,7 @@ export function RSVP() {
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState<FormData>(initialFormData);
 
-  const totalSteps = formData.attending === 'yes' ? 3 : 2;
+  const totalSteps = 3;
 
   const canProceed = () => {
     if (step === 1) {
@@ -65,10 +65,7 @@ export function RSVP() {
       lastName: formData.lastName,
       email: formData.email,
       attending: formData.attending,
-      polterabend:
-        formData.attending === 'yes'
-          ? formData.polterabend
-          : false,
+      polterabend: formData.polterabend,
       vegan:
         formData.attending === 'yes'
           ? formData.vegan
@@ -135,7 +132,7 @@ END:VCALENDAR`;
             </h3>
 
             <p className="mx-auto max-w-xl text-sm leading-7 text-[var(--text-soft)] sm:text-base">
-              {t('successText')}
+              {t(formData.attending === 'yes' ? 'successText' : 'declinedSuccessText')}
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
@@ -306,14 +303,14 @@ END:VCALENDAR`;
           )}
 
           {/* STEP 3 */}
-          {step === 3 && formData.attending === 'yes' && (
+          {step === 3 && (
             <div>
               <h3 className="serif mb-2 text-2xl text-[var(--text)] sm:text-3xl">
-                {t('detailsTitle')}
+                {t(formData.attending === 'yes' ? 'detailsTitle' : 'declinedDetailsTitle')}
               </h3>
 
               <p className="mb-6 text-sm leading-7 text-[var(--text-soft)]">
-                {t('detailsText')}
+                {t(formData.attending === 'yes' ? 'detailsText' : 'declinedDetailsText')}
               </p>
 
               <div className="space-y-4">
@@ -334,54 +331,58 @@ END:VCALENDAR`;
                   <span>{t('polterabend')}</span>
                 </label>
 
-                {/* Vegan */}
-                <label className="flex cursor-pointer gap-3 border border-[var(--border)] bg-[rgba(255,250,242,0.36)] p-4">
-                  <input
-                    type="checkbox"
-                    checked={formData.vegan}
-                    onChange={(e) =>
-                      setFormData({
-                        ...formData,
-                        vegan: e.target.checked
-                      })
-                    }
-                    className="mt-1 accent-[var(--brand-600)]"
-                  />
+                {formData.attending === 'yes' && (
+                  <>
+                    {/* Vegan */}
+                    <label className="flex cursor-pointer gap-3 border border-[var(--border)] bg-[rgba(255,250,242,0.36)] p-4">
+                      <input
+                        type="checkbox"
+                        checked={formData.vegan}
+                        onChange={(e) =>
+                          setFormData({
+                            ...formData,
+                            vegan: e.target.checked
+                          })
+                        }
+                        className="mt-1 accent-[var(--brand-600)]"
+                      />
 
-                  <span>
-                    <span className="block text-sm leading-6 text-[var(--text)]">
-                      {t('vegan')}
-                    </span>
+                      <span>
+                        <span className="block text-sm leading-6 text-[var(--text)]">
+                          {t('vegan')}
+                        </span>
 
-                    <span className="mt-1 block text-xs leading-5 text-[var(--text-muted)]">
-                      {t('veganHint')}
-                    </span>
-                  </span>
-                </label>
+                        <span className="mt-1 block text-xs leading-5 text-[var(--text-muted)]">
+                          {t('veganHint')}
+                        </span>
+                      </span>
+                    </label>
 
-                {/* Allergies */}
-                <Input
-                  label={t('allergies')}
-                  value={formData.allergies}
-                  onChange={(value) =>
-                    setFormData({
-                      ...formData,
-                      allergies: value
-                    })
-                  }
-                />
+                    {/* Allergies */}
+                    <Input
+                      label={t('allergies')}
+                      value={formData.allergies}
+                      onChange={(value) =>
+                        setFormData({
+                          ...formData,
+                          allergies: value
+                        })
+                      }
+                    />
 
-                {/* Song wish */}
-                <Input
-                  label={t('songWish')}
-                  value={formData.songWish}
-                  onChange={(value) =>
-                    setFormData({
-                      ...formData,
-                      songWish: value
-                    })
-                  }
-                />
+                    {/* Song wish */}
+                    <Input
+                      label={t('songWish')}
+                      value={formData.songWish}
+                      onChange={(value) =>
+                        setFormData({
+                          ...formData,
+                          songWish: value
+                        })
+                      }
+                    />
+                  </>
+                )}
               </div>
             </div>
           )}

@@ -8,7 +8,7 @@
   },
   "navigation": {
     "schedule": "Schedule",
-    "dresscode": "Dress Code",
+    "dresscode": "Dresscode",
     "location": "Location",
     "contact": "Contacts",
     "faq": "FAQ",
@@ -153,7 +153,7 @@
     },
     "dressCode": {
       "eyebrow": "Color Palette",
-      "title": "Dress Code",
+      "title": "Dresscode",
 
       "mainColorsLabel": "Our Main Colors",
 
@@ -217,7 +217,7 @@
         }
       ],
 
-      "imageAlt": "Inspiration for our Dress Code",
+      "imageAlt": "Inspiration for our Dresscode",
 
       "noteLabel": "Important:",
       "note": "The color palette is an inspiration and not a strict requirement. We are, of course, happy for anyone who comes in the suggested colors, but feel free to wear other colors you like. We want you to feel comfortable."
@@ -229,7 +229,7 @@
       "step": "Step",
 
       "contactTitle": "Your Contact Information 💌",
-      "contactText": "So we know who is coming and how to reach you.",
+      "contactText": "So we know if you’re coming and how to reach you. Please fill out a separate form for each guest.",
 
       "firstName": "First Name",
       "lastName": "Last Name",
@@ -247,6 +247,9 @@
       "detailsTitle": "A Few More Details",
       "detailsText": "So we can prepare everything perfectly.",
 
+      "declinedDetailsTitle": "We’ll miss you at the wedding",
+      "declinedDetailsText": "You’re still warmly invited to the Polterabend. Let us know if you can make it.",
+
       "polterabend": "I’ll also attend the Polterabend on Wednesday, May 12. 🎉",
 
       "vegan": "I eat vegan",
@@ -260,9 +263,10 @@
 
       "successTitle": "Thank You!",
       "successText": "We have received your response and are very excited to see you.",
+      "declinedSuccessText": "We’ve received your reply. We’ll miss you at the wedding.",
 
       "calendarCta": "Add to Calendar",
-      "addAnotherCta": "Add Another Person",
+      "addAnotherCta": "Reply for another guest",
       "calendarSummary": "Wedding Merle & Lasse",
       "calendarDescription": "We're getting married! Celebrate this special day with us.",
       "calendarLocation": "Heimathaus Tornesch, Schleswig-Holstein",
@@ -283,7 +287,7 @@
           "question": "What should I wear?",
           "answer": "We would love for you to orient yourself to our natural, warm color palette. 👗 A small note on shoe choice: Our ceremony will take place outside on the lawn before the evening program continues indoors.",
           "link": "#dresscode",
-          "linkLabel": "To the Dress Code"
+          "linkLabel": "To the Dresscode"
         },
         {
           "question": "When does it start?",
@@ -320,7 +324,7 @@
         {
           "question": "What can we gift you?",
           "answer": "Our biggest wish is to travel to Canada for a month after the wedding – this time to Vancouver, Vancouver Island, and the Rocky Mountains. 🇨🇦 We’d especially love to go whale watching on Vancouver Island. If you would like to support us with a small contribution to our honeymoon, we would be very grateful. And if you prefer to gift something for our home, we have also created a small wish list for you. 🏡",
-          "link": "",
+          "link": "https://www.wunschbiber.de/wunschliste/72f2cd33-ecf7-4e53-afad-e6be16a44d0e/",
           "linkLabel": "View Our Wishlist"
         }
       ]

@@ -39,6 +39,19 @@ export function Navigation() {
 
   // Show hint once after entering the website.
   useEffect(() => {
+    if (!languageOpen) return;
+
+    const closeOnOutsidePress = (event: PointerEvent) => {
+      if (event.target instanceof Element && !event.target.closest('[data-language-picker]')) {
+        setLanguageOpen(false);
+      }
+    };
+
+    document.addEventListener('pointerdown', closeOnOutsidePress, true);
+    return () => document.removeEventListener('pointerdown', closeOnOutsidePress, true);
+  }, [languageOpen]);
+
+  useEffect(() => {
     const handleInvitationEntered = () => {
       if (sessionStorage.getItem(LANGUAGE_HINT_KEY)) return;
 
@@ -167,7 +180,7 @@ export function Navigation() {
               </Button>
             </li>
 
-            <li className="relative border-l border-[var(--border)] pl-5">
+            <li data-language-picker className="relative border-l border-[var(--border)] pl-5">
               <LanguageSelector
                 locale={locale}
                 activeLocale={activeLocale}
@@ -196,7 +209,7 @@ export function Navigation() {
             </Button>
 
             {/* Language selector */}
-            <div className="relative">
+            <div data-language-picker className="relative">
               <button
                 type="button"
                 onClick={toggleLanguage}

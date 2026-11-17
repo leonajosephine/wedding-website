@@ -50,7 +50,7 @@ export default function GuestlistPage() {
       total: responses.length,
       attending: attending.length,
       declined: declined.length,
-      polterabend: attending.filter((item) => item.polterabend).length,
+      polterabend: responses.filter((item) => item.polterabend).length,
       vegan: attending.filter((item) => item.vegan === true).length
     };
   }, [responses]);

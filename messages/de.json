@@ -231,7 +231,7 @@
       "step": "Schritt",
 
       "contactTitle": "Deine Kontaktdaten 💌",
-      "contactText": "Damit wir wissen, wer kommt und wie wir dich erreichen können.",
+      "contactText": "Damit wir wissen, ob du kommst und wie wir dich erreichen. Bitte fülle das Formular für jede Person einzeln aus.",
 
       "firstName": "Vorname",
       "lastName": "Nachname",
@@ -249,6 +249,9 @@
       "detailsTitle": "Noch ein paar Details",
       "detailsText": "Damit wir alles perfekt vorbereiten können.",
 
+      "declinedDetailsTitle": "Schade, dass du nicht kommen kannst",
+      "declinedDetailsText": "Du bist trotzdem herzlich zum Polterabend eingeladen. Sag uns gern Bescheid, ob du dabei bist.",
+
       "polterabend": "Ich komme auch zum Polterabend am Mittwoch, den 12. Mai. 🎉",
 
       "vegan": "Ich esse vegan",
@@ -262,9 +265,10 @@
 
       "successTitle": "Vielen Dank!",
       "successText": "Wir haben deine Antwort erhalten und freuen uns riesig auf euch.",
+      "declinedSuccessText": "Wir haben deine Antwort erhalten. Schade, dass du bei der Hochzeit nicht dabei sein kannst.",
 
       "calendarCta": "Zum Kalender hinzufügen",
-      "addAnotherCta": "Weitere Person hinzufügen",
+      "addAnotherCta": "Für eine weitere Person antworten",
       "calendarSummary": "Hochzeit Merle & Lasse",
       "calendarDescription": "Wir heiraten! Feiert mit uns diesen besonderen Tag.",
       "calendarLocation": "Heimathaus Tornesch, Schleswig-Holstein",
@@ -322,7 +326,7 @@
         {
           "question": "Was können wir euch schenken?",
           "answer": "Unser größter Wunsch ist, im Anschluss an die Hochzeit wieder für einen Monat nach Kanada zu reisen – dieses Mal nach Vancouver, Vancouver Island und in die Rocky Mountains. 🇨🇦 Auf Vancouver Island möchten wir besonders gerne Wale beobachten. Wenn ihr uns dabei mit einem kleinen Beitrag für unsere Flitterwochen unterstützen möchtet, würden wir uns sehr freuen. Und falls ihr lieber etwas für unser Zuhause schenken möchtet, haben wir auch eine kleine Wunschliste für euch zusammengestellt. 🏡",
-          "link": "",
+          "link": "https://www.wunschbiber.de/wunschliste/72f2cd33-ecf7-4e53-afad-e6be16a44d0e/",
           "linkLabel": "Unsere Wunschliste ansehen"
         }
       ]
