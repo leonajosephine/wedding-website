@@ -1,56 +1,55 @@
 'use client';
 
-import {useMemo, useSyncExternalStore} from 'react';
+import {useMemo, useState, type FormEvent} from 'react';
 import {
-  Beef,
   Check,
-  Leaf,
   PartyPopper,
   Sprout,
   Users,
   X
 } from 'lucide-react';
-import {getRsvpResponses, RsvpResponse} from '@/lib/rsvpStorage';
-
-function subscribe(callback: () => void) {
-  window.addEventListener('storage', callback);
-  window.addEventListener('rsvp-storage-change', callback);
-
-  return () => {
-    window.removeEventListener('storage', callback);
-    window.removeEventListener('rsvp-storage-change', callback);
-  };
-}
-
-function getSnapshot() {
-  return JSON.stringify(getRsvpResponses());
-}
-
-function getServerSnapshot() {
-  return JSON.stringify([]);
-}
+import type {RsvpResponse} from '@/lib/rsvp';
 
 export default function GuestlistPage() {
-  const responsesJson = useSyncExternalStore(
-    subscribe,
-    getSnapshot,
-    getServerSnapshot
-  );
+  const [responses, setResponses] = useState<RsvpResponse[] | null>(null);
+  const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
-  const responses = useMemo<RsvpResponse[]>(
-    () => JSON.parse(responsesJson),
-    [responsesJson]
-  );
+  async function unlock(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    if (!password || loading) return;
+    setLoading(true);
+    setError('');
+
+    try {
+      const result = await fetch('/api/rsvp', {
+        headers: {Authorization: 'Bearer ' + password},
+        cache: 'no-store'
+      });
+      if (!result.ok) {
+        setError(result.status === 401 ? 'Das Passwort stimmt nicht.' : 'Die Gästeliste konnte nicht geladen werden.');
+        return;
+      }
+      setResponses(await result.json());
+      setPassword('');
+    } catch {
+      setError('Die Gästeliste konnte nicht geladen werden.');
+    } finally {
+      setLoading(false);
+    }
+  }
 
   const stats = useMemo(() => {
-    const attending = responses.filter((item) => item.attending === 'yes');
-    const declined = responses.filter((item) => item.attending === 'no');
+    const entries = responses ?? [];
+    const attending = entries.filter((item) => item.attending === 'yes');
+    const declined = entries.filter((item) => item.attending === 'no');
 
     return {
-      total: responses.length,
+      total: entries.length,
       attending: attending.length,
       declined: declined.length,
-      polterabend: responses.filter((item) => item.polterabend).length,
+      polterabend: entries.filter((item) => item.polterabend).length,
       vegan: attending.filter((item) => item.vegan === true).length
     };
   }, [responses]);
@@ -60,6 +59,30 @@ export default function GuestlistPage() {
 
   const declinedPercent =
     stats.total > 0 ? Math.round((stats.declined / stats.total) * 100) : 0;
+
+  if (!responses) {
+    return (
+      <main className="min-h-screen bg-[var(--background)] px-6 py-24">
+        <form onSubmit={unlock} className="mx-auto max-w-md space-y-4">
+          <h1 className="serif text-4xl">Gästeliste</h1>
+          <label className="block">
+            Passwort für die Gästeliste
+            <input
+              type="password"
+              required
+              value={password}
+              onChange={(event) => setPassword(event.target.value)}
+              className="mt-2 block w-full border border-[var(--border)] p-3"
+            />
+          </label>
+          <button type="submit" disabled={loading} className="bg-[var(--brand-600)] px-5 py-2 text-white">
+            {loading ? 'Wird geladen …' : 'Gästeliste öffnen'}
+          </button>
+          {error && <p role="alert">{error}</p>}
+        </form>
+      </main>
+    );
+  }
 
   return (
     <main className="min-h-screen bg-[var(--background)] px-6 py-24">
@@ -72,8 +95,7 @@ export default function GuestlistPage() {
           </h1>
 
           <p className="mt-4 max-w-2xl text-sm leading-7 text-[var(--text-soft)]">
-            Mock-Daten aus dem RSVP-Formular. Später ersetzen wir die lokale
-            Speicherung durch Supabase.
+            Rückmeldungen aus dem Hochzeitsformular.
           </p>
         </div>
 

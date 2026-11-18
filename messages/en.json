@@ -260,6 +260,9 @@
       "back": "Back",
       "next": "Next",
       "submit": "Submit",
+      "saving": "Sending…",
+      "submitError": "We couldn’t save your reply. Please try again.",
+      "invalidResponse": "Please check your details, especially your email address.",
 
       "successTitle": "Thank You!",
       "successText": "We have received your response and are very excited to see you.",

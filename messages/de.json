@@ -262,6 +262,9 @@
       "back": "Zurück",
       "next": "Weiter",
       "submit": "Absenden",
+      "saving": "Wird gesendet …",
+      "submitError": "Deine Antwort konnte gerade nicht gespeichert werden. Bitte versuche es erneut.",
+      "invalidResponse": "Bitte prüfe deine Angaben, besonders deine E-Mail-Adresse.",
 
       "successTitle": "Vielen Dank!",
       "successText": "Wir haben deine Antwort erhalten und freuen uns riesig auf euch.",

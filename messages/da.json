@@ -260,6 +260,9 @@
       "back": "Tilbage",
       "next": "Næste",
       "submit": "Indsend",
+      "saving": "Sender …",
+      "submitError": "Dit svar kunne ikke gemmes. Prøv gerne igen.",
+      "invalidResponse": "Tjek dine oplysninger, især din e-mailadresse.",
 
       "successTitle": "Tak!",
       "successText": "Vi har modtaget dit svar og glæder os meget til at se dig.",

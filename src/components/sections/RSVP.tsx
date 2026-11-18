@@ -1,11 +1,10 @@
 'use client';
 
-import {useState} from 'react';
+import {useRef, useState} from 'react';
 import {Calendar, Check, ChevronLeft, ChevronRight} from 'lucide-react';
 import {useTranslations} from 'next-intl';
 
 import {Button} from '@/components/ui/Button';
-import {saveRsvpResponse} from '@/lib/rsvpStorage';
 import {useScrollAnimation} from '@/hooks/useScrollAnimation';
 
 type FormData = {
@@ -38,6 +37,9 @@ export function RSVP() {
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState<FormData>(initialFormData);
 
+  const submissionId = useRef<string | null>(null);
+  const [saving, setSaving] = useState(false);
+  const [submitError, setSubmitError] = useState<'invalidResponse' | 'submitError' | null>(null);
   const totalSteps = 3;
 
   const canProceed = () => {
@@ -52,38 +54,30 @@ export function RSVP() {
     return true;
   };
 
-  const handleSubmit = () => {
-    if (
-      formData.attending !== 'yes' &&
-      formData.attending !== 'no'
-    ) {
-      return;
+  const handleSubmit = async () => {
+    if (saving || !formData.attending) return;
+    submissionId.current ??= crypto.randomUUID();
+    setSaving(true);
+    setSubmitError(null);
+
+    try {
+      const result = await fetch('/api/rsvp', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({...formData, id: submissionId.current})
+      });
+      if (result.ok) setSubmitted(true);
+      else setSubmitError(result.status === 400 ? 'invalidResponse' : 'submitError');
+    } catch {
+      setSubmitError('submitError');
+    } finally {
+      setSaving(false);
     }
-
-    saveRsvpResponse({
-      firstName: formData.firstName,
-      lastName: formData.lastName,
-      email: formData.email,
-      attending: formData.attending,
-      polterabend: formData.polterabend,
-      vegan:
-        formData.attending === 'yes'
-          ? formData.vegan
-          : false,
-      allergies:
-        formData.attending === 'yes'
-          ? formData.allergies
-          : '',
-      songWish:
-        formData.attending === 'yes'
-          ? formData.songWish
-          : ''
-    });
-
-    setSubmitted(true);
   };
 
   const resetForm = () => {
+    submissionId.current = null;
+    setSubmitError(null);
     setFormData(initialFormData);
     setStep(1);
     setSubmitted(false);
@@ -387,12 +381,18 @@ END:VCALENDAR`;
             </div>
           )}
 
+          {submitError && (
+            <p role="alert" className="mt-5 text-sm text-[var(--text)]">
+              {t(submitError)}
+            </p>
+          )}
+
           {/* Navigation */}
           <div className="mt-8 flex flex-col-reverse gap-3 border-t border-[var(--border)] pt-6 sm:flex-row sm:items-center sm:justify-between">
             <Button
               variant="ghost"
               onClick={() => setStep(step - 1)}
-              disabled={step === 1}
+              disabled={step === 1 || saving}
               className="w-full sm:w-auto"
             >
               <ChevronLeft className="h-4 w-4" />
@@ -413,9 +413,10 @@ END:VCALENDAR`;
               <Button
                 variant="primary"
                 onClick={handleSubmit}
+                disabled={saving}
                 className="w-full sm:w-auto"
               >
-                {t('submit')}
+                {t(saving ? 'saving' : 'submit')}
               </Button>
             )}
           </div>
