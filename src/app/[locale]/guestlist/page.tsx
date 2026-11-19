@@ -15,6 +15,7 @@ export default function GuestlistPage() {
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const [sortOrder, setSortOrder] = useState('newest');
 
   async function unlock(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -54,6 +55,20 @@ export default function GuestlistPage() {
     };
   }, [responses]);
 
+  const sortedResponses = useMemo(() => {
+    const compareNames = (a: RsvpResponse, b: RsvpResponse) =>
+      a.lastName.localeCompare(b.lastName, 'de', {sensitivity: 'base'}) ||
+      a.firstName.localeCompare(b.firstName, 'de', {sensitivity: 'base'});
+
+    return [...(responses ?? [])].sort((a, b) => {
+      if (sortOrder === 'name') return compareNames(a, b);
+      if (sortOrder === 'attendance') {
+        return Number(b.attending === 'yes') - Number(a.attending === 'yes') || compareNames(a, b);
+      }
+      return Date.parse(b.submittedAt) - Date.parse(a.submittedAt);
+    });
+  }, [responses, sortOrder]);
+
   const attendingPercent =
     stats.total > 0 ? Math.round((stats.attending / stats.total) * 100) : 0;
 
@@ -62,7 +77,7 @@ export default function GuestlistPage() {
 
   if (!responses) {
     return (
-      <main className="min-h-screen bg-[var(--background)] px-6 py-24">
+      <main className="min-h-screen bg-[var(--background)] px-4 py-12 sm:px-6 sm:py-24">
         <form onSubmit={unlock} className="mx-auto max-w-md space-y-4">
           <h1 className="serif text-4xl">Gästeliste</h1>
           <label className="block">
@@ -85,13 +100,13 @@ export default function GuestlistPage() {
   }
 
   return (
-    <main className="min-h-screen bg-[var(--background)] px-6 py-24">
-      <div className="container">
+    <main className="min-h-screen bg-[var(--background)] px-4 py-12 sm:px-6 sm:py-24">
+      <div className="mx-auto w-full max-w-7xl">
         <div className="mb-12">
           <p className="eyebrow mb-4">Admin</p>
 
           <h1 className="serif text-5xl text-[var(--text)] md:text-7xl">
-            Guestlist 💒
+            Gästeliste 💒
           </h1>
 
           <p className="mt-4 max-w-2xl text-sm leading-7 text-[var(--text-soft)]">
@@ -99,8 +114,8 @@ export default function GuestlistPage() {
           </p>
         </div>
 
-        <div className="mb-12 grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
-          <section className="relative overflow-hidden rounded-sm border border-[var(--border-soft)] bg-[rgba(255,250,242,0.72)] p-7 shadow-[var(--shadow-paper)] md:p-9">
+        <div className="mb-12 grid gap-6 xl:grid-cols-[0.9fr_1.1fr]">
+          <section className="relative overflow-hidden rounded-sm border border-[var(--border-soft)] bg-[rgba(255,250,242,0.72)] p-5 shadow-[var(--shadow-paper)] md:p-9">
             <div className="pointer-events-none absolute inset-[12px] border border-[rgba(42,37,34,0.05)]" />
 
             <div className="relative flex flex-col items-center gap-8 text-center sm:flex-row sm:text-left">
@@ -145,7 +160,7 @@ export default function GuestlistPage() {
               icon={<PartyPopper />}
               label="Polterabend"
               value={stats.polterabend}
-              hint="kommen am Freitag"
+              hint="kommen am Mittwoch, 12. Mai"
             />
 
             <MiniStat
@@ -156,12 +171,26 @@ export default function GuestlistPage() {
             />
 
             <MenuSummary
-              vegan={stats.vegan > 0}
+              vegan={stats.vegan}
             />
           </section>
         </div>
 
-        <div className="overflow-hidden rounded-sm border border-[var(--border-soft)] bg-[rgba(255,250,242,0.72)] shadow-[var(--shadow-paper)]">
+        <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-end">
+          <label htmlFor="guestlist-sort" className="text-sm text-[var(--text-soft)]">Sortieren nach</label>
+          <select id="guestlist-sort" value={sortOrder} onChange={(event) => setSortOrder(event.target.value)}
+            className="min-h-11 rounded-sm border border-[var(--border-soft)] bg-[var(--surface)] px-3 py-2 text-sm">
+            <option value="newest">Anmeldedatum · neueste zuerst</option>
+            <option value="name">Nachname · A–Z</option>
+            <option value="attendance">Zusagen zuerst · danach Absagen</option>
+          </select>
+        </div>
+
+        {responses.length === 0 && (
+          <p className="py-8 text-center text-[var(--text-soft)]">Es sind noch keine Rückmeldungen eingegangen.</p>
+        )}
+
+        <div className="min-w-0 overflow-hidden rounded-sm border border-[var(--border-soft)] bg-[rgba(255,250,242,0.72)] shadow-[var(--shadow-paper)]">
           <div className="overflow-x-auto">
             <table className="w-full min-w-[900px] border-collapse text-left text-sm">
               <thead className="border-b border-[var(--border-soft)] text-xs uppercase tracking-[0.16em] text-[var(--text-muted)]">
@@ -177,7 +206,7 @@ export default function GuestlistPage() {
               </thead>
 
               <tbody>
-                {responses.map((item) => (
+                {sortedResponses.map((item) => (
                   <tr
                     key={item.id}
                     className="border-b border-[var(--border-soft)] last:border-b-0"
@@ -191,10 +220,10 @@ export default function GuestlistPage() {
                     <td className="px-5 py-4">
                       {item.polterabend ? 'Ja' : 'Nein'}
                     </td>
-                    <td className="px-5 py-4">{item.vegan || '–'}</td>
-                    <td className="px-5 py-4">{item.allergies || '–'}</td>
-                    <td className="px-5 py-4">{item.songWish || '–'}</td>
-                    <td className="px-5 py-4">{item.email}</td>
+                    <td className="px-5 py-4">{item.attending === 'yes' ? (item.vegan ? 'Vegan' : 'Keine vegane Auswahl') : '–'}</td>
+                    <td className="max-w-xs whitespace-pre-wrap break-words px-5 py-4 [overflow-wrap:anywhere]">{item.allergies || '–'}</td>
+                    <td className="max-w-xs whitespace-pre-wrap break-words px-5 py-4 [overflow-wrap:anywhere]">{item.songWish || '–'}</td>
+                    <td className="max-w-xs break-words px-5 py-4 [overflow-wrap:anywhere]">{item.email}</td>
                   </tr>
                 ))}
               </tbody>
@@ -337,7 +366,7 @@ function MiniStat({
 function MenuSummary({
   vegan
 }: {
-  vegan: boolean;
+  vegan: number;
 }) {
   return (
     <article className="relative overflow-hidden rounded-sm border border-[var(--border-soft)] bg-[rgba(255,250,242,0.72)] p-5 shadow-[var(--shadow-paper)] sm:col-span-2">
@@ -346,7 +375,7 @@ function MenuSummary({
       <div className="relative">
         <p className="eyebrow mb-5">Menüauswahl</p>
 
-        <MenuRow icon={<Sprout />} label="Vegan" value={vegan ? 1 : 0} />
+        <MenuRow icon={<Sprout />} label="Vegan" value={vegan} />
       </div>
     </article>
   );
